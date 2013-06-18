@@ -60,7 +60,7 @@
 				</button>
 				<!-- /Mobile Menu Button -->
 
-				<a href="/" class="brand"><img src="../img/logo.png" alt="logo" width="" height="" /></a>
+				<a href="/" class="brand"><?php echo $this->Html->image('logo.png') ?></a>
 
 				<div class="nav-collapse collapse pull-right">
 					<ul class="nav">
