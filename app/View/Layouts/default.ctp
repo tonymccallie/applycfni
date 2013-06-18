@@ -60,11 +60,23 @@
 				</button>
 				<!-- /Mobile Menu Button -->
 
-				<a href="/" class="brand"><?php echo $this->Html->image('logo.png') ?></a>
+				<?php echo $this->Html->link($this->Html->image('logo.png'),'/',array('class'=>'brand','escape'=>false)) ?>
 
 				<div class="nav-collapse collapse pull-right">
 					<ul class="nav">
 						<li class="active"><?php echo $this->Html->link('Home','/') ?></li>
+						<li><?php echo $this->Html->link('FAQs','/pages/faq') ?></li>
+						<?php if(Authsome::get('Role.name') == 'Admin'): ?>
+							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="admin_dropdown">Admin <b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<li><?php echo $this->Html->link('Users','/admin/users') ?></li>
+									<li><?php echo $this->Html->link('Semesters','/admin/semesters') ?></li>
+									<li><?php echo $this->Html->link('Recruiters','/admin/recruiters') ?></li>
+									<li><?php echo $this->Html->link('Majors','/admin/majors') ?></li>
+									<li><?php echo $this->Html->link('Degrees','/admin/degrees') ?></li>
+								</ul>
+							</li>
+						<?php endif ?>
 						<?php if(Authsome::get('email') == 'guest@greyback.net'): ?>
 							<li class=""><?php echo $this->Html->link('Login','/users/login') ?></li>
 							<li class=""><?php echo $this->Html->link('Register','/users/register') ?></li>
@@ -79,6 +91,11 @@
 	</div>
 	
 	<div id="steps">
+		<?php
+			if(!empty($application)) {
+				//debug($application);
+			}
+		?>
 		<a href="/applications/start">01. Start </a><i class="icon-chevron-right"></i><a href="/applications/personal">02. Personal</a><i class="icon-chevron-right"></i><a href="/applications/education">03. Education</a><i class="icon-chevron-right"></i><a href="/applications/spiritual">04. Spiritual</a><i class="icon-chevron-right"></i><a href="/applications/recommendations">05. Recomendations</a><i class="icon-chevron-right"></i><a href="/applications/releases">06. Finish</a> 	
 	</div>
 

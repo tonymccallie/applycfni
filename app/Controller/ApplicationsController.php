@@ -16,11 +16,12 @@ class ApplicationsController extends AppController {
 			$this->Session->write('application',$application);
 		}
 		$this->application = $application;
+		$this->set(compact('application'));
 	}
 	
 	function start() {
 		if(!empty($this->request->data['Application'])) {
-			if(!empty($this->application['Application']['step'])) {
+			if(empty($this->application['Application']['step_completed'])) {
 				$this->request->data['Application']['step_completed'] = 1;
 			}
 			if($this->Application->save($this->request->data)) {
@@ -38,7 +39,7 @@ class ApplicationsController extends AppController {
 	
 	function personal() {
 		if(!empty($this->request->data['Application'])) {
-			if(!empty($this->application['Application']['step'])) {
+			if(!empty($this->application['Application']['step_completed'])) {
 				$this->request->data['Application']['step_completed'] = 2;
 			}
 			if($this->Application->save($this->request->data)) {
@@ -53,7 +54,7 @@ class ApplicationsController extends AppController {
 	
 	function education() {
 		if(!empty($this->request->data['Application'])) {
-			if(!empty($this->application['Application']['step'])) {
+			if(!empty($this->application['Application']['step_completed'])) {
 				$this->request->data['Application']['step_completed'] = 3;
 			}
 			if($this->Application->save($this->request->data)) {
@@ -68,7 +69,7 @@ class ApplicationsController extends AppController {
 	
 	function spiritual() {
 		if(!empty($this->request->data['Application'])) {
-			if(!empty($this->application['Application']['step'])) {
+			if(!empty($this->application['Application']['step_completed'])) {
 				$this->request->data['Application']['step_completed'] = 4;
 			}
 			if($this->Application->save($this->request->data)) {
@@ -83,7 +84,7 @@ class ApplicationsController extends AppController {
 	
 	function recommendations() {
 		if(!empty($this->request->data['Application'])) {
-			if(!empty($this->application['Application']['step'])) {
+			if(!empty($this->application['Application']['step_completed'])) {
 				$this->request->data['Application']['step_completed'] = 5;
 			}
 			if($this->Application->save($this->request->data)) {
@@ -98,7 +99,7 @@ class ApplicationsController extends AppController {
 	
 	function releases() {
 		if(!empty($this->request->data['Application'])) {
-			if(!empty($this->application['Application']['step'])) {
+			if(!empty($this->application['Application']['step_completed'])) {
 				$this->request->data['Application']['step_completed'] = 6;
 			}
 			if($this->Application->save($this->request->data)) {

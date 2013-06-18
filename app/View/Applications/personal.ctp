@@ -54,7 +54,7 @@
 					<?php echo $this->Form->input('ssn',array('label'=>'Social Security Number','class'=>'span12')); ?>
 				</div>
 				<div class="span6">
-					<?php echo $this->Form->input('birth_date',array('label'=>'Date of Birth','class'=>'span12')); ?>
+					<?php echo $this->Form->input('birth_date',array('label'=>'Date of Birth','class'=>'span4')); ?>
 				</div>
 			</div>
 			<div class="row-fluid">

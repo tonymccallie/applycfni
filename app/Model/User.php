@@ -12,7 +12,8 @@ class User extends AppModel {
 
 	var $hasMany = array(
 		'LoginToken' => array('dependent' => true),
-		'Application' => array('depenent'=>true)
+		'Application' => array('depenent'=>true),
+		'Referral'
 	);
 
 
