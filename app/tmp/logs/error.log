@@ -1,0 +1,696 @@
+2013-06-12 13:51:51 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [2002] Can\'t connect to local MySQL server through socket \'/var/run/mysqld/mysqld.sock\' (2)',
+  'enabled' => true,
+)
+Request URL: /users/login
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/lib/Cake/Model/Datasource/DboSource.php(262): Mysql->connect()
+#1 /var/www/apply.cfni.org/public_html/lib/Cake/Model/ConnectionManager.php(107): DboSource->__construct(Array)
+#2 /var/www/apply.cfni.org/public_html/lib/Cake/Model/Model.php(3221): ConnectionManager::getDataSource('default')
+#3 /var/www/apply.cfni.org/public_html/lib/Cake/Model/Model.php(1108): Model->setDataSource('default')
+#4 /var/www/apply.cfni.org/public_html/lib/Cake/Model/Model.php(3243): Model->setSource('users')
+#5 /var/www/apply.cfni.org/public_html/lib/Cake/Model/Model.php(1319): Model->getDataSource()
+#6 /var/www/apply.cfni.org/public_html/lib/Cake/View/Helper/FormHelper.php(199): Model->schema()
+#7 /var/www/apply.cfni.org/public_html/lib/Cake/View/Helper/FormHelper.php(456): FormHelper->_introspectModel('User', 'fields')
+#8 /var/www/apply.cfni.org/public_html/app/View/Users/login.ctp(6): FormHelper->create('User', Array)
+#9 /var/www/apply.cfni.org/public_html/lib/Cake/View/View.php(947): include('/var/www/apply....')
+#10 /var/www/apply.cfni.org/public_html/lib/Cake/View/View.php(909): View->_evaluate('/var/www/apply....', Array)
+#11 /var/www/apply.cfni.org/public_html/lib/Cake/View/View.php(471): View->_render('/var/www/apply....')
+#12 /var/www/apply.cfni.org/public_html/lib/Cake/Controller/Controller.php(948): View->render(NULL, NULL)
+#13 /var/www/apply.cfni.org/public_html/lib/Cake/Routing/Dispatcher.php(194): Controller->render()
+#14 /var/www/apply.cfni.org/public_html/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#15 /var/www/apply.cfni.org/public_html/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2013-06-12 13:51:51 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /img/cake.power.gif
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-06-12 13:51:51 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/cake.generic.css
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-06-12 13:51:55 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /img/cake.power.gif
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-06-12 17:04:06 Error: [MissingTableException] Table applications for model Application was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'applications',
+  'class' => 'Application',
+  'ds' => 'default',
+)
+Request URL: /
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/lib/Cake/Model/Model.php(3243): Model->setSource('applications')
+#1 /var/www/apply.cfni.org/public_html/lib/Cake/Model/Datasource/DboSource.php(1066): Model->getDataSource()
+#2 /var/www/apply.cfni.org/public_html/lib/Cake/Model/Model.php(2696): DboSource->read(Object(User), Array)
+#3 /var/www/apply.cfni.org/public_html/app/Model/User.php(130): Model->find('first', Array)
+#4 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(88): User->authsomeLogin('guest', NULL)
+#5 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(197): AuthsomeComponent->login('guest')
+#6 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(147): AuthsomeComponent->__useGuestAccount()
+#7 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(58): AuthsomeComponent->__getActiveUser()
+#8 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(220): AuthsomeComponent->get('User.email')
+#9 /var/www/apply.cfni.org/public_html/app/Controller/AppController.php(25): Authsome::get('User.email')
+#10 [internal function]: AppController->beforeFilter(Object(CakeEvent))
+#11 /var/www/apply.cfni.org/public_html/lib/Cake/Event/CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#12 /var/www/apply.cfni.org/public_html/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#13 /var/www/apply.cfni.org/public_html/lib/Cake/Routing/Dispatcher.php(184): Controller->startupProcess()
+#14 /var/www/apply.cfni.org/public_html/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#15 /var/www/apply.cfni.org/public_html/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2013-06-12 17:12:50 Error: [MissingTableException] Table applications for model Application was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'applications',
+  'class' => 'Application',
+  'ds' => 'default',
+)
+Request URL: /users/login
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/lib/Cake/Model/Model.php(3243): Model->setSource('applications')
+#1 /var/www/apply.cfni.org/public_html/lib/Cake/Model/Datasource/DboSource.php(1066): Model->getDataSource()
+#2 /var/www/apply.cfni.org/public_html/lib/Cake/Model/Model.php(2696): DboSource->read(Object(User), Array)
+#3 /var/www/apply.cfni.org/public_html/app/Model/User.php(130): Model->find('first', Array)
+#4 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(88): User->authsomeLogin('guest', NULL)
+#5 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(197): AuthsomeComponent->login('guest')
+#6 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(147): AuthsomeComponent->__useGuestAccount()
+#7 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(58): AuthsomeComponent->__getActiveUser()
+#8 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(220): AuthsomeComponent->get('User.email')
+#9 /var/www/apply.cfni.org/public_html/app/Controller/AppController.php(25): Authsome::get('User.email')
+#10 [internal function]: AppController->beforeFilter(Object(CakeEvent))
+#11 /var/www/apply.cfni.org/public_html/lib/Cake/Event/CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#12 /var/www/apply.cfni.org/public_html/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#13 /var/www/apply.cfni.org/public_html/lib/Cake/Routing/Dispatcher.php(184): Controller->startupProcess()
+#14 /var/www/apply.cfni.org/public_html/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#15 /var/www/apply.cfni.org/public_html/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2013-06-12 18:13:28 Error: [MissingTableException] Table applications for model Application was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'applications',
+  'class' => 'Application',
+  'ds' => 'default',
+)
+Request URL: /dashboard
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/lib/Cake/Model/Model.php(3243): Model->setSource('applications')
+#1 /var/www/apply.cfni.org/public_html/lib/Cake/Model/Datasource/DboSource.php(1066): Model->getDataSource()
+#2 /var/www/apply.cfni.org/public_html/lib/Cake/Model/Model.php(2696): DboSource->read(Object(User), Array)
+#3 /var/www/apply.cfni.org/public_html/app/Model/User.php(130): Model->find('first', Array)
+#4 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(88): User->authsomeLogin('guest', NULL)
+#5 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(197): AuthsomeComponent->login('guest')
+#6 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(147): AuthsomeComponent->__useGuestAccount()
+#7 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(58): AuthsomeComponent->__getActiveUser()
+#8 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(220): AuthsomeComponent->get('User.email')
+#9 /var/www/apply.cfni.org/public_html/app/Controller/AppController.php(25): Authsome::get('User.email')
+#10 [internal function]: AppController->beforeFilter(Object(CakeEvent))
+#11 /var/www/apply.cfni.org/public_html/lib/Cake/Event/CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#12 /var/www/apply.cfni.org/public_html/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#13 /var/www/apply.cfni.org/public_html/lib/Cake/Routing/Dispatcher.php(184): Controller->startupProcess()
+#14 /var/www/apply.cfni.org/public_html/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#15 /var/www/apply.cfni.org/public_html/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2013-06-12 18:28:09 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/cake.generic.css
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-06-12 18:28:14 Error: [MissingTableException] Table applications for model Application was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'applications',
+  'class' => 'Application',
+  'ds' => 'default',
+)
+Request URL: /users/register
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/lib/Cake/Model/Model.php(3243): Model->setSource('applications')
+#1 /var/www/apply.cfni.org/public_html/lib/Cake/Model/Datasource/DboSource.php(1066): Model->getDataSource()
+#2 /var/www/apply.cfni.org/public_html/lib/Cake/Model/Model.php(2696): DboSource->read(Object(User), Array)
+#3 /var/www/apply.cfni.org/public_html/app/Model/User.php(130): Model->find('first', Array)
+#4 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(88): User->authsomeLogin('guest', NULL)
+#5 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(197): AuthsomeComponent->login('guest')
+#6 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(147): AuthsomeComponent->__useGuestAccount()
+#7 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(58): AuthsomeComponent->__getActiveUser()
+#8 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(220): AuthsomeComponent->get('User.email')
+#9 /var/www/apply.cfni.org/public_html/app/Controller/AppController.php(25): Authsome::get('User.email')
+#10 [internal function]: AppController->beforeFilter(Object(CakeEvent))
+#11 /var/www/apply.cfni.org/public_html/lib/Cake/Event/CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#12 /var/www/apply.cfni.org/public_html/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#13 /var/www/apply.cfni.org/public_html/lib/Cake/Routing/Dispatcher.php(184): Controller->startupProcess()
+#14 /var/www/apply.cfni.org/public_html/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#15 /var/www/apply.cfni.org/public_html/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2013-06-12 18:28:27 Error: [MissingTableException] Table applications for model Application was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'applications',
+  'class' => 'Application',
+  'ds' => 'default',
+)
+Request URL: /dashboard/
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/lib/Cake/Model/Model.php(3243): Model->setSource('applications')
+#1 /var/www/apply.cfni.org/public_html/lib/Cake/Model/Datasource/DboSource.php(1066): Model->getDataSource()
+#2 /var/www/apply.cfni.org/public_html/lib/Cake/Model/Model.php(2696): DboSource->read(Object(User), Array)
+#3 /var/www/apply.cfni.org/public_html/app/Model/User.php(130): Model->find('first', Array)
+#4 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(88): User->authsomeLogin('guest', NULL)
+#5 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(197): AuthsomeComponent->login('guest')
+#6 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(147): AuthsomeComponent->__useGuestAccount()
+#7 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(58): AuthsomeComponent->__getActiveUser()
+#8 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(220): AuthsomeComponent->get('User.email')
+#9 /var/www/apply.cfni.org/public_html/app/Controller/AppController.php(25): Authsome::get('User.email')
+#10 [internal function]: AppController->beforeFilter(Object(CakeEvent))
+#11 /var/www/apply.cfni.org/public_html/lib/Cake/Event/CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#12 /var/www/apply.cfni.org/public_html/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#13 /var/www/apply.cfni.org/public_html/lib/Cake/Routing/Dispatcher.php(184): Controller->startupProcess()
+#14 /var/www/apply.cfni.org/public_html/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#15 /var/www/apply.cfni.org/public_html/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2013-06-12 18:30:14 Error: [MissingTableException] Table applications for model Application was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'applications',
+  'class' => 'Application',
+  'ds' => 'default',
+)
+Request URL: /users/register/2-65007f
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/lib/Cake/Model/Model.php(3243): Model->setSource('applications')
+#1 /var/www/apply.cfni.org/public_html/lib/Cake/Model/Datasource/DboSource.php(1066): Model->getDataSource()
+#2 /var/www/apply.cfni.org/public_html/lib/Cake/Model/Model.php(2696): DboSource->read(Object(User), Array)
+#3 /var/www/apply.cfni.org/public_html/app/Model/User.php(130): Model->find('first', Array)
+#4 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(88): User->authsomeLogin('guest', NULL)
+#5 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(197): AuthsomeComponent->login('guest')
+#6 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(147): AuthsomeComponent->__useGuestAccount()
+#7 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(58): AuthsomeComponent->__getActiveUser()
+#8 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(220): AuthsomeComponent->get('User.email')
+#9 /var/www/apply.cfni.org/public_html/app/Controller/AppController.php(25): Authsome::get('User.email')
+#10 [internal function]: AppController->beforeFilter(Object(CakeEvent))
+#11 /var/www/apply.cfni.org/public_html/lib/Cake/Event/CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#12 /var/www/apply.cfni.org/public_html/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#13 /var/www/apply.cfni.org/public_html/lib/Cake/Routing/Dispatcher.php(184): Controller->startupProcess()
+#14 /var/www/apply.cfni.org/public_html/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#15 /var/www/apply.cfni.org/public_html/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2013-06-12 18:30:30 Error: [MissingTableException] Table applications for model Application was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'applications',
+  'class' => 'Application',
+  'ds' => 'default',
+)
+Request URL: /
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/lib/Cake/Model/Model.php(3243): Model->setSource('applications')
+#1 /var/www/apply.cfni.org/public_html/lib/Cake/Model/Datasource/DboSource.php(1066): Model->getDataSource()
+#2 /var/www/apply.cfni.org/public_html/lib/Cake/Model/Model.php(2696): DboSource->read(Object(User), Array)
+#3 /var/www/apply.cfni.org/public_html/app/Model/User.php(130): Model->find('first', Array)
+#4 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(88): User->authsomeLogin('guest', NULL)
+#5 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(197): AuthsomeComponent->login('guest')
+#6 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(147): AuthsomeComponent->__useGuestAccount()
+#7 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(58): AuthsomeComponent->__getActiveUser()
+#8 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(220): AuthsomeComponent->get('User.email')
+#9 /var/www/apply.cfni.org/public_html/app/Controller/AppController.php(25): Authsome::get('User.email')
+#10 [internal function]: AppController->beforeFilter(Object(CakeEvent))
+#11 /var/www/apply.cfni.org/public_html/lib/Cake/Event/CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#12 /var/www/apply.cfni.org/public_html/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#13 /var/www/apply.cfni.org/public_html/lib/Cake/Routing/Dispatcher.php(184): Controller->startupProcess()
+#14 /var/www/apply.cfni.org/public_html/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#15 /var/www/apply.cfni.org/public_html/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2013-06-12 18:30:31 Error: [MissingTableException] Table applications for model Application was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'applications',
+  'class' => 'Application',
+  'ds' => 'default',
+)
+Request URL: /
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/lib/Cake/Model/Model.php(3243): Model->setSource('applications')
+#1 /var/www/apply.cfni.org/public_html/lib/Cake/Model/Datasource/DboSource.php(1066): Model->getDataSource()
+#2 /var/www/apply.cfni.org/public_html/lib/Cake/Model/Model.php(2696): DboSource->read(Object(User), Array)
+#3 /var/www/apply.cfni.org/public_html/app/Model/User.php(130): Model->find('first', Array)
+#4 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(88): User->authsomeLogin('guest', NULL)
+#5 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(197): AuthsomeComponent->login('guest')
+#6 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(147): AuthsomeComponent->__useGuestAccount()
+#7 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(58): AuthsomeComponent->__getActiveUser()
+#8 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(220): AuthsomeComponent->get('User.email')
+#9 /var/www/apply.cfni.org/public_html/app/Controller/AppController.php(25): Authsome::get('User.email')
+#10 [internal function]: AppController->beforeFilter(Object(CakeEvent))
+#11 /var/www/apply.cfni.org/public_html/lib/Cake/Event/CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#12 /var/www/apply.cfni.org/public_html/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#13 /var/www/apply.cfni.org/public_html/lib/Cake/Routing/Dispatcher.php(184): Controller->startupProcess()
+#14 /var/www/apply.cfni.org/public_html/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#15 /var/www/apply.cfni.org/public_html/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2013-06-12 18:30:31 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/cake.generic.css
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-06-12 18:30:33 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /img/cake.power.gif
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-06-12 18:31:00 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /img/cake.power.gif
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-06-13 08:44:10 Error: [MissingTableException] Table applications for model Application was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'applications',
+  'class' => 'Application',
+  'ds' => 'default',
+)
+Request URL: /
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/lib/Cake/Model/Model.php(3243): Model->setSource('applications')
+#1 /var/www/apply.cfni.org/public_html/lib/Cake/Model/Datasource/DboSource.php(1066): Model->getDataSource()
+#2 /var/www/apply.cfni.org/public_html/lib/Cake/Model/Model.php(2696): DboSource->read(Object(User), Array)
+#3 /var/www/apply.cfni.org/public_html/app/Model/User.php(130): Model->find('first', Array)
+#4 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(88): User->authsomeLogin('guest', NULL)
+#5 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(197): AuthsomeComponent->login('guest')
+#6 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(147): AuthsomeComponent->__useGuestAccount()
+#7 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(58): AuthsomeComponent->__getActiveUser()
+#8 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(220): AuthsomeComponent->get('User.email')
+#9 /var/www/apply.cfni.org/public_html/app/Controller/AppController.php(25): Authsome::get('User.email')
+#10 [internal function]: AppController->beforeFilter(Object(CakeEvent))
+#11 /var/www/apply.cfni.org/public_html/lib/Cake/Event/CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#12 /var/www/apply.cfni.org/public_html/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#13 /var/www/apply.cfni.org/public_html/lib/Cake/Routing/Dispatcher.php(184): Controller->startupProcess()
+#14 /var/www/apply.cfni.org/public_html/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#15 /var/www/apply.cfni.org/public_html/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2013-06-13 08:44:10 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/cake.generic.css
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-06-13 08:44:15 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /img/cake.power.gif
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-06-13 10:58:27 Error: [MissingTableException] Table applications for model Application was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'applications',
+  'class' => 'Application',
+  'ds' => 'default',
+)
+Request URL: /
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/lib/Cake/Model/Model.php(3243): Model->setSource('applications')
+#1 /var/www/apply.cfni.org/public_html/lib/Cake/Model/Datasource/DboSource.php(1066): Model->getDataSource()
+#2 /var/www/apply.cfni.org/public_html/lib/Cake/Model/Model.php(2696): DboSource->read(Object(User), Array)
+#3 /var/www/apply.cfni.org/public_html/app/Model/User.php(130): Model->find('first', Array)
+#4 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(88): User->authsomeLogin('cookie', Array)
+#5 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(182): AuthsomeComponent->login('cookie', Array)
+#6 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(146): AuthsomeComponent->__useCookieToken()
+#7 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(58): AuthsomeComponent->__getActiveUser()
+#8 /var/www/apply.cfni.org/public_html/app/Controller/Component/AuthsomeComponent.php(220): AuthsomeComponent->get('User.email')
+#9 /var/www/apply.cfni.org/public_html/app/Controller/AppController.php(25): Authsome::get('User.email')
+#10 [internal function]: AppController->beforeFilter(Object(CakeEvent))
+#11 /var/www/apply.cfni.org/public_html/lib/Cake/Event/CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#12 /var/www/apply.cfni.org/public_html/lib/Cake/Controller/Controller.php(670): CakeEventManager->dispatch(Object(CakeEvent))
+#13 /var/www/apply.cfni.org/public_html/lib/Cake/Routing/Dispatcher.php(184): Controller->startupProcess()
+#14 /var/www/apply.cfni.org/public_html/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#15 /var/www/apply.cfni.org/public_html/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2013-06-13 10:58:28 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /css/cake.generic.css
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-06-13 10:58:28 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /img/cake.power.gif
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-06-14 11:29:00 Error: [MissingActionException] Action ApplicationsController::faq() could not be found.
+Exception Attributes: array (
+  'controller' => 'ApplicationsController',
+  'action' => 'faq',
+)
+Request URL: /applications/faq
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/apply.cfni.org/public_html/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ApplicationsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/apply.cfni.org/public_html/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-06-14 11:38:24 Error: [MissingViewException] View file "/var/www/apply.cfni.org/public_html/app/View/Applications/index.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/var/www/apply.cfni.org/public_html/app/View/Applications/index.ctp',
+)
+Request URL: /applications/
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/lib/Cake/View/View.php(468): View->_getViewFileName(NULL)
+#1 /var/www/apply.cfni.org/public_html/lib/Cake/Controller/Controller.php(948): View->render(NULL, NULL)
+#2 /var/www/apply.cfni.org/public_html/lib/Cake/Routing/Dispatcher.php(194): Controller->render()
+#3 /var/www/apply.cfni.org/public_html/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ApplicationsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/apply.cfni.org/public_html/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-06-14 11:39:58 Error: [MissingControllerException] Controller class FaqController could not be found.
+Exception Attributes: array (
+  'class' => 'FaqController',
+  'plugin' => NULL,
+)
+Request URL: /faq
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-06-14 11:40:15 Error: [MissingControllerException] Controller class FaqController could not be found.
+Exception Attributes: array (
+  'class' => 'FaqController',
+  'plugin' => NULL,
+)
+Request URL: /faq
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-06-14 11:40:28 Error: [MissingControllerException] Controller class FaqController could not be found.
+Exception Attributes: array (
+  'class' => 'FaqController',
+  'plugin' => NULL,
+)
+Request URL: /faq
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-06-14 11:40:37 Error: [MissingControllerException] Controller class HomeController could not be found.
+Exception Attributes: array (
+  'class' => 'HomeController',
+  'plugin' => NULL,
+)
+Request URL: /home
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-06-16 22:30:29 Error: Fatal Error (4): syntax error, unexpected T_DOUBLE_ARROW in [/var/www/apply.cfni.org/public_html/app/View/Applications/personal.ctp, line 29]
+2013-06-16 22:30:29 Error: [FatalErrorException] syntax error, unexpected T_DOUBLE_ARROW
+Request URL: /applications/personal
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/apply....', 29)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/apply....', 29, Array)
+#2 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(927): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/apply....', 29, Array)
+#3 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(900): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-06-16 22:30:31 Error: Fatal Error (4): syntax error, unexpected T_DOUBLE_ARROW in [/var/www/apply.cfni.org/public_html/app/View/Applications/personal.ctp, line 29]
+2013-06-16 22:30:31 Error: [FatalErrorException] syntax error, unexpected T_DOUBLE_ARROW
+Request URL: /applications/personal
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/apply....', 29)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/apply....', 29, Array)
+#2 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(927): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/apply....', 29, Array)
+#3 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(900): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-06-16 22:31:13 Error: Fatal Error (4): syntax error, unexpected T_DOUBLE_ARROW in [/var/www/apply.cfni.org/public_html/app/View/Applications/personal.ctp, line 29]
+2013-06-16 22:31:13 Error: [FatalErrorException] syntax error, unexpected T_DOUBLE_ARROW
+Request URL: /applications/personal
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/apply....', 29)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/apply....', 29, Array)
+#2 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(927): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/apply....', 29, Array)
+#3 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(900): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-06-16 22:33:23 Error: Fatal Error (4): syntax error, unexpected T_ARRAY in [/var/www/apply.cfni.org/public_html/app/View/Applications/personal.ctp, line 29]
+2013-06-16 22:33:23 Error: [FatalErrorException] syntax error, unexpected T_ARRAY
+Request URL: /applications/personal
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/apply....', 29)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/apply....', 29, Array)
+#2 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(927): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/apply....', 29, Array)
+#3 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(900): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-06-16 23:09:16 Error: Fatal Error (4): syntax error, unexpected ',' in [/var/www/apply.cfni.org/public_html/app/View/Applications/personal.ctp, line 31]
+2013-06-16 23:09:16 Error: [FatalErrorException] syntax error, unexpected ','
+Request URL: /applications/personal
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/apply....', 31)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/apply....', 31, Array)
+#2 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(927): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/apply....', 31, Array)
+#3 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(900): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-06-16 23:09:22 Error: Fatal Error (4): syntax error, unexpected ',' in [/var/www/apply.cfni.org/public_html/app/View/Applications/personal.ctp, line 31]
+2013-06-16 23:09:22 Error: [FatalErrorException] syntax error, unexpected ','
+Request URL: /applications/personal
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/apply....', 31)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/apply....', 31, Array)
+#2 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(927): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/apply....', 31, Array)
+#3 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(900): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-06-16 23:09:26 Error: Fatal Error (4): syntax error, unexpected ',' in [/var/www/apply.cfni.org/public_html/app/View/Applications/personal.ctp, line 31]
+2013-06-16 23:09:26 Error: [FatalErrorException] syntax error, unexpected ','
+Request URL: /applications/personal
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/apply....', 31)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/apply....', 31, Array)
+#2 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(927): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/apply....', 31, Array)
+#3 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(900): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-06-16 23:09:43 Error: Fatal Error (4): syntax error, unexpected ',' in [/var/www/apply.cfni.org/public_html/app/View/Applications/personal.ctp, line 31]
+2013-06-16 23:09:43 Error: [FatalErrorException] syntax error, unexpected ','
+Request URL: /applications/personal
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/apply....', 31)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/apply....', 31, Array)
+#2 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(927): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/apply....', 31, Array)
+#3 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(900): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-06-16 23:17:59 Error: Fatal Error (4): syntax error, unexpected '<' in [/var/www/apply.cfni.org/public_html/app/View/Applications/personal.ctp, line 21]
+2013-06-16 23:17:59 Error: [FatalErrorException] syntax error, unexpected '<'
+Request URL: /applications/personal
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/apply....', 21)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/apply....', 21, Array)
+#2 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(927): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/apply....', 21, Array)
+#3 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(900): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-06-16 23:18:01 Error: Fatal Error (4): syntax error, unexpected '<' in [/var/www/apply.cfni.org/public_html/app/View/Applications/personal.ctp, line 21]
+2013-06-16 23:18:01 Error: [FatalErrorException] syntax error, unexpected '<'
+Request URL: /applications/personal
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/apply....', 21)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/apply....', 21, Array)
+#2 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(927): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/apply....', 21, Array)
+#3 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(900): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-06-16 23:18:42 Error: Fatal Error (4): syntax error, unexpected '<' in [/var/www/apply.cfni.org/public_html/app/View/Applications/personal.ctp, line 20]
+2013-06-16 23:18:42 Error: [FatalErrorException] syntax error, unexpected '<'
+Request URL: /applications/personal
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/apply....', 20)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/apply....', 20, Array)
+#2 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(927): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/apply....', 20, Array)
+#3 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(900): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-06-16 23:18:48 Error: Fatal Error (4): syntax error, unexpected '<' in [/var/www/apply.cfni.org/public_html/app/View/Applications/personal.ctp, line 20]
+2013-06-16 23:18:48 Error: [FatalErrorException] syntax error, unexpected '<'
+Request URL: /applications/personal
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/apply....', 20)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/apply....', 20, Array)
+#2 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(927): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/apply....', 20, Array)
+#3 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(900): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-06-16 23:19:36 Error: Fatal Error (1): Call to undefined method Common::countries() in [/var/www/apply.cfni.org/public_html/app/View/Applications/personal.ctp, line 21]
+2013-06-16 23:19:36 Error: [FatalErrorException] Call to undefined method Common::countries()
+Request URL: /applications/personal
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/apply....', 21)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/apply....', 21, Array)
+#2 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(927): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/apply....', 21, Array)
+#3 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(900): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-06-16 23:20:50 Error: Fatal Error (1): Call to undefined method Common::countries() in [/var/www/apply.cfni.org/public_html/app/View/Applications/personal.ctp, line 21]
+2013-06-16 23:20:50 Error: [FatalErrorException] Call to undefined method Common::countries()
+Request URL: /applications/personal
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/apply....', 21)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/apply....', 21, Array)
+#2 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(927): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/apply....', 21, Array)
+#3 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(900): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-06-16 23:27:30 Error: Fatal Error (1): Call to undefined method Common::countries() in [/var/www/apply.cfni.org/public_html/app/View/Applications/personal.ctp, line 21]
+2013-06-16 23:27:30 Error: [FatalErrorException] Call to undefined method Common::countries()
+Request URL: /applications/personal
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/apply....', 21)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/apply....', 21, Array)
+#2 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(927): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/apply....', 21, Array)
+#3 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(900): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-06-16 23:33:41 Error: Fatal Error (1): Call to undefined method Common::countryList() in [/var/www/apply.cfni.org/public_html/app/View/Applications/personal.ctp, line 21]
+2013-06-16 23:33:41 Error: [FatalErrorException] Call to undefined method Common::countryList()
+Request URL: /applications/personal
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/apply....', 21)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/apply....', 21, Array)
+#2 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(927): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/apply....', 21, Array)
+#3 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(900): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-06-16 23:36:51 Error: Fatal Error (1): Call to undefined method Common::countries() in [/var/www/apply.cfni.org/public_html/app/View/Applications/personal.ctp, line 21]
+2013-06-16 23:36:51 Error: [FatalErrorException] Call to undefined method Common::countries()
+Request URL: /applications/personal
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/apply....', 21)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/apply....', 21, Array)
+#2 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(927): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/apply....', 21, Array)
+#3 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(900): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-06-16 23:37:04 Error: Fatal Error (1): Call to undefined method Common::country() in [/var/www/apply.cfni.org/public_html/app/View/Applications/personal.ctp, line 21]
+2013-06-16 23:37:04 Error: [FatalErrorException] Call to undefined method Common::country()
+Request URL: /applications/personal
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/apply....', 21)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/apply....', 21, Array)
+#2 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(927): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/apply....', 21, Array)
+#3 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(900): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-06-16 23:48:42 Error: Fatal Error (1): Call to undefined method Common::country() in [/var/www/apply.cfni.org/public_html/app/View/Applications/personal.ctp, line 21]
+2013-06-16 23:48:42 Error: [FatalErrorException] Call to undefined method Common::country()
+Request URL: /applications/personal
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to undefin...', '/var/www/apply....', 21)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', '/var/www/apply....', 21, Array)
+#2 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(927): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', '/var/www/apply....', 21, Array)
+#3 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(900): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-06-16 23:54:21 Error: Fatal Error (4): syntax error, unexpected T_DOUBLE_ARROW, expecting ',' or ';' in [/var/www/apply.cfni.org/public_html/app/View/Applications/personal.ctp, line 19]
+2013-06-16 23:54:21 Error: [FatalErrorException] syntax error, unexpected T_DOUBLE_ARROW, expecting ',' or ';'
+Request URL: /applications/personal
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/apply....', 19)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/apply....', 19, Array)
+#2 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(927): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/apply....', 19, Array)
+#3 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(900): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-06-16 23:54:34 Error: Fatal Error (4): syntax error, unexpected T_DOUBLE_ARROW in [/var/www/apply.cfni.org/public_html/app/View/Applications/personal.ctp, line 19]
+2013-06-16 23:54:34 Error: [FatalErrorException] syntax error, unexpected T_DOUBLE_ARROW
+Request URL: /applications/personal
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/apply....', 19)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/apply....', 19, Array)
+#2 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(927): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/apply....', 19, Array)
+#3 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(900): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-06-17 00:18:55 Error: Fatal Error (4): syntax error, unexpected T_EMPTY, expecting ')' in [/var/www/apply.cfni.org/public_html/app/View/Applications/personal.ctp, line 517]
+2013-06-17 00:18:55 Error: [FatalErrorException] syntax error, unexpected T_EMPTY, expecting ')'
+Request URL: /applications/personal
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/apply....', 517)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/apply....', 517, Array)
+#2 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(927): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/apply....', 517, Array)
+#3 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(900): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-06-17 00:19:40 Error: Fatal Error (4): syntax error, unexpected T_EMPTY, expecting ')' in [/var/www/apply.cfni.org/public_html/app/View/Applications/personal.ctp, line 517]
+2013-06-17 00:19:40 Error: [FatalErrorException] syntax error, unexpected T_EMPTY, expecting ')'
+Request URL: /applications/personal
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/lib/Cake/Error/ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/var/www/apply....', 517)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/var/www/apply....', 517, Array)
+#2 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(927): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/var/www/apply....', 517, Array)
+#3 /var/www/apply.cfni.org/public_html/lib/Cake/Core/App.php(900): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-06-17 02:08:54 Error: [MissingActionException] Action ApplicationsController::spritual() could not be found.
+Exception Attributes: array (
+  'controller' => 'ApplicationsController',
+  'action' => 'spritual',
+)
+Request URL: /applications/spritual
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/apply.cfni.org/public_html/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ApplicationsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/apply.cfni.org/public_html/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-06-17 04:13:29 Error: [MissingActionException] Action ApplicationsController::spritual() could not be found.
+Exception Attributes: array (
+  'controller' => 'ApplicationsController',
+  'action' => 'spritual',
+)
+Request URL: /applications/spritual
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/apply.cfni.org/public_html/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ApplicationsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/apply.cfni.org/public_html/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-06-17 04:13:37 Error: [MissingActionException] Action ApplicationsController::spritual() could not be found.
+Exception Attributes: array (
+  'controller' => 'ApplicationsController',
+  'action' => 'spritual',
+)
+Request URL: /applications/spritual
+Stack Trace:
+#0 /var/www/apply.cfni.org/public_html/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/apply.cfni.org/public_html/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ApplicationsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/apply.cfni.org/public_html/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}

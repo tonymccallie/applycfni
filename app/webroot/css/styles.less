@@ -1,0 +1,87 @@
+@import "less/bootstrap.less";
+@import "less/greyback-defaults.less";
+@import "less/responsive.less";
+@import "fonts.less";
+
+
+.futura {
+	font-weight: 700;
+	font-family: "futura-pt", serif;
+	text-transform: uppercase;
+	text-rendering: optimizelegibility;
+	letter-spacing: .1em;
+}
+
+body {
+	padding-top: @navbarHeight + 50px; /* 60px to make the container go all the way to the bottom of the topbar */
+	.futura();
+}
+
+.navbar .nav > li > a {
+	padding: 30px 15px;
+}
+
+.navbar .brand {
+	padding: 20px 30px;
+}
+
+#banner {
+	margin-bottom: 20px;
+}
+
+#banner img {
+	width: 100%;
+}
+
+.scaleVid {
+	background: @gray;
+}
+
+#steps {
+	background: #666666;
+	height: 36px;
+	line-height: 40px;
+	font-size: 15px;
+	position: fixed;
+	top: 80px;
+	text-align: center;
+	width: 100%;
+	
+	a {
+		color: @white;
+	}
+	
+	a:hover {
+		text-decoration: none;
+		color: #f3f3f3;
+	}
+	
+	i {
+		color: @white;
+		padding: 0px 10px;
+	}
+}
+
+.btn-group > .btn:last-child, option {
+	.futura();
+}
+
+#footer {
+	padding: 20px 0 10px; 
+	background: @grayDark;
+	color: @grayLight;
+	margin-top: 30px;
+	
+	a {
+		color: @grayLight;
+	}
+	
+	a:hover {
+		color: #666;
+		text-decoration: none;
+	}
+}
+
+@import "responsive_large.less";
+@import "responsive_tablet.less";
+@import "responsive_phone.less";
