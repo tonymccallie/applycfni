@@ -112,5 +112,9 @@ class ApplicationsController extends AppController {
 			$this->request->data = $this->application;
 		}
 	}
+	
+	function status() {
+		
+	}
 }
 ?>

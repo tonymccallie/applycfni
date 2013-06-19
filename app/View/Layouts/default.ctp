@@ -92,11 +92,24 @@
 	
 	<div id="steps">
 		<?php
+			$steps = array(
+				1 => array('01. Start','/applications/start'),
+				2 => array('02. Personal','/applications/personal'),
+				3 => array('03. Education','/applications/education'),
+				4 => array('04. Spiritual','/applications/spiritual'),
+				5 => array('05. Recommendations','/applications/recomendations'),
+				6 => array('06. Finish','/applications/releases'),
+				7 => array('Status','/application/status')
+			);
 			if(!empty($application)) {
-				//debug($application);
+				for($i=1; $i <= $application['Application']['step_completed']+1;$i++) {
+					if($i > 1) {
+						echo '<i class="icon-chevron-right"></i>';
+					}
+					echo $this->Html->link($steps[$i][0],$steps[$i][1]);
+				}
 			}
 		?>
-		<a href="/applications/start">01. Start </a><i class="icon-chevron-right"></i><a href="/applications/personal">02. Personal</a><i class="icon-chevron-right"></i><a href="/applications/education">03. Education</a><i class="icon-chevron-right"></i><a href="/applications/spiritual">04. Spiritual</a><i class="icon-chevron-right"></i><a href="/applications/recommendations">05. Recomendations</a><i class="icon-chevron-right"></i><a href="/applications/releases">06. Finish</a> 	
 	</div>
 
 	<div class="container">
