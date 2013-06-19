@@ -10,19 +10,19 @@ information needed for acceptance. Please keep this form and refer to it when yo
 			$text = 'Continue The Application';
 			switch($application['Application']['step_completed']) {
 				case 1:
-					$link = 'personal';
+					$action = 'personal';
 					break;
 				case 2:
-					$link = 'education';
+					$action = 'education';
 					break;
 				case 3:
-					$link = 'spiritual';
+					$action = 'spiritual';
 					break;
 				case 4:
-					$link = 'recommendations';
+					$action = 'recommendations';
 					break;
 				case 5:
-					$link = 'releases';
+					$action = 'releases';
 					break;
 			}
 			
