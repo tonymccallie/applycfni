@@ -96,7 +96,7 @@
 		<?php echo $this->Form->input('recruit_location',array('label'=>'How did you hear about Christ for the Nations?','class'=>'span12')); ?>
 	</div>
 	<div class="row-fluid">
-		<?php echo $this->Form->input('recruit_person',array('label'=>'I was recruited by','options'=>array('Kenny Price' => 'Kenny Price','Patrick Kemp' => 'Patrick Kemp'),'empty'=>'--','class'=>'span12')); ?>
+		<?php echo $this->Form->input('recruiter_id',array('label'=>'I was recruited by','options'=>$recruiters,'empty'=>'--','class'=>'span12')); ?>
 	</div>
 	<div class="row-fluid">
 		<?php echo $this->Form->input('recruit_campus',array('label'=>'Have you attended CFNI campus days?','options'=>array(1 => 'Yes',0 => 'No'),'empty'=>'--','class'=>'span12')); ?>

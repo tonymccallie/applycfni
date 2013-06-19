@@ -34,7 +34,8 @@ class ApplicationsController extends AppController {
 		}
 		$degrees = $this->Application->Degree->find('list');
 		$majors = $this->Application->Major->find('list');
-		$this->set(compact('degrees','majors'));
+		$semesters = $this->Application->Semester->find('list');
+		$this->set(compact('degrees','majors','semesters'));
 	}
 	
 	function personal() {
@@ -50,6 +51,8 @@ class ApplicationsController extends AppController {
 		} else {
 			$this->request->data = $this->application;
 		}
+		$recruiters = $this->Application->Recruiter->find('list');
+		$this->set(compact('recruiters'));
 	}
 	
 	function education() {
