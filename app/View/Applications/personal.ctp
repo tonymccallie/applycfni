@@ -35,63 +35,70 @@
 	<div class="row-fluid">
 		<div class="span12">
 			<?php echo $this->Form->input('country',array('options'=>Common::countries(),'empty'=>'--','class'=>'span12')); ?>
-				</div>
-			</div>
-			
-			<div class="row-fluid">
-				<div class="span4">
-					<?php echo $this->Form->input('phone_home',array('label'=>'Home Phone','class'=>'span12')); ?>
-				</div>
-				<div class="span4">
-					<?php echo $this->Form->input('phone_work',array('label'=>'Work Phone','class'=>'span12')); ?>
-				</div>
-				<div class="span4">
-					<?php echo $this->Form->input('phone_mobile',array('label'=>'Mobile Phone','class'=>'span12')); ?>
-				</div>
-			</div>
-			<div class="row-fluid">
-				<div class="span6">
-					<?php echo $this->Form->input('ssn',array('label'=>'Social Security Number','class'=>'span12')); ?>
-				</div>
-				<div class="span6">
-					<?php echo $this->Form->input('birth_date',array('label'=>'Date of Birth','class'=>'span4')); ?>
-				</div>
-			</div>
-			<div class="row-fluid">
-				<div class="span6">
-					<?php echo $this->Form->input('birth_city',array('label'=>'City of Birth','class'=>'span12')); ?>
-				</div>
-				<div class="span3">
+		</div>
+	</div>
+	<div class="row-fluid">
+		<div class="span4">
+			<?php echo $this->Form->input('phone_home',array('label'=>'Home Phone','class'=>'span12')); ?>
+		</div>
+		<div class="span4">
+			<?php echo $this->Form->input('phone_work',array('label'=>'Work Phone','class'=>'span12')); ?>
+		</div>
+		<div class="span4">
+			<?php echo $this->Form->input('phone_mobile',array('label'=>'Mobile Phone','class'=>'span12')); ?>
+		</div>
+	</div>
+	<div class="row-fluid">
+		<div class="span6">
+			<?php echo $this->Form->input('ssn',array('label'=>'Social Security Number','class'=>'span12')); ?>
+		</div>
+		<div class="span6">
+			<?php echo $this->Form->input('birth_date',array('label'=>'Date of Birth','class'=>'span4')); ?>
+		</div>
+	</div>
+	<div class="row-fluid">
+		<div class="span6">
+			<?php echo $this->Form->input('birth_city',array('label'=>'City of Birth','class'=>'span12')); ?>
+		</div>
+		<div class="span3">
 			<?php echo $this->Form->input('birth_state',array('options' => Common::states(),'empty'=>'--','class'=>'span12'));?>
-				</div>
-				<div class="span3">
+		</div>
+		<div class="span3">
 			<?php echo $this->Form->input('birth_country',array('options'=>Common::countries(),'empty'=>'--','class'=>'span12')); ?>
-				</div>
-			</div>
-			<div class="row-fluid">
-				<div class="span4">
-					<?php echo $this->Form->input('marital_status',array('options'=>array(
-						'Single' => 'Single',
-						'Married' => 'Married',
-						'Divorced' => 'Divorced',
-						'Separated' => 'Separated'),'empty'=>'--','class'=>'span12')); ?>
-				</div>
-				<div class="span4">
-					<?php echo $this->Form->input('gender',array('options'=>array('M' => 'Male','F' => 'Female'),'empty'=>'--','class'=>'span12')); ?>
-				</div>
-				<div class="span4">
-					<?php echo $this->Form->input('maiden_name',array('label'=>'Maiden Name','class'=>'span12')); ?>
-				</div>
-			</div>
-			<div class="row-fluid">		
-				<?php echo $this->Form->input('citizen_us',array('label'=>'Are you a US Citizen?','options'=>array(1 => 'Yes',0 => 'No'),'empty'=>'--','class'=>'span12')); ?>
-			</div>
-			<div class="row-fluid">
-	<?php echo $this->Form->input('citizen_status',array('label'=>'Are you a permanent resident/resident alien?','options'=>array(1 => 'Yes',0 => 'No'),'empty'=>'--','class'=>'span12')); ?>
-			</div>
-			<div class="row-fluid">
-	<?php echo $this->Form->input('citizen_country',array('label'=>'Country of Citizenship','options'=>Common::countries(),'empty'=>'--','class'=>'span12')); ?>
-			</div>
+		</div>
+	</div>
+	<div class="row-fluid">
+		<div class="span4">
+			<?php echo $this->Form->input('marital_status',array('options'=>array(
+				'Single' => 'Single',
+				'Married' => 'Married',
+				'Divorced' => 'Divorced',
+				'Separated' => 'Separated'),'empty'=>'--','class'=>'span12')); ?>
+		</div>
+		<div class="span4">
+			<?php echo $this->Form->input('gender',array('options'=>array('M' => 'Male','F' => 'Female'),'empty'=>'--','class'=>'span12')); ?>
+		</div>
+		<div class="span4">
+			<?php echo $this->Form->input('maiden_name',array('label'=>'Maiden Name','class'=>'span12')); ?>
+		</div>
+	</div>
+	<div class="row-fluid">
+		<h4>Citizenship</h4>
+	</div>
+	<div class="row-fluid">	
+		<div class="span6">
+			<?php echo $this->ExtendedForm->radio('citizen_us',array('label'=>'Are you a US Citizen?','type'=>'radio','options'=>array(1 => 'Yes',0 => 'No'))); ?>
+		</div>
+		<div class="span6">
+			<?php echo $this->ExtendedForm->radio('citizen_status',array('label'=>'Are you a permanent resident/resident alien?','type'=>'radio','options'=>array(1 => 'Yes',0 => 'No'))); ?>
+		</div>
+	</div>
+	<div class="row-fluid">
+		<?php echo $this->Form->input('citizen_country',array('label'=>'Country of Citizenship','options'=>Common::countries(),'empty'=>'--','class'=>'span12')); ?>
+	</div>
+	<div class="row-fluid">
+		<h4>Recruitment</h4>
+	</div>
 	<div class="row-fluid">
 		<?php echo $this->Form->input('recruit_location',array('label'=>'How did you hear about Christ for the Nations?','class'=>'span12')); ?>
 	</div>
@@ -99,21 +106,30 @@
 		<?php echo $this->Form->input('recruiter_id',array('label'=>'I was recruited by','options'=>$recruiters,'empty'=>'--','class'=>'span12')); ?>
 	</div>
 	<div class="row-fluid">
-		<?php echo $this->Form->input('recruit_campus',array('label'=>'Have you attended CFNI campus days?','options'=>array(1 => 'Yes',0 => 'No'),'empty'=>'--','class'=>'span12')); ?>
+		<div class="span6">
+			<?php echo $this->ExtendedForm->radio('recruit_campus',array('label'=>'Have you attended CFNI campus days?','type'=>'radio','options'=>array(1 => 'Yes',0 => 'No'))); ?>
+		</div>
+		<div class="span6">
+			<?php echo $this->ExtendedForm->radio('recruit_yfn',array('label'=>'Have you attended Youth for the Nations?','type'=>'radio','options'=>array(1 => 'Yes',0 => 'No'))); ?>
+		</div>
 	</div>
 	<div class="row-fluid">
-		<?php echo $this->Form->input('recruit_yfn',array('label'=>'Have you attended Youth for the Nations?','options'=>array(1 => 'Yes',0 => 'No'),'empty'=>'--','class'=>'span12')); ?>
+		<h4>Finances</h4>
 	</div>
 	<div class="row-fluid">
-		<?php echo $this->Form->input('finances',array('label'=>'Do you have adequate finances to cover tuition and living costs?','options'=>array(1 => 'Yes',0 => 'No'),'empty'=>'--','class'=>'span12')); ?>
+		<div class="span6">
+			<?php echo $this->ExtendedForm->radio('finances',array('label'=>'Do you have adequate finances to cover tuition and living costs?','type'=>'radio','options'=>array(1 => 'Yes',0 => 'No'))); ?>
+		</div>
+		<div class="span6">
+			<?php echo $this->ExtendedForm->radio('veteran',array('label'=>'Are you a U.S. veteran?','type'=>'radio','options'=>array(1 => 'Yes',0 => 'No'))); ?>
+		</div>
 	</div>
 	<div class="row-fluid">
-		<?php echo $this->Form->input('veteran',array('label'=>'Are you a U.S. veteran?','options'=>array(1 => 'Yes',0 => 'No'),'empty'=>'--','class'=>'span12')); ?>
+		<?php echo $this->ExtendedForm->radio('veteran_benefits',array('label'=>'Are you receiving any VA benefits?','type'=>'radio','options'=>array(1 => 'Yes',0 => 'No'))); ?>
 	</div>
 	<div class="row-fluid">
-		<?php echo $this->Form->input('veteran_benefits',array('label'=>'Are you receiving any VA benefits?','options'=>array(1 => 'Yes',0 => 'No'),'empty'=>'--','class'=>'span12')); ?>	
+		<h4>History</h4>
 	</div>
-	
 	<div class="btn-group pull-right">
 	<?php
 		echo $this->Html->link('Back',array('action'=>'start'),array('class'=>'btn btn-large pull-left','div'=>false));
