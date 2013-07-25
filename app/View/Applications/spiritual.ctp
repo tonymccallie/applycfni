@@ -50,25 +50,6 @@
 	</div>
 	<div class="row-fluid">
 		<div class="span12">
-			<?php echo $this->Form->input('church_address',array('label'=>'Church Address','class'=>'span12')); ?>
-		</div>
-	</div>
-	<div class="row-fluid">
-		<div class="span6">
-			<?php echo $this->Form->input('church_city',array('label'=>'City','class'=>'span12')); ?>
-		</div>
-		<div class="span3">
-			<?php echo $this->Form->input('church_state',array('options' => Common::states(),'empty'=>'--','class'=>'span12'));?>
-		</div>
-		<div class="span3">
-			<?php echo $this->Form->input('church_zip',array('label'=>'Zip Code','class'=>'span12')); ?>
-		</div>
-	</div>
-	<div class="row-fluid">
-		<h4>Service</h4>
-	</div>
-	<div class="row-fluid">
-		<div class="span12">
 			<?php echo $this->Form->input('christian_service',array('label'=>'State any type of Christian service you have done? ','class'=>'span12')); ?>
 		</div>
 	</div>
