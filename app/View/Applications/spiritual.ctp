@@ -23,6 +23,11 @@
 		</div>
 	</div>
 	<div class="row-fluid">
+		<div class="span12">
+			<?php echo $this->Form->input('christian_service',array('label'=>'Please describe your history of ministry involvement. ','class'=>'span12')); ?>
+		</div>
+	</div>
+	<div class="row-fluid">
 		<h4>Church</h4>
 	</div>
 	<div class="row-fluid">
@@ -46,11 +51,6 @@
 	<div class="row-fluid">
 		<div class="span12">
 			<?php echo $this->Form->input('church_pastor',array('label'=>'Church Pastor','class'=>'span12')); ?>
-		</div>
-	</div>
-	<div class="row-fluid">
-		<div class="span12">
-			<?php echo $this->Form->input('christian_service',array('label'=>'State any type of Christian service you have done? ','class'=>'span12')); ?>
 		</div>
 	</div>
 	<div class="btn-group pull-right">
