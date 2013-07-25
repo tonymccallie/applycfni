@@ -10,15 +10,15 @@
 				'New Student' => 'New Student',
 				'Re-Admission' => 'Re-Admission',
 				'Transfer' => 'Transfer',
-				'Online' => 'Online',
-				'Nights & Weekends' => 'Nights & Weekends'
 			),'class'=>'span12')); ?>
 		</div>
 		<div class="span6">
 			<?php echo $this->Form->input('attendance_type',array('options'=>array(
 				'Full Time' => 'Full Time',
 				'Part Time' => 'Part Time',
-				'Audit' => 'Audit'
+				'Audit' => 'Audit',
+				'Online' => 'Online',
+				'Evenings & Weekends' => 'Evenings & Weekends'
 			),'class'=>'span12')); ?>
 		</div>
 	</div>
