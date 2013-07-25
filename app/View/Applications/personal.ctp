@@ -38,14 +38,22 @@
 		</div>
 	</div>
 	<div class="row-fluid">
+		<div class="span6">
+			<?php echo $this->Form->input('phone_primary',array('label'=>'Home Phone','class'=>'span12')); ?>
+		</div>
+		<div class="span6">
+			<?php echo $this->Form->input('phone_secondary',array('label'=>'Work Phone','class'=>'span12')); ?>
+		</div>
+	</div>
+	<div class="row-fluid">
 		<div class="span4">
-			<?php echo $this->Form->input('phone_home',array('label'=>'Home Phone','class'=>'span12')); ?>
+			<?php echo $this->Form->input('twitter',array('class'=>'span12')); ?>
 		</div>
 		<div class="span4">
-			<?php echo $this->Form->input('phone_work',array('label'=>'Work Phone','class'=>'span12')); ?>
+			<?php echo $this->Form->input('facebook',array('class'=>'span12')); ?>
 		</div>
 		<div class="span4">
-			<?php echo $this->Form->input('phone_mobile',array('label'=>'Mobile Phone','class'=>'span12')); ?>
+			<?php echo $this->Form->input('instagram',array('class'=>'span12')); ?>
 		</div>
 	</div>
 	<div class="row-fluid">
