@@ -9,7 +9,7 @@
 	</div>
 	<div class="row-fluid">
 		<div class="span12">
-			<?php echo $this->Form->input('salvation',array('label'=>'When did you accept Christ?','empty'=>true,'type'=>'date','class'=>'span4')); ?>
+			<?php echo $this->Form->input('salvation_date',array('label'=>'When did you accept Christ?','empty'=>true,'type'=>'date','class'=>'span4')); ?>
 		</div>
 	</div>
 	<div class="row-fluid">
