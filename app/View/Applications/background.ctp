@@ -141,10 +141,24 @@
 	</div>
 	<div class="row-fluid">
 		<div class="span6">
-			<?php echo $this->Form->input('criminal_explain',array('label'=>'If you answered yes to any of the previous questions, please explain.','type'=>'textarea','class'=>'span12')); ?>
+			<?php echo $this->ExtendedForm->radio('probation',array('label'=>'Are you currently on probation or parole?','type'=>'radio','options'=>array(1 => 'Yes',0 => 'No'))); ?>
 		</div>
 		<div class="span6">
-			<?php echo $this->ExtendedForm->radio('probation',array('label'=>'Are you currently on probation or parole?','type'=>'radio','options'=>array(1 => 'Yes',0 => 'No'))); ?>
+			<?php echo $this->Form->input('criminal_explain',array('label'=>'If you answered yes to any of the previous questions, please explain.','type'=>'textarea','class'=>'span12')); ?>
+		</div>
+	</div>
+	<div class="row-fluid">
+		<h4>Code of Conduct</h4>
+	</div>
+	<div class="row-fluid">
+		<p>Because Christ for the Nations Institute exists to teach, train, and send Holy Spirit empowered Christians into all the nations of the earth, we expect students to have a basic foundation of Christian behavior established in their lives prior to their original enrollment.  Students are required to be free from alcohol use, illegal use of drugs, sexual immorality, pornography, homosexuality, or any other conduct inconsistent with the standards of this Institute for at least 6 months prior to their first semester.</p>
+	</div>
+	<div class="row-fluid">
+		<div class="span6">
+			<?php echo $this->ExtendedForm->radio('conduct_code',array('label'=>'I understand and qualify to meet the requirements explained above. ','type'=>'radio','options'=>array(1 => 'Yes',0 => 'No'))); ?>
+		</div>
+		<div class="span6">
+			<?php echo $this->Form->input('conduct_reason',array('label'=>'If no, please explain:','type'=>'textarea','class'=>'span12')); ?>
 		</div>
 	</div>
 	<div class="btn-group pull-right">
