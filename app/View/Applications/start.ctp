@@ -10,6 +10,8 @@
 				'New Student' => 'New Student',
 				'Re-Admission' => 'Re-Admission',
 				'Transfer' => 'Transfer',
+				'Online' => 'Online',
+				'Nights & Weekends' => 'Nights & Weekends'
 			),'class'=>'span12')); ?>
 		</div>
 		<div class="span6">
