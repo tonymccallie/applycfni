@@ -94,6 +94,8 @@ class ApplicationsController extends AppController {
 			//send emails
 			$url = Common::currentUrl().'referrals/confirm/';
 			
+			$emailCount = 0;
+			
 			foreach($this->request->data['Referral'] as $k => $referral) {
 				$sendEmail = false;
 				$newCode = false;
@@ -138,11 +140,19 @@ class ApplicationsController extends AppController {
 						)
 					),'');
 					$this->request->data['Referral'][$k]['sent'] = date('Y-m-d H:i:s');
+					$emailCount++;
 				}
 			}
 			
 			if($this->Application->saveAll($this->request->data)) {
-			
+				if($emailCount) {
+					if($emailCount > 1) {
+						$emailPlural = 'emails';
+					} else {
+						$emailPlural = 'email';
+					}
+					$this->Session->setFlash($emailCount.' '.$emailPlural.' sent.','success');
+				}
 				$application = $this->Application->findById();
 				$this->Session->write('application',$application);
 				$this->redirect(array('action'=>'releases'));

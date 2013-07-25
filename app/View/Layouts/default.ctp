@@ -79,7 +79,6 @@
 						<?php endif ?>
 						<?php if(Authsome::get('email') == 'guest@greyback.net'): ?>
 							<li class=""><?php echo $this->Html->link('Login','/users/login') ?></li>
-							<li class=""><?php echo $this->Html->link('Register','/users/register') ?></li>
 						<?php else: ?>
 							<li class=""><?php echo $this->Html->link('Change Password','/users/password') ?></li>
 							<li class=""><?php echo $this->Html->link('Logout','/users/logout') ?></li>
