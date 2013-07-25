@@ -92,24 +92,38 @@ class ApplicationsController extends AppController {
 			}
 			
 			//send emails
-			$url = Common::currentUrl();
+			$url = Common::currentUrl().'referrals/confirm/';
 			
 			foreach($this->request->data['Referral'] as $k => $referral) {
 				$sendEmail = false;
+				$newCode = false;
 				if(empty($this->application['Referral'][$k]['email'])) {
 					$sendEmail = true;
+					$newCode = true;
 				} else {
 					if($this->application['Referral'][$k]['email'] != $referral['email']) {
 						$sendEmail = true;
+						$newCode = true;
 					}
 					
 					if(empty($referral['sent'])) {
 						$sendEmail = true;
+						$newCode = true;
 					}
 					
 					if(!empty($referral['resend'])) {
 						$sendEmail = true;
 					}
+					
+					if(empty($this->application['Referral'][$k]['shortcode'])) {
+						$newCode = true;
+					}
+				}
+				
+				if($newCode) {
+					$this->request->data['Referral'][$k]['shortcode'] = Common::generateRandom(10);
+				} else {
+					$this->request->data['Referral'][$k]['shortcode'] = $this->application['Referral'][$k]['shortcode'];
 				}
 				
 				if($sendEmail) {
@@ -120,7 +134,7 @@ class ApplicationsController extends AppController {
 						'variables' => array(
 							'referral_name' => $referral['first_name'].' '.$referral['last_name'],
 							'applicant_name' => $this->application['Application']['first_name'].' '.$this->application['Application']['last_name'],
-							'url' => $url
+							'url' => $url.$this->request->data['Referral'][$k]['shortcode']
 						)
 					),'');
 					$this->request->data['Referral'][$k]['sent'] = date('Y-m-d H:i:s');
