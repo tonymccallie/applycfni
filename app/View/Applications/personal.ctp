@@ -39,10 +39,10 @@
 	</div>
 	<div class="row-fluid">
 		<div class="span6">
-			<?php echo $this->Form->input('phone_primary',array('label'=>'Home Phone','class'=>'span12')); ?>
+			<?php echo $this->Form->input('phone_primary',array('label'=>'Primary Phone','class'=>'span12')); ?>
 		</div>
 		<div class="span6">
-			<?php echo $this->Form->input('phone_secondary',array('label'=>'Work Phone','class'=>'span12')); ?>
+			<?php echo $this->Form->input('phone_secondary',array('label'=>'Secondary Phone','class'=>'span12')); ?>
 		</div>
 	</div>
 	<div class="row-fluid">
