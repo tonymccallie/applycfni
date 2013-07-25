@@ -1,5 +1,5 @@
 <div class="span12">
-	<h2>Step 6: Releases</h2>
+	<h2>Step 7: Releases</h2>
 	<?php 
 		echo $this->Form->create();
 			echo $this->Form->input('id',array());

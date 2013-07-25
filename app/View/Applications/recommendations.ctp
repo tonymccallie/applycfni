@@ -1,5 +1,5 @@
 <div class="span12">
-	<h2>Step 5: Recommendations</h2>
+	<h2>Step 6: Recommendations</h2>
 	<?php 
 		echo $this->Form->create();
 			echo $this->Form->input('id',array());

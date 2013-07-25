@@ -1,5 +1,5 @@
 <div class="span12">
-	<h2>Step 4: Spiritual Information</h2>
+	<h2>Step 5: Spiritual Information</h2>
 	<?php 
 		echo $this->Form->create();
 			echo $this->Form->input('id',array());
