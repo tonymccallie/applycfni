@@ -46,6 +46,23 @@ class ApplicationsController extends AppController {
 			if($this->Application->save($this->request->data)) {
 				$application = $this->Application->findById();
 				$this->Session->write('application',$application);
+				$this->redirect(array('action'=>'background'));
+			}
+		} else {
+			$this->request->data = $this->application;
+		}
+		$recruiters = $this->Application->Recruiter->find('list');
+		$this->set(compact('recruiters'));
+	}
+	
+	function background() {
+		if(!empty($this->request->data['Application'])) {
+			if(!empty($this->application['Application']['step_completed'])) {
+				$this->request->data['Application']['step_completed'] = 3;
+			}
+			if($this->Application->save($this->request->data)) {
+				$application = $this->Application->findById();
+				$this->Session->write('application',$application);
 				$this->redirect(array('action'=>'education'));
 			}
 		} else {
@@ -58,7 +75,7 @@ class ApplicationsController extends AppController {
 	function education() {
 		if(!empty($this->request->data['Application'])) {
 			if(!empty($this->application['Application']['step_completed'])) {
-				$this->request->data['Application']['step_completed'] = 3;
+				$this->request->data['Application']['step_completed'] = 4;
 			}
 			if($this->Application->save($this->request->data)) {
 				$application = $this->Application->findById();
@@ -73,7 +90,7 @@ class ApplicationsController extends AppController {
 	function spiritual() {
 		if(!empty($this->request->data['Application'])) {
 			if(!empty($this->application['Application']['step_completed'])) {
-				$this->request->data['Application']['step_completed'] = 4;
+				$this->request->data['Application']['step_completed'] = 5;
 			}
 			if($this->Application->save($this->request->data)) {
 				$application = $this->Application->findById();
@@ -88,7 +105,7 @@ class ApplicationsController extends AppController {
 	function recommendations() {
 		if(!empty($this->request->data['Application'])) {
 			if(!empty($this->application['Application']['step_completed'])) {
-				$this->request->data['Application']['step_completed'] = 5;
+				$this->request->data['Application']['step_completed'] = 6;
 			}
 			
 			//send emails
@@ -165,7 +182,7 @@ class ApplicationsController extends AppController {
 	function releases() {
 		if(!empty($this->request->data['Application'])) {
 			if(!empty($this->application['Application']['step_completed'])) {
-				$this->request->data['Application']['step_completed'] = 6;
+				$this->request->data['Application']['step_completed'] = 7;
 			}
 			if($this->Application->save($this->request->data)) {
 				$application = $this->Application->findById();

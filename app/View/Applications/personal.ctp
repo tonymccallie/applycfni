@@ -68,17 +68,10 @@
 		</div>
 	</div>
 	<div class="row-fluid">
-		<div class="span4">
-			<?php echo $this->Form->input('marital_status',array('options'=>array(
-				'Single' => 'Single',
-				'Married' => 'Married',
-				'Divorced' => 'Divorced',
-				'Separated' => 'Separated'),'empty'=>'--','class'=>'span12')); ?>
-		</div>
-		<div class="span4">
+		<div class="span6">
 			<?php echo $this->Form->input('gender',array('options'=>array('M' => 'Male','F' => 'Female'),'empty'=>'--','class'=>'span12')); ?>
 		</div>
-		<div class="span4">
+		<div class="span6">
 			<?php echo $this->Form->input('maiden_name',array('label'=>'Maiden Name','class'=>'span12')); ?>
 		</div>
 	</div>
@@ -97,23 +90,6 @@
 		<?php echo $this->Form->input('citizen_country',array('label'=>'Country of Citizenship','options'=>Common::countries(),'empty'=>'--','class'=>'span12')); ?>
 	</div>
 	<div class="row-fluid">
-		<h4>Recruitment</h4>
-	</div>
-	<div class="row-fluid">
-		<?php echo $this->Form->input('recruit_location',array('label'=>'How did you hear about Christ for the Nations?','class'=>'span12')); ?>
-	</div>
-	<div class="row-fluid">
-		<?php echo $this->Form->input('recruiter_id',array('label'=>'I was recruited by','options'=>$recruiters,'empty'=>'--','class'=>'span12')); ?>
-	</div>
-	<div class="row-fluid">
-		<div class="span6">
-			<?php echo $this->ExtendedForm->radio('recruit_campus',array('label'=>'Have you attended CFNI campus days?','type'=>'radio','options'=>array(1 => 'Yes',0 => 'No'))); ?>
-		</div>
-		<div class="span6">
-			<?php echo $this->ExtendedForm->radio('recruit_yfn',array('label'=>'Have you attended Youth for the Nations?','type'=>'radio','options'=>array(1 => 'Yes',0 => 'No'))); ?>
-		</div>
-	</div>
-	<div class="row-fluid">
 		<h4>Finances</h4>
 	</div>
 	<div class="row-fluid">
@@ -128,7 +104,21 @@
 		<?php echo $this->ExtendedForm->radio('veteran_benefits',array('label'=>'Are you receiving any VA benefits?','type'=>'radio','options'=>array(1 => 'Yes',0 => 'No'))); ?>
 	</div>
 	<div class="row-fluid">
-		<h4>History</h4>
+		<h4>Recruitment</h4>
+	</div>
+	<div class="row-fluid">
+		<?php echo $this->Form->input('recruit_location',array('label'=>'How did you hear about Christ for the Nations?','class'=>'span12')); ?>
+	</div>
+	<div class="row-fluid">
+		<?php echo $this->Form->input('recruiter_name',array('label'=>'I was recruited by','class'=>'span12')); ?>
+	</div>
+	<div class="row-fluid">
+		<div class="span6">
+			<?php echo $this->ExtendedForm->radio('recruit_campus',array('label'=>'Have you attended CFNI campus days?','type'=>'radio','options'=>array(1 => 'Yes',0 => 'No'))); ?>
+		</div>
+		<div class="span6">
+			<?php echo $this->ExtendedForm->radio('recruit_yfn',array('label'=>'Have you attended Youth for the Nations?','type'=>'radio','options'=>array(1 => 'Yes',0 => 'No'))); ?>
+		</div>
 	</div>
 	<div class="btn-group pull-right">
 	<?php

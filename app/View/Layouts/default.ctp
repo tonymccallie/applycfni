@@ -94,11 +94,12 @@
 			$steps = array(
 				1 => array('01. Start','/applications/start'),
 				2 => array('02. Personal','/applications/personal'),
-				3 => array('03. Education','/applications/education'),
-				4 => array('04. Spiritual','/applications/spiritual'),
-				5 => array('05. Recommendations','/applications/recommendations'),
-				6 => array('06. Finish','/applications/releases'),
-				7 => array('Status','/applications/status')
+				3 => array('03. Background','/applications/background'),
+				4 => array('04. Education','/applications/education'),
+				5 => array('05. Spiritual','/applications/spiritual'),
+				6 => array('06. Recommendations','/applications/recommendations'),
+				7 => array('07. Finish','/applications/releases'),
+				8 => array('Status','/applications/status')
 			);
 			if(!empty($application)) {
 				for($i=1; $i <= $application['Application']['step_completed']+1;$i++) {
