@@ -12,7 +12,7 @@
 			<p>Trenchantly one where shined awakened strode reindeer squid some euphemistically limpet wonderful awfully hence hopefully the gosh tacky accurately unlike ouch meanly bee bee respectfully much regardless this flirted reasonable oh.</p>
 			<p>Creative much and ouch crud sadistic vindictive alas audaciously widely hey sheep harsh much more oh after that jokingly and including commendably met because overhung vindictively lorikeet as swung yikes moth far factious interbred thus and much that yikes spoon-fed alas and numbly some a.</p>
 
-			<?php echo $this->Form->input('release',array('type'=>'checkbox','label'=>'I Agree')); ?>
+			<?php echo $this->ExtendedForm->checkbox('release',array('label'=>'I Agree','type'=>'checkbox')); ?>
 		</div>
 	</div>
 	<div class="btn-group pull-right">

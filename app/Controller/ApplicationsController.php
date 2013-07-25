@@ -90,7 +90,45 @@ class ApplicationsController extends AppController {
 			if(!empty($this->application['Application']['step_completed'])) {
 				$this->request->data['Application']['step_completed'] = 5;
 			}
-			if($this->Application->save($this->request->data)) {
+			
+			//send emails
+			$url = Common::currentUrl();
+			
+			foreach($this->request->data['Referral'] as $k => $referral) {
+				$sendEmail = false;
+				if(empty($this->application['Referral'][$k]['email'])) {
+					$sendEmail = true;
+				} else {
+					if($this->application['Referral'][$k]['email'] != $referral['email']) {
+						$sendEmail = true;
+					}
+					
+					if(empty($referral['sent'])) {
+						$sendEmail = true;
+					}
+					
+					if(!empty($referral['resend'])) {
+						$sendEmail = true;
+					}
+				}
+				
+				if($sendEmail) {
+					Common::email(array(
+						'to' => $referral['email'],
+						'subject' => 'CFNI Application Referral Request',
+						'template' => 'referral',
+						'variables' => array(
+							'referral_name' => $referral['first_name'].' '.$referral['last_name'],
+							'applicant_name' => $this->application['Application']['first_name'].' '.$this->application['Application']['last_name'],
+							'url' => $url
+						)
+					),'');
+					$this->request->data['Referral'][$k]['sent'] = date('Y-m-d H:i:s');
+				}
+			}
+			
+			if($this->Application->saveAll($this->request->data)) {
+			
 				$application = $this->Application->findById();
 				$this->Session->write('application',$application);
 				$this->redirect(array('action'=>'releases'));
