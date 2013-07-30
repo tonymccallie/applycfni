@@ -24,6 +24,9 @@ class ApplicationsController extends AppController {
 			if(empty($this->application['Application']['step_completed'])) {
 				$this->request->data['Application']['step_completed'] = 1;
 			}
+			
+			$this->Application->validate = $this->Application->validateStart;
+			
 			if($this->Application->save($this->request->data)) {
 				$application = $this->Application->findById();
 				$this->Session->write('application',$application);
