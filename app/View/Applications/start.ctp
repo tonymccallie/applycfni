@@ -39,7 +39,7 @@
 	</div>
 	<div class="row-fluid">
 		<div class="span12">
-			<?php echo $this->Form->input('semester_id',array('label'=>'Expected entrance term <a href="/test" class="labeltooltip" data-toggle="tooltip" data-placement="top" title data-original-title="Visit one of our other sites"><i class="icon-question-sign"></i></a>','options'=>$semesters,'empty'=>'--','class'=>'span12')); ?>
+			<?php echo $this->Form->input('semester_id',array('label'=>'Expected entrance term <a href="/test" class="labeltooltip" data-toggle="tooltip" data-placement="top" title data-original-title="Must be 12 months away for international students"><i class="icon-question-sign"></i></a>','options'=>$semesters,'empty'=>'--','class'=>'span12')); ?>
 		</div>
 	</div>
 	<?php echo $this->Form->end(array('label'=>'Next','class'=>'btn btn-inverse btn-large pull-right')); ?>
