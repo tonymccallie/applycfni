@@ -54,8 +54,6 @@ class ApplicationsController extends AppController {
 		} else {
 			$this->request->data = $this->application;
 		}
-		$recruiters = $this->Application->Recruiter->find('list');
-		$this->set(compact('recruiters'));
 	}
 	
 	function background() {
@@ -71,8 +69,6 @@ class ApplicationsController extends AppController {
 		} else {
 			$this->request->data = $this->application;
 		}
-		$recruiters = $this->Application->Recruiter->find('list');
-		$this->set(compact('recruiters'));
 	}
 	
 	function education() {

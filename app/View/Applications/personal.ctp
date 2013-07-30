@@ -61,7 +61,7 @@
 			<?php echo $this->Form->input('ssn',array('label'=>'Social Security Number','class'=>'span12')); ?>
 		</div>
 		<div class="span6">
-			<?php echo $this->Form->input('birth_date',array('label'=>'Date of Birth','class'=>'span4')); ?>
+			<?php echo $this->Form->input('birth_date',array('label'=>'Date of Birth','class'=>'span4','empty'=>true)); ?>
 		</div>
 	</div>
 	<div class="row-fluid">
@@ -77,7 +77,7 @@
 	</div>
 	<div class="row-fluid">
 		<div class="span6">
-			<?php echo $this->Form->input('gender',array('options'=>array('M' => 'Male','F' => 'Female'),'empty'=>'--','class'=>'span12')); ?>
+			<?php echo $this->ExtendedForm->radio('gender',array('label'=>'Gender','type'=>'radio','options'=>array('M' => 'Male','F' => 'Female'))); ?>
 		</div>
 		<div class="span6">
 			<?php echo $this->Form->input('maiden_name',array('label'=>'Maiden Name','class'=>'span12')); ?>
@@ -118,7 +118,7 @@
 		<?php echo $this->Form->input('recruit_location',array('label'=>'How did you hear about Christ for the Nations?','class'=>'span12')); ?>
 	</div>
 	<div class="row-fluid">
-		<?php echo $this->Form->input('recruiter_name',array('label'=>'I was recruited by','class'=>'span12')); ?>
+		<?php echo $this->Form->input('recruiter',array('label'=>'I was recruited by','class'=>'span12')); ?>
 	</div>
 	<div class="row-fluid">
 		<div class="span6">

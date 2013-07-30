@@ -71,7 +71,6 @@
 								<ul class="dropdown-menu">
 									<li><?php echo $this->Html->link('Users','/admin/users') ?></li>
 									<li><?php echo $this->Html->link('Semesters','/admin/semesters') ?></li>
-									<li><?php echo $this->Html->link('Recruiters','/admin/recruiters') ?></li>
 									<li><?php echo $this->Html->link('Majors','/admin/majors') ?></li>
 									<li><?php echo $this->Html->link('Degrees','/admin/degrees') ?></li>
 								</ul>
