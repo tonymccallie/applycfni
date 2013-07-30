@@ -5,31 +5,39 @@
 			echo $this->Form->input('id',array());
 	?>
 	<div class="row-fluid">
-		<div class="span12">
-			<h3>Release and Agreements</h3>
+		<h4>Release and Agreements</h4>
+	</div>
+	<div class="row-fluid">
+		<div class="span6">
 			<p>I have read the <a href="#objectivesandstandards" data-toggle="modal">"Objectives & Standards"</a> and <a href="#statementoffaith" data-toggle="modal">"Statement of Faith"</a> of Christ For The Nations Institute. I accept them, including observance of the specific standards of conduct stated therein, while being a student of Christ For The Nations Institute.</p>
+		</div>
+		<div class="span6">
 			<?php echo $this->ExtendedForm->checkbox('release',array('label'=>'I Agree','type'=>'checkbox')); ?>
 		</div>
 	</div>
 	<div class="row-fluid">
-		<div class="span12">
-			<h3>Criminal Background Check</h3>
+		<h4>Criminal Background Check</h4>
+	</div>
+	<div class="row-fluid">
+		<div class="span6">
 			<p>Needs some great legal jargon to go here to authorize subjective criminal background checks</p>
-			<?php echo $this->ExtendedForm->checkbox('criminal',array('label'=>'I Agree','type'=>'checkbox')); ?>
+		</div>
+		<div class="span6">
+			<?php echo $this->ExtendedForm->checkbox('background_check',array('label'=>'I Agree','type'=>'checkbox')); ?>
 		</div>
 	</div>
 	<div class="row-fluid">
-		<div class="span12">
-			<h3>Electronic Signature</h3>
+		<h4>Electronic Signature</h4>
+	</div>
+	<div class="row-fluid">
+		<div class="span6">
 			<p>The form will not be "signed" in the sense of a traditional paper document. To verify the contents of the above, the signatory must enter any alpha/numeric character(s) or combination thereof of his or her choosing, preceded and followed by the forward slash (/) symbol. Christ for the Nations, Inc does not determine or pre-approve what the entry should be, but simply presumes that this specific entry has been adopted to serve the function of the signature. Most signatories simply enter their names between the two forward slashes, although acceptable "signatures" could include /john doe/; /jd/; or /123-4567/.</p>
-				<div class="row-fluid">
-					<div class="span5">
-						<?php echo $this->Form->input('signature_name',array('label'=>'Full Name','class'=>'span12')); ?>
-						<?php echo $this->Form->input('signature_phone',array('label'=>'Phone Number','class'=>'span12')); ?>
-						<?php echo $this->Form->input('signature_signature',array('label'=>'Signature','class'=>'span12')); ?>
-						<?php echo $this->Form->input('signature_date',array('label'=>'Date of Signature','class'=>'span12')); ?>
-					</div>
-				</div>
+		</div>
+		<div class="span6">
+			<?php echo $this->Form->input('signature_name',array('label'=>'Full Name','class'=>'span12')); ?>
+			<?php echo $this->Form->input('signature_phone',array('label'=>'Phone Number','class'=>'span12')); ?>
+			<?php echo $this->Form->input('signature_signature',array('label'=>'Signature','class'=>'span12')); ?>
+			<?php echo $this->Form->input('signature_date',array('label'=>'Date of Signature','class'=>'span4','empty'=>true,'type'=>'date')); ?>
 		</div>
 	</div>
 	<div class="btn-group pull-right">

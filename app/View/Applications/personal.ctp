@@ -61,7 +61,7 @@
 			<?php echo $this->Form->input('ssn',array('label'=>'Social Security Number','class'=>'span12')); ?>
 		</div>
 		<div class="span6">
-			<?php echo $this->Form->input('birth_date',array('label'=>'Date of Birth','class'=>'span4','empty'=>true)); ?>
+			<?php echo $this->Form->input('birth_date',array('label'=>'Date of Birth','class'=>'span4','empty'=>true,'minYear' => date('Y') - 70,)); ?>
 		</div>
 	</div>
 	<div class="row-fluid">
@@ -88,14 +88,11 @@
 	</div>
 	<div class="row-fluid">	
 		<div class="span6">
-			<?php echo $this->ExtendedForm->radio('citizen_us',array('label'=>'Are you a US Citizen?','type'=>'radio','options'=>array(1 => 'Yes',0 => 'No'))); ?>
+			<?php echo $this->Form->input('citizen_country',array('label'=>'Country of Citizenship','options'=>Common::countries(),'empty'=>'--','class'=>'span12')); ?>
 		</div>
 		<div class="span6">
 			<?php echo $this->ExtendedForm->radio('citizen_status',array('label'=>'Are you a permanent resident/resident alien?','type'=>'radio','options'=>array(1 => 'Yes',0 => 'No'))); ?>
 		</div>
-	</div>
-	<div class="row-fluid">
-		<?php echo $this->Form->input('citizen_country',array('label'=>'Country of Citizenship','options'=>Common::countries(),'empty'=>'--','class'=>'span12')); ?>
 	</div>
 	<div class="row-fluid">
 		<h4>Finances</h4>
@@ -115,10 +112,12 @@
 		<h4>Recruitment</h4>
 	</div>
 	<div class="row-fluid">
-		<?php echo $this->Form->input('recruit_location',array('label'=>'How did you hear about Christ for the Nations?','class'=>'span12')); ?>
-	</div>
-	<div class="row-fluid">
-		<?php echo $this->Form->input('recruiter',array('label'=>'I was recruited by','class'=>'span12')); ?>
+		<div class="span6">
+			<?php echo $this->Form->input('how_hear',array('label'=>'How did you hear about Christ for the Nations?','class'=>'span12')); ?>
+		</div>
+		<div class="span6">
+			<?php echo $this->Form->input('recruiter',array('label'=>'I was recruited by','class'=>'span12')); ?>
+		</div>
 	</div>
 	<div class="row-fluid">
 		<div class="span6">

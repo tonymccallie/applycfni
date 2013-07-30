@@ -52,28 +52,100 @@ class Application extends AppModel {
 				'message' => 'Please enter your first name'
 			)
 		),
-		'first_name' => array(
+		'address1' => array(
 			'ruleName' => array(
 				'rule' => array('notEmpty'),
-				'message' => 'Please enter your first name'
+				'message' => 'Please your address.'
 			)
 		),
-		'first_name' => array(
+		'city' => array(
 			'ruleName' => array(
 				'rule' => array('notEmpty'),
-				'message' => 'Please enter your first name'
+				'message' => 'Please enter your city'
 			)
 		),
-		'first_name' => array(
+		'country' => array(
 			'ruleName' => array(
 				'rule' => array('notEmpty'),
-				'message' => 'Please enter your first name'
+				'message' => 'Please enter your country'
 			)
 		),
-		'first_name' => array(
+		'phone_primary' => array(
+			'ruleName' => array(
+				'rule' => array('phone',null,'us'),
+				'message' => 'Please use a valid phone number'
+			)
+		),
+		'ssn' => array(
+			'ruleName' => array(
+				'rule' => array('ssn',null,'us'),
+				'message' => 'Please use a valid Social Security Number'
+			)
+		),
+		'birth_date' => array(
 			'ruleName' => array(
 				'rule' => array('notEmpty'),
-				'message' => 'Please enter your first name'
+				'message' => 'Please enter your date of birth'
+			)
+		),
+		'birth_city' => array(
+			'ruleName' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'Please enter city of birth'
+			)
+		),
+		'birth_country' => array(
+			'ruleName' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'Please enter your country of birth'
+			)
+		),
+		'gender' => array(
+			'ruleName' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'Please enter your gender.'
+			)
+		),
+		'citizen_status' => array(
+			'ruleName' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'Please check yes or no.'
+			)
+		),
+		'citizen_country' => array(
+			'ruleName' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'Please choose a country of citizenship.'
+			)
+		),
+		'finances' => array(
+			'ruleName' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'Please check yes or no.'
+			)
+		),
+		'veteran' => array(
+			'ruleName' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'Please check yes or no.'
+			)
+		),
+		'veteran_benefits' => array(
+			'ruleName' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'Please check yes or no.'
+			)
+		),
+		'recruit_campus' => array(
+			'ruleName' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'Please check yes or no.'
+			)
+		),
+		'recruit_yfn' => array(
+			'ruleName' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'Please check yes or no.'
 			)
 		),
 	);
