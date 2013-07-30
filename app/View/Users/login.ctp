@@ -18,9 +18,9 @@
 			<div class="span12">
 				<div class="btn-group pull-right">
 					<?php
-						echo $this->Html->link('Forgot Password?', array('action' => 'recover'),array('class'=>'btn','escape'=>false));
-						echo $this->Html->link('Register',array('action'=>'register'),array('class'=>'btn','escape'=>false));
-						echo $this->Form->submit('Login',array('class'=>'btn btn-primary','div'=>false));
+						echo $this->Html->link('FORGOT PASSWORD?', array('action' => 'recover'),array('class'=>'btn','escape'=>false));
+						echo $this->Html->link('CREATE AN ACCOUNT',array('action'=>'register'),array('class'=>'btn','escape'=>false));
+						echo $this->Form->submit('LOGIN',array('class'=>'btn btn-primary','div'=>false));
 					?>
 				</div>
 			</div>
