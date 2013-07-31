@@ -31,8 +31,6 @@ class Application extends AppModel {
 		),
 	);
 	
-//	personal, background, education, spritual, recommendations, releases
-	
 	var $validatePersonal = array(
 		'first_name' => array(
 			'ruleName' => array(
@@ -148,6 +146,66 @@ class Application extends AppModel {
 				'message' => 'Please check yes or no.'
 			)
 		),
+	);
+	
+	var $validateBackground = array(
+		'marital_status' => array(
+			'ruleName' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'Marital status is required.'
+			)
+		),
+		'felony' => array(
+			'ruleName' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'Please check yes or no.'
+			)
+		),
+		'misdemeanor' => array(
+			'ruleName' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'Please check yes or no.'
+			)
+		),
+		'probation' => array(
+			'ruleName' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'Please check yes or no.'
+			)
+		),
+		'conduct_code' => array(
+			'ruleName' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'Please check yes or no.'
+			)
+		),
+	);
+	
+	var $validateEducation = array(
+		'field' => array(
+			'ruleName' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'Message is required'
+			)
+		)
+	);
+	
+	var $validateSpiritual = array(
+		'field' => array(
+			'ruleName' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'Message is required'
+			)
+		)
+	);
+	
+	var $validateReleases = array(
+		'field' => array(
+			'ruleName' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'Message is required'
+			)
+		)
 	);
 }
 ?>
