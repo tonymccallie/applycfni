@@ -1,8 +1,16 @@
 <div class="span12">
+---> Text when you start the application
 	<h2><i class="icon-dash"></i>Welcome</h2>
-	<p>Your consideration of Christ For The Nations Institute is something for which we are very thankful. A check list is provided which will indicate
-information needed for acceptance. Please keep this form and refer to it when you send information to Enrollment Services.</p>
-	<p>More text and directons will go here...</p>
+	<p>Thank you for considering Christ For The Nations Institute for your biblical training. You are about to embark on the most rewarding journey of your life.
+As you begin your application process, a checklist will be provided to indicate information needed for acceptance. Please refer to this form as you check off the necessary items needed to complete your application form. </p>
+
+---> Text when you complete the application
+	
+	<h1>Thank You.</h1>
+	<p>Thank you for beginning the application process to attend CFNI.  An admissions advisor will be contacting you soon.  There are a few documents we will need to complete your enrollment.  At this point, you will not be able to change your application information online.  If any changes are needed, please contact the admissions office at <a href="mailto:admissions@cfni.org">admissions@cfni.org.</a>  We are excited that you have chosen CFNI for biblical training.  As always, your admissions advisor is here to answer any questions you may have. 
+We look forward to serving you during this process.
+The CFNI Admissions Team</p>
+
 	<?php 
 		$action = 'start';
 		$text = 'Start The Application';
@@ -31,3 +39,5 @@ information needed for acceptance. Please keep this form and refer to it when yo
 		echo $this->Html->link('<i class="icon-check"></i> '.$text,array('controller'=>'applications','action'=>$action),array('class'=>'btn btn-large btn-inverse','escape'=>false));
 	?>
 </div>
+
+

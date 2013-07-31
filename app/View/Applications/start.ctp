@@ -34,7 +34,7 @@
 	</div>
 	<div class="row-fluid">
 		<div class="span6">
-			<?php echo $this->Form->input('semester_id',array('label'=>'Expected entrance term <a href="/test" class="labeltooltip" data-toggle="tooltip" data-placement="top" title data-original-title="Visit one of our other sites"><i class="icon-question-sign"></i></a>','options'=>$semesters,'empty'=>'--','class'=>'span12')); ?>
+			<?php echo $this->Form->input('semester_id',array('label'=>'Expected entrance term <a href="/test" class="labeltooltip" data-toggle="tooltip" data-placement="top" title data-original-title="International Students cannot apply for the Fall 2013 semester, Please choose Spring 2014"><i class="icon-question-sign"></i></a>','options'=>$semesters,'empty'=>'--','class'=>'span12')); ?>
 		</div>
 		<div class="span6">
 			<?php echo $this->ExtendedForm->radio('international',array('label'=>'International Student?','type'=>'radio','options'=>array(1 => 'Yes',0 => 'No'))); ?>

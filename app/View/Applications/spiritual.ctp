@@ -19,7 +19,7 @@
 	</div>
 	<div class="row-fluid">
 		<div class="span12">
-			<?php echo $this->ExtendedForm->radio('acts_24',array('label'=>'Have you received the Baptism of the Holy Spirit?','type'=>'radio','options'=>array(1 => 'Yes',0 => 'No'))); ?>
+			<?php echo $this->ExtendedForm->radio('acts_24',array('label'=>'Have you received the baptism of the Holy Spirit?','type'=>'radio','options'=>array(1 => 'Yes',0 => 'No'))); ?>
 		</div>
 	</div>
 	<div class="row-fluid">
