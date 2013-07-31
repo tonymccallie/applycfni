@@ -19,11 +19,11 @@
 	</div>
 	<div class="row-fluid">
 		<h4>Domestic Students</h4>
-		<p>Text explaining how to send it in, Address</p>
+		<p>Please provide an official transcript from your high school and any other institute of learning you have attended. Homeschool transcripts must to be notarized.</p>
 	</div>
 	<div class="row-fluid">
 		<h4>International Students</h4>
-		<p>Text explaining how to send it in and notes that we won't send it back, Address</p>
+		<p><span class="text-error">Please be aware that once we receive a transcript, we will NOT return it to you.</span>  If you only have access to one original in your lifetime, we encourage you to obtain and send us a stamped, notarized copy of the original.  All international transcripts must be officially translated into English or Spanish. </p>
 	</div>
 	<div class="btn-group pull-right">
 	<?php

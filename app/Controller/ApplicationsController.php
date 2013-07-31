@@ -24,6 +24,9 @@ class ApplicationsController extends AppController {
 			if(empty($this->application['Application']['step_completed'])) {
 				$this->request->data['Application']['step_completed'] = 1;
 			}
+			
+			$this->Application->validate = $this->Application->validateStart;
+			
 			if($this->Application->save($this->request->data)) {
 				$application = $this->Application->findById();
 				$this->Session->write('application',$application);
@@ -51,8 +54,6 @@ class ApplicationsController extends AppController {
 		} else {
 			$this->request->data = $this->application;
 		}
-		$recruiters = $this->Application->Recruiter->find('list');
-		$this->set(compact('recruiters'));
 	}
 	
 	function background() {
@@ -68,8 +69,6 @@ class ApplicationsController extends AppController {
 		} else {
 			$this->request->data = $this->application;
 		}
-		$recruiters = $this->Application->Recruiter->find('list');
-		$this->set(compact('recruiters'));
 	}
 	
 	function education() {

@@ -5,7 +5,7 @@
 			echo $this->Form->input('id',array());
 	?>
 	<div class="row-fluid">
-		<p>Maybe some details about the recomendations...</p>
+		<p>Your recommender must have known you for at least 6 months prior to filling out the recommendation. Please note, this form cannot be completed by a relative of the applicant.</p>
 	</div>
 	<div class="row-fluid">
 		<div class="span6">

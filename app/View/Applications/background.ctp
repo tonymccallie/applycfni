@@ -17,15 +17,15 @@
 				'Widowed' => 'Widowed'),'empty'=>'--','class'=>'span12')); ?>
 		</div>
 		<div class="span6">
-			<?php echo $this->Form->input('divorce_date',array('label'=>'If Divorced or Seperated, When?','class'=>'span12')); ?>
+			<?php echo $this->Form->input('divorce_date',array('label'=>'If Divorced or Separated, When?','empty'=>true,'class'=>'span12')); ?>
 		</div>
 	</div>
 	<div class="row-fluid">
 		<div class="span6">
-			<?php echo $this->Form->input('spouse_first',array('label'=>'Spouse First Name','class'=>'span12')); ?>
+			<?php echo $this->Form->input('spouse_first',array('label'=>'spouse First Name','class'=>'span12')); ?>
 		</div>
 		<div class="span6">
-			<?php echo $this->Form->input('spouse_last',array('label'=>'Spouse Last Name','class'=>'span12')); ?>
+			<?php echo $this->Form->input('spouse_last',array('label'=>'spouse Last Name','class'=>'span12')); ?>
 		</div>
 	</div>
 	<div class="row-fluid">
