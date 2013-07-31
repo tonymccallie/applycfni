@@ -18,7 +18,11 @@
 		</div>
 		<div class="span6">
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<?php echo $this->Form->input('divorce_date',array('label'=>'If Divorced or Separated, When?','empty'=>true,'class'=>'span12')); ?>
+=======
+			<?php echo $this->Form->input('divorce_date',array('label'=>'If Divorced or Seperated, When?','empty'=>true,'class'=>'span4')); ?>
+>>>>>>> master
 =======
 			<?php echo $this->Form->input('divorce_date',array('label'=>'If Divorced or Seperated, When?','empty'=>true,'class'=>'span4')); ?>
 >>>>>>> master

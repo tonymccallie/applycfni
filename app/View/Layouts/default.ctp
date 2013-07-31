@@ -65,7 +65,7 @@
 				<div class="nav-collapse collapse pull-right">
 					<ul class="nav">
 						<li class="active"><?php echo $this->Html->link('Home','/') ?></li>
-						<li><?php echo $this->Html->link('FAQs','/pages/faq') ?></li>
+						<li><?php echo $this->Html->link('FAQs','/faqs') ?></li>
 						<?php if(Authsome::get('Role.name') == 'Admin'): ?>
 							<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="admin_dropdown">Admin <b class="caret"></b></a>
 								<ul class="dropdown-menu">
@@ -73,6 +73,7 @@
 									<li><?php echo $this->Html->link('Semesters','/admin/semesters') ?></li>
 									<li><?php echo $this->Html->link('Majors','/admin/majors') ?></li>
 									<li><?php echo $this->Html->link('Degrees','/admin/degrees') ?></li>
+									<li><?php echo $this->Html->link('FAQs','/admin/faqs') ?></li>
 								</ul>
 							</li>
 						<?php endif ?>

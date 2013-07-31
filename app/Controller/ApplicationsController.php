@@ -225,6 +225,9 @@ class ApplicationsController extends AppController {
 			if(!empty($this->application['Application']['step_completed'])) {
 				$this->request->data['Application']['step_completed'] = 5;
 			}
+			
+			$this->Application->validate = $this->Application->validateSpiritual;
+			
 			if($this->Application->save($this->request->data)) {
 				$application = $this->Application->findById();
 				$this->Session->write('application',$application);
@@ -321,6 +324,9 @@ class ApplicationsController extends AppController {
 			if(!empty($this->application['Application']['step_completed'])) {
 				$this->request->data['Application']['step_completed'] = 7;
 			}
+			
+			$this->Application->validate = $this->Application->validateReleases;
+			
 			if($this->Application->save($this->request->data)) {
 				$application = $this->Application->findById();
 				$this->Session->write('application',$application);

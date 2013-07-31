@@ -191,21 +191,105 @@ class Application extends AppModel {
 	);
 	
 	var $validateSpiritual = array(
-		'field' => array(
+		'salvation_date' => array(
 			'ruleName' => array(
 				'rule' => array('notEmpty'),
-				'message' => 'Message is required'
+				'message' => 'Please enter a date.'
 			)
-		)
+		),
+		'testimony' => array(
+			'ruleName' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'Please enter your testimony.'
+			)
+		),
+		'holy_spirit' => array(
+			'ruleName' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'Please check yes or no.'
+			)
+		),
+		'christian_service' => array(
+			'ruleName' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'Please describe your history of ministry involvement.'
+			)
+		),
+		'church_attend' => array(
+			'ruleName' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'Please check yes or no.'
+			)
+		),
+		'church_member' => array(
+			'ruleName' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'Please check yes or no.'
+			)
+		),
+		'church_name' => array(
+			'ruleName' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'Please enter your church name.'
+			)
+		),
+		'church_affiliation' => array(
+			'ruleName' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'Please enter your church affiliation.'
+			)
+		),
+		'church_pastor' => array(
+			'ruleName' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'Please enter your church pastor.'
+			)
+		),
 	);
 	
 	var $validateReleases = array(
-		'field' => array(
+		'standards_release' => array(
+			'ruleName' => array(
+				'rule' => array('comparison', '!=', 0),
+				'message' => 'Please choose I Agree to continue or contact the admissions office if you have questions.'
+			)
+		),
+		'truthful_release' => array(
+			'ruleName' => array(
+				'rule' => array('comparison', '!=', 0),
+				'message' => 'Please choose I Agree to continue or contact the admissions office if you have questions.'
+			)
+		),
+		'background_check' => array(
+			'ruleName' => array(
+				'rule' => array('comparison', '!=', 0),
+				'message' => 'Please choose I Agree to continue or contact the admissions office if you have questions.'
+			)
+		),
+		'signature_name' => array(
 			'ruleName' => array(
 				'rule' => array('notEmpty'),
-				'message' => 'Message is required'
+				'message' => 'Please enter your name.'
 			)
-		)
+		),
+		'signature_phone' => array(
+			'ruleName' => array(
+				'rule' => array('phone',null,'us'),
+				'message' => 'Please enter a valid phone number.'
+			)
+		),
+		'signature_signature' => array(
+			'ruleName' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'Please enter your signature.'
+			)
+		),
+		'signature_date' => array(
+			'ruleName' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'Please enter a signature date.'
+			)
+		),
 	);
 }
 ?>

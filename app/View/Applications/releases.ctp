@@ -5,11 +5,12 @@
 			echo $this->Form->input('id',array());
 	?>
 	<div class="row-fluid">
-		<h4>Release and Agreements</h4>
+		<h4>Standards</h4>
 	</div>
 	<div class="row-fluid">
 		<div class="span6">
 			<p>I have read the <a href="#objectivesandstandards" data-toggle="modal">"Objectives & Standards"</a> and <a href="#statementoffaith" data-toggle="modal">"Statement of Faith"</a> of Christ For The Nations Institute. I accept them, including observance of the specific standards of conduct stated therein, while being a student of Christ For The Nations Institute.</p>
+<<<<<<< HEAD
 <<<<<<< HEAD
 			<p>I hereby agree the information I have provided in this application is true. I further understand that if I have overlooked a question, or failed to complete any part of the application form, the review process of my application may be delayed. This may result in me having to wait until the following semester to attend.  
 
@@ -26,12 +27,24 @@ Note:  If you are under 18 years of age, a Parent or Legal guardian must sign t
 <<<<<<< HEAD
 		<div class="span12">
 			<h3>Criminal Background Check</h3>
+=======
+		</div>
+		<div class="span6">
+			<?php echo $this->ExtendedForm->checkbox('standards_release',array('label'=>'I agree','type'=>'checkbox')); ?>
+		</div>
+	</div>
+	<div class="row-fluid">
+		<h4>Criminal Background Check</h4>
+	</div>
+	<div class="row-fluid">
+		<div class="span6">
+>>>>>>> master
 			<p>All applicants are required by CFNI policies and procedures to submit to a standard background check.  CFNI takes seriously our obligation to provide an atmosphere of safety for those to whom we minister.  This would especially be true regarding young people and children.  We appreciate your willingness to comply and ask that you embrace with us the desire and the responsibility to provide this important level of safety. </p>
 			<p>I hereby authorize Christ for the Nations, Inc. and its contracted third parties, to research character, general reputation, personal characteristics, and mode of living, as well as my driving record and/or criminal history, to be included in an applicant profile.  I release and hold Christ for the Nations, Inc. and its contracted third parties, including but not limited to, it’s respective officers, directors, and employees harmless from any and all liability with respect to the investigation, verification and or use of any information relevant to my application for enrollment. </p>
 			<p>I authorize and request any present or former employer, state/federal government office, state department of motor vehicles, school, police department, court records, including those maintained by both public and private organizations, or other persons having personal knowledge about me to furnish Christ for the Nations, Inc. and its contracted third parties with any and all information in their possession regarding me for the purposes of confirming the information contained in my application.  </p>
-			<h4>CERTIFICATION AND AUTHORIZATION</h4>
 			<p>I certify that the information contained on this form is true, correct and complete to the best of my knowledge.  I understand that CFNI enrollment requires criminal history and/or driving record background checks for the purpose of evaluating me for enrollment and continued enrollment.  I also understand that any misrepresentations, falsification or omission of the facts herein may be grounds for disqualification or expulsion.  </p>
 			<p>I authorize Christ For The Nations Inc.  to make any investigation of my personal history through any investigative agencies of their choice.</p>
+<<<<<<< HEAD
 			<?php echo $this->ExtendedForm->checkbox('criminal',array('label'=>'I Agree','type'=>'checkbox')); ?>
 =======
 		<h4>Criminal Background Check</h4>
@@ -40,9 +53,23 @@ Note:  If you are under 18 years of age, a Parent or Legal guardian must sign t
 		<div class="span6">
 			<p>Needs some great legal jargon to go here to authorize subjective criminal background checks</p>
 >>>>>>> master
+=======
+>>>>>>> master
 		</div>
 		<div class="span6">
 			<?php echo $this->ExtendedForm->checkbox('background_check',array('label'=>'I Agree','type'=>'checkbox')); ?>
+		</div>
+	</div>
+	<div class="row-fluid">
+		<h4>Application Completion</h4>
+	</div>
+	<div class="row-fluid">
+		<div class="span6">
+			<p>I hereby agree the information I have provided in this application is true. I further understand that if I have overlooked a question, or failed to complete any part of the application form, the review process of my application may be delayed. This may result in me having to wait until the following semester to attend. </p>
+			<p>Note:  If you are under 18 years of age, a Parent or Legal guardian must sign this application and must also complete the "Minor Release" form before the application can be processed.  After you have submitted your application, please contact a CFNI Enrollment Services Advisor.  </p>
+		</div>
+		<div class="span6">
+			<?php echo $this->ExtendedForm->checkbox('truthful_release',array('label'=>'I Agree','type'=>'checkbox')); ?>
 		</div>
 	</div>
 	<div class="row-fluid">

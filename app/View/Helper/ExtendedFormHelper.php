@@ -20,6 +20,7 @@ class ExtendedFormHelper extends FormHelper {
 		$out = $this->Form->input($fieldName, $options);
 		$out = str_ireplace('<label ', '<label class="btn icon-" ', $out);
 		$out = str_ireplace('<div class="input checkbox">', '<div class="input checkbox">', $out);
+		$out = str_ireplace('<div class="input checkbox required">', '<div class="input checkbox required">', $out);
 		return $this->output($out);
 	}
 
