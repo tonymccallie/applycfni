@@ -9,6 +9,7 @@
 		$('#ApplicationPaymentForm').submit(function(event) {
 			var $form = $(this);
 			//disable button
+			$('#errors').hide();
 			$('#submit_payment').attr('disabled',true);
 			Stripe.createToken($form, stripeResponse);
 			return false;
@@ -17,6 +18,22 @@
 	
 	var stripeResponse = function(status, response) {
 		console.log([status, response]);
+		var $form = $('#ApplicationPaymentForm');
+
+		if (response.error) {
+			// Show the errors on the form
+			$form.find('.payment-errors').text(response.error.message);
+			$('#error_message').html(response.error.message);
+			$('#errors').show();
+			$('#submit_payment').attr('disabled',false);
+		} else {
+		// token contains id, last4, and card type
+			var token = response.id;
+			// Insert the token into the form so it gets submitted to the server
+			$form.append($('<input type="hidden" name="stripeToken" />').val(token));
+			// and submit
+			$form.get(0).submit();
+		}
 	}
 	
 	/* ]]> */
@@ -30,6 +47,9 @@
 		echo $this->Form->create();
 			echo $this->Form->input('id',array());
 	?>
+	<div id="errors" class="alert alert-error hide">
+		<i class="icon-remove-sign"></i> <span id="error_message"></span>
+	</div>
 	<div class="row-fluid">
 		<div class="span9">
 			<?php echo $this->Form->input('credit_card_number',array('data-stripe'=>'number','class'=>'span12'));  ?>
