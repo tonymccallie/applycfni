@@ -5,17 +5,25 @@
 			echo $this->Form->input('id',array());
 	?>
 	<div class="row-fluid">
-		<div class="span12">
-			<h3>Release and Agreements</h3>
+		<h4>Release and Agreements</h4>
+	</div>
+	<div class="row-fluid">
+		<div class="span6">
 			<p>I have read the <a href="#objectivesandstandards" data-toggle="modal">"Objectives & Standards"</a> and <a href="#statementoffaith" data-toggle="modal">"Statement of Faith"</a> of Christ For The Nations Institute. I accept them, including observance of the specific standards of conduct stated therein, while being a student of Christ For The Nations Institute.</p>
+<<<<<<< HEAD
 			<p>I hereby agree the information I have provided in this application is true. I further understand that if I have overlooked a question, or failed to complete any part of the application form, the review process of my application may be delayed. This may result in me having to wait until the following semester to attend.  
 
 Note:  If you are under 18 years of age, a Parent or Legal guardian must sign this application and must also complete the "Minor Release" form before the application can be processed.  After you have submitted your application, please contact a CFNI Enrollment Services Advisor.  
 </p>
+=======
+		</div>
+		<div class="span6">
+>>>>>>> master
 			<?php echo $this->ExtendedForm->checkbox('release',array('label'=>'I Agree','type'=>'checkbox')); ?>
 		</div>
 	</div>
 	<div class="row-fluid">
+<<<<<<< HEAD
 		<div class="span12">
 			<h3>Criminal Background Check</h3>
 			<p>All applicants are required by CFNI policies and procedures to submit to a standard background check.  CFNI takes seriously our obligation to provide an atmosphere of safety for those to whom we minister.  This would especially be true regarding young people and children.  We appreciate your willingness to comply and ask that you embrace with us the desire and the responsibility to provide this important level of safety. </p>
@@ -25,20 +33,30 @@ Note:  If you are under 18 years of age, a Parent or Legal guardian must sign t
 			<p>I certify that the information contained on this form is true, correct and complete to the best of my knowledge.  I understand that CFNI enrollment requires criminal history and/or driving record background checks for the purpose of evaluating me for enrollment and continued enrollment.  I also understand that any misrepresentations, falsification or omission of the facts herein may be grounds for disqualification or expulsion.  </p>
 			<p>I authorize Christ For The Nations Inc.  to make any investigation of my personal history through any investigative agencies of their choice.</p>
 			<?php echo $this->ExtendedForm->checkbox('criminal',array('label'=>'I Agree','type'=>'checkbox')); ?>
+=======
+		<h4>Criminal Background Check</h4>
+	</div>
+	<div class="row-fluid">
+		<div class="span6">
+			<p>Needs some great legal jargon to go here to authorize subjective criminal background checks</p>
+>>>>>>> master
+		</div>
+		<div class="span6">
+			<?php echo $this->ExtendedForm->checkbox('background_check',array('label'=>'I Agree','type'=>'checkbox')); ?>
 		</div>
 	</div>
 	<div class="row-fluid">
-		<div class="span12">
-			<h3>Electronic Signature</h3>
+		<h4>Electronic Signature</h4>
+	</div>
+	<div class="row-fluid">
+		<div class="span6">
 			<p>The form will not be "signed" in the sense of a traditional paper document. To verify the contents of the above, the signatory must enter any alpha/numeric character(s) or combination thereof of his or her choosing, preceded and followed by the forward slash (/) symbol. Christ for the Nations, Inc does not determine or pre-approve what the entry should be, but simply presumes that this specific entry has been adopted to serve the function of the signature. Most signatories simply enter their names between the two forward slashes, although acceptable "signatures" could include /john doe/; /jd/; or /123-4567/.</p>
-				<div class="row-fluid">
-					<div class="span5">
-						<?php echo $this->Form->input('signature_name',array('label'=>'Full Name','class'=>'span12')); ?>
-						<?php echo $this->Form->input('signature_phone',array('label'=>'Phone Number','class'=>'span12')); ?>
-						<?php echo $this->Form->input('signature_signature',array('label'=>'Signature','class'=>'span12')); ?>
-						<?php echo $this->Form->input('signature_date',array('label'=>'Date of Signature','class'=>'span12')); ?>
-					</div>
-				</div>
+		</div>
+		<div class="span6">
+			<?php echo $this->Form->input('signature_name',array('label'=>'Full Name','class'=>'span12')); ?>
+			<?php echo $this->Form->input('signature_phone',array('label'=>'Phone Number','class'=>'span12')); ?>
+			<?php echo $this->Form->input('signature_signature',array('label'=>'Signature','class'=>'span12')); ?>
+			<?php echo $this->Form->input('signature_date',array('label'=>'Date of Signature','class'=>'span4','empty'=>true,'type'=>'date')); ?>
 		</div>
 	</div>
 	<div class="btn-group pull-right">

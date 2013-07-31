@@ -31,6 +31,8 @@ class ApplicationsController extends AppController {
 				$application = $this->Application->findById();
 				$this->Session->write('application',$application);
 				$this->redirect(array('action'=>'personal'));
+			} else {
+				$this->Session->setFlash('There were problems with this page of the form. See the indicated fields below.','error');
 			}
 		} else {
 			$this->request->data = $this->application;
@@ -46,10 +48,39 @@ class ApplicationsController extends AppController {
 			if(!empty($this->application['Application']['step_completed'])) {
 				$this->request->data['Application']['step_completed'] = 2;
 			}
+			
+			$this->Application->validate = $this->Application->validatePersonal;
+			
+			if($this->request->data['Application']['country'] == 'US') {
+				$this->Application->validate['zip'] = array(
+					'ruleName' => array(
+						'rule' => array('postal',null,'zip'),
+						'message' => 'Please use a valid zip code.'
+					)
+				);
+				$this->Application->validate['state'] = array(
+					'ruleName' => array(
+						'rule' => array('notEmpty'),
+						'message' => 'Please select a state.'
+					)
+				);
+			}
+			
+			if(!empty($this->request->data['Application']['phone_secondary'])) {
+				$this->Application->validate['phone_secondary'] = array(
+					'ruleName' => array(
+						'rule' => array('phone',null,'us'),
+						'message' => 'Please use a valid phone number.'
+					)
+				);
+			}
+			
 			if($this->Application->save($this->request->data)) {
 				$application = $this->Application->findById();
 				$this->Session->write('application',$application);
 				$this->redirect(array('action'=>'background'));
+			} else {
+				$this->Session->setFlash('There were problems with this page of the form. See the indicated fields below.','error');
 			}
 		} else {
 			$this->request->data = $this->application;
@@ -61,10 +92,111 @@ class ApplicationsController extends AppController {
 			if(!empty($this->application['Application']['step_completed'])) {
 				$this->request->data['Application']['step_completed'] = 3;
 			}
+			
+			$this->Application->validate = $this->Application->validateBackground;
+			
+			switch($this->request->data['Application']['marital_status']) {
+				case 'Married':
+					$this->Application->validate['spouse_first'] = array(
+						'ruleName' => array(
+							'rule' => array('notEmpty'),
+							'message' => "Please enter your spouse's first name."
+						)
+					);
+					$this->Application->validate['spouse_last'] = array(
+						'ruleName' => array(
+							'rule' => array('notEmpty'),
+							'message' => "Please enter your spouse's last name."
+						)
+					);
+					$this->Application->validate['spouse_saved'] = array(
+						'ruleName' => array(
+							'rule' => array('notEmpty'),
+							'message' => "Please check yes or no."
+						)
+					);
+					$this->Application->validate['spouse_coming'] = array(
+						'ruleName' => array(
+							'rule' => array('notEmpty'),
+							'message' => "Please check yes or no."
+						)
+					);
+					break;
+				case 'Divorced':
+				case 'Separated':
+					$this->Application->validate['divorce_date'] = array(
+						'ruleName' => array(
+							'rule' => array('notEmpty'),
+							'message' => "Please enter the date of your divorce/separation."
+						)
+					);
+					break;
+			}
+			
+			for($i=1;$i<=6;$i++) {
+				if(!empty($this->request->data['Application']['child'.$i.'_name'])) {
+					$this->Application->validate['child'.$i.'_age'] = array(
+						'ruleName' => array(
+							'rule' => array('notEmpty'),
+							'message' => "Please enter this child's age."
+						)
+					);
+					$this->Application->validate['child'.$i.'_gender'] = array(
+						'ruleName' => array(
+							'rule' => array('notEmpty'),
+							'message' => "Please enter this child's gender."
+						)
+					);
+					$this->Application->validate['child'.$i.'_coming'] = array(
+						'ruleName' => array(
+							'rule' => array('notEmpty'),
+							'message' => "Please check yes or no."
+						)
+					);
+				}
+			}			
+
+			$criminal = false;
+			
+			if(!empty($this->request->data['Application']['felony'])) {
+				$this->Application->validate['felony_date'] = array(
+					'ruleName' => array(
+						'rule' => array('notEmpty'),
+						'message' => 'Please enter the date of the felony offense.'
+					)
+				);
+				$criminal = true;
+			}
+			
+			if(!empty($this->request->data['Application']['misdemeanor'])) {
+				$this->Application->validate['misdemeanor_date'] = array(
+					'ruleName' => array(
+						'rule' => array('notEmpty'),
+						'message' => 'Please enter the date of the misdemeanor offense.'
+					)
+				);
+				$criminal = true;
+			}
+			
+			if(!empty($this->request->data['Application']['probation'])) {
+				$criminal = true;
+			}
+			
+			if($criminal) {
+				$this->Application->validate['criminal_explain'] = array(
+					'ruleName' => array(
+						'rule' => array('notEmpty'),
+						'message' => 'Please elaborate on the details if you answered yes to the previous questions.'
+					)
+				);
+			}
+			
 			if($this->Application->save($this->request->data)) {
 				$application = $this->Application->findById();
 				$this->Session->write('application',$application);
 				$this->redirect(array('action'=>'education'));
+			} else {
+				$this->Session->setFlash('There were problems with this page of the form. See the indicated fields below.','error');
 			}
 		} else {
 			$this->request->data = $this->application;
@@ -80,6 +212,8 @@ class ApplicationsController extends AppController {
 				$application = $this->Application->findById();
 				$this->Session->write('application',$application);
 				$this->redirect(array('action'=>'spiritual'));
+			} else {
+				$this->Session->setFlash('There were problems with this page of the form. See the indicated fields below.','error');
 			}
 		} else {
 			$this->request->data = $this->application;
@@ -95,6 +229,8 @@ class ApplicationsController extends AppController {
 				$application = $this->Application->findById();
 				$this->Session->write('application',$application);
 				$this->redirect(array('action'=>'recommendations'));
+			} else {
+				$this->Session->setFlash('There were problems with this page of the form. See the indicated fields below.','error');
 			}
 		} else {
 			$this->request->data = $this->application;
@@ -172,6 +308,8 @@ class ApplicationsController extends AppController {
 				$application = $this->Application->findById();
 				$this->Session->write('application',$application);
 				$this->redirect(array('action'=>'releases'));
+			} else {
+				$this->Session->setFlash('There were problems with this page of the form. See the indicated fields below.','error');
 			}
 		} else {
 			$this->request->data = $this->application;
@@ -188,6 +326,8 @@ class ApplicationsController extends AppController {
 				$this->Session->write('application',$application);
 				$this->Session->setFlash('Thanks!');
 				$this->redirect(array('controller'=>'users','action'=>'dashboard'));
+			} else {
+				$this->Session->setFlash('There were problems with this page of the form. See the indicated fields below.','error');
 			}
 		} else {
 			$this->request->data = $this->application;
