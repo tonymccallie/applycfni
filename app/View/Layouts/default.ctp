@@ -98,8 +98,9 @@
 				4 => array('04. Education','/applications/education'),
 				5 => array('05. Spiritual','/applications/spiritual'),
 				6 => array('06. Recommendations','/applications/recommendations'),
-				7 => array('07. Finish','/applications/releases'),
-				8 => array('Status','/applications/status')
+				7 => array('07. Releases','/applications/releases'),
+				8 => array('08. Payment','/applications/payment'),
+				9 => array('Status','/applications/status')
 			);
 			if(!empty($application)) {
 				for($i=1; $i <= $application['Application']['step_completed']+1;$i++) {

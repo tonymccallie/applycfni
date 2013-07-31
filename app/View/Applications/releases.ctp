@@ -59,7 +59,7 @@
 	<div class="btn-group pull-right">
 	<?php
 		echo $this->Html->link('Back',array('action'=>'recommendations'),array('class'=>'btn btn-large pull-left','div'=>false));
-		echo $this->Form->submit('Finish',array('class'=>'btn btn-inverse btn-large','div'=>false));
+		echo $this->Form->submit('Next',array('class'=>'btn btn-inverse btn-large','div'=>false));
 	?>
 	</div>
 	

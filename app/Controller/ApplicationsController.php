@@ -330,13 +330,19 @@ class ApplicationsController extends AppController {
 			if($this->Application->save($this->request->data)) {
 				$application = $this->Application->findById();
 				$this->Session->write('application',$application);
-				$this->Session->setFlash('Thanks!');
-				$this->redirect(array('controller'=>'users','action'=>'dashboard'));
+				$this->redirect(array('action'=>'payment'));
 			} else {
 				$this->Session->setFlash('There were problems with this page of the form. See the indicated fields below.','error');
 			}
 		} else {
 			$this->request->data = $this->application;
+		}
+	}
+	
+	function payment() {
+		if(!empty($this->request->data['Application'])) {
+			App::import('Vendor','stripe/Stripe');
+			Stripe::setApiKey("sk_test_4QXdfngcC47Y1xA1uxw3hw4r");
 		}
 	}
 	
