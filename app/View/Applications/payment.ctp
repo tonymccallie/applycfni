@@ -51,11 +51,16 @@
 		<i class="icon-remove-sign"></i> <span id="error_message"></span>
 	</div>
 	<div class="row-fluid">
+		<div class="span12">
+			<?php echo $this->Form->input('name_on_card',array('data-stripe'=>'name','class'=>'span12')); ?>
+		</div>
+	</div>
+	<div class="row-fluid">
 		<div class="span9">
 			<?php echo $this->Form->input('credit_card_number',array('data-stripe'=>'number','class'=>'span12'));  ?>
 		</div>
 		<div class="span3">
-			<?php echo $this->Form->input('cvc',array('data-stripe'=>'cvc','class'=>'span12')); ?>
+			<?php echo $this->Form->input('cvc',array('label'=>'CVC','data-stripe'=>'cvc','class'=>'span12')); ?>
 		</div>
 	</div>
 	<div class="row-fluid">

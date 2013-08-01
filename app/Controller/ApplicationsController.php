@@ -17,6 +17,10 @@ class ApplicationsController extends AppController {
 		}
 		$this->application = $application;
 		$this->set(compact('application'));
+		if(($this->action != 'status') && (!empty($application['Application']['stripe_id']))) {
+			$this->Session->setFlash('Your application has already been submitted. No further changes can be made.','success');
+			$this->redirect(array('action'=>'status'));
+		}
 	}
 	
 	function start() {
@@ -28,7 +32,7 @@ class ApplicationsController extends AppController {
 			$this->Application->validate = $this->Application->validateStart;
 			
 			if($this->Application->save($this->request->data)) {
-				$application = $this->Application->findById();
+				$application = $this->Application->findById($this->request->data['Application']['id']);
 				$this->Session->write('application',$application);
 				$this->redirect(array('action'=>'personal'));
 			} else {
@@ -76,7 +80,7 @@ class ApplicationsController extends AppController {
 			}
 			
 			if($this->Application->save($this->request->data)) {
-				$application = $this->Application->findById();
+				$application = $this->Application->findById($this->request->data['Application']['id']);
 				$this->Session->write('application',$application);
 				$this->redirect(array('action'=>'background'));
 			} else {
@@ -192,7 +196,7 @@ class ApplicationsController extends AppController {
 			}
 			
 			if($this->Application->save($this->request->data)) {
-				$application = $this->Application->findById();
+				$application = $this->Application->findById($this->request->data['Application']['id']);
 				$this->Session->write('application',$application);
 				$this->redirect(array('action'=>'education'));
 			} else {
@@ -209,7 +213,7 @@ class ApplicationsController extends AppController {
 				$this->request->data['Application']['step_completed'] = 4;
 			}
 			if($this->Application->save($this->request->data)) {
-				$application = $this->Application->findById();
+				$application = $this->Application->findById($this->request->data['Application']['id']);
 				$this->Session->write('application',$application);
 				$this->redirect(array('action'=>'spiritual'));
 			} else {
@@ -229,7 +233,7 @@ class ApplicationsController extends AppController {
 			$this->Application->validate = $this->Application->validateSpiritual;
 			
 			if($this->Application->save($this->request->data)) {
-				$application = $this->Application->findById();
+				$application = $this->Application->findById($this->request->data['Application']['id']);
 				$this->Session->write('application',$application);
 				$this->redirect(array('action'=>'recommendations'));
 			} else {
@@ -308,7 +312,7 @@ class ApplicationsController extends AppController {
 					}
 					$this->Session->setFlash($emailCount.' '.$emailPlural.' sent.','success');
 				}
-				$application = $this->Application->findById();
+				$application = $this->Application->findById($this->request->data['Application']['id']);
 				$this->Session->write('application',$application);
 				$this->redirect(array('action'=>'releases'));
 			} else {
@@ -328,7 +332,7 @@ class ApplicationsController extends AppController {
 			$this->Application->validate = $this->Application->validateReleases;
 			
 			if($this->Application->save($this->request->data)) {
-				$application = $this->Application->findById();
+				$application = $this->Application->findById($this->request->data['Application']['id']);
 				$this->Session->write('application',$application);
 				$this->redirect(array('action'=>'payment'));
 			} else {
@@ -343,6 +347,33 @@ class ApplicationsController extends AppController {
 		if(!empty($this->request->data['Application'])) {
 			App::import('Vendor','stripe/Stripe');
 			Stripe::setApiKey("sk_test_4QXdfngcC47Y1xA1uxw3hw4r");
+			try {
+				$charge = Stripe_Charge::create(array(
+					"amount" => 5000, // amount in cents, again
+					"currency" => "usd",
+					"card" => $this->request->data['stripeToken'],
+					"description" => $this->application['Application']['first_name'].' '.$this->application['Application']['last_name'].' - '.$this->application['User']['email'])
+				);
+				$data = array(
+					'Application' => array(
+						'id' => $this->application['Application']['id'],
+						'stripe_id' => $charge->id
+					)
+				);
+				if($this->Application->save($data)) {
+					$application = $this->Application->findById($this->request->data['Application']['id']);
+					$this->Session->write('application',$application);
+					$this->Session->setFlash('Thank you for filling out your application. Someone will contact you.','success');
+					$this->redirect(array('action'=>'status'));
+				} else {
+					$this->Session->setFlash('There were problems with this page of the form. See the indicated fields below.','error');
+				}
+			} catch(Stripe_CardError $e) {
+				$this->Session->setFlash('There were problems charging the card.','error');
+				debug($e);
+			}
+		} else {
+			$this->request->data = $this->application;
 		}
 	}
 	
