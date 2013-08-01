@@ -2,8 +2,9 @@
 App::uses('AppController', 'Controller');
 class FaqsController extends AppController {
 	public function index() {
+		$categories = $this->Faq->FaqCategory->find('all');
 		$faqs = $this->Faq->find('all');
-		$this->set(compact('faqs'));
+		$this->set(compact('categories','faqs'));
 	}
 	
 	public function admin_index() {
@@ -21,6 +22,8 @@ class FaqsController extends AppController {
 				$this->Session->setFlash('The faq could not be saved. Please, try again.','error');
 			}
 		}
+		$categories = $this->Faq->FaqCategory->find('list');
+		$this->set(compact('categories'));
 	}
 
 
@@ -39,6 +42,8 @@ class FaqsController extends AppController {
 			$options = array('conditions' => array('Faq.' . $this->Faq->primaryKey => $id));
 			$this->request->data = $this->Faq->find('first', $options);
 		}
+		$categories = $this->Faq->FaqCategory->find('list');
+		$this->set(compact('categories'));
 	}
 
 

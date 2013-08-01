@@ -1,14 +1,10 @@
 <div class="span12">
 	<h3>Frequently Asked Questions</h3>
-	<?php foreach($categories as $category): ?>
-		<h5><?php echo $category['FaqCategory']['title'] ?></h5>
-		<ul>
-		<?php foreach($category['Faq'] as $faq): ?>
-			<li><?php echo $this->Html->link($faq['question'],'#'.$faq['id']) ?></li>
-		<?php endforeach ?>
-		</ul>
+	<ul>
+	<?php foreach($faqs as $faq): ?>
+		<li><?php echo $this->Html->link($faq['Faq']['question'],'#'.$faq['Faq']['id']) ?></li>
 	<?php endforeach ?>
-	
+	</ul>
 	<?php foreach($faqs as $faq): ?>
 	<div class="row-fluid">
 		<div class="span4" id="<?php echo $faq['Faq']['id'] ?>">
