@@ -39,8 +39,7 @@
 	/* ]]> */
 	</script>
 	<h2>Step 8: Payment Information</h2>
-	<p>Abortively and staid unwillingly blew dark much far eager hawk noticeably independent much much well excepting that smelled before built crane onto while then far this as so ouch taught hello told healthy that scratched terrier pled some however darn one.</p>
-	<p>Piquantly that and then sped and vicious much at much tart one anteater scallop hello horrendous much more gosh wholesome much jeepers darn much wove congenial some whooped this the goat one one before a more a this more measurable grew oh mumbled extrinsically reindeer various darkly connected oh some.</p>
+	<p>In order to process your application, a $50.00 application fee is required. Please enter your credit card or debit card information. This is the final step in processing your application to Christ For The Nations Institute. Please note, all credit/debit card information is encrypted.</p>
 </div>
 <div class="span6">
 	<?php 

@@ -47,7 +47,7 @@
 	</div>
 	<div class="row-fluid">
 		<div class="span6">
-			<p>The form will not be "signed" in the sense of a traditional paper document. To verify the contents of the above, the signatory must enter any alpha/numeric character(s) or combination thereof of his or her choosing, preceded and followed by the forward slash (/) symbol. Christ for the Nations, Inc does not determine or pre-approve what the entry should be, but simply presumes that this specific entry has been adopted to serve the function of the signature. Most signatories simply enter their names between the two forward slashes, although acceptable "signatures" could include /john doe/; /jd/; or /123-4567/.</p>
+			<p>The form will not be "signed" in the sense of a traditional paper document. To verify the contents of the online application, please fill in your full name to serve as your digital signature.  By filing out this form and signing you are agreeing to validity of the stated electronic signature.</p>
 		</div>
 		<div class="span6">
 			<?php echo $this->Form->input('signature_name',array('label'=>'Full Name','class'=>'span12')); ?>
