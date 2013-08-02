@@ -21,10 +21,12 @@
 		<h4>Domestic Students</h4>
 		<p>Please provide an official transcript from your high school and any other institute of learning you have attended. Home school transcripts need to be notarized.  Please send transcripts to:  Christ For The Nations Institute *Attention:  Admissions Office* P.O. Box 769000 Dallas, TX 75376-9000</p>
 	</div>
+<!--
 	<div class="row-fluid">
 		<h4>International Students</h4>
 		<p><span class="text-error">Please be aware that once we receive a transcript, we will NOT return it to you.</span>  If you only have access to one original in your lifetime, we encourage you to obtain and send us a stamped, notarized copy of the original.  All international transcripts must be officially translated into English or Spanish.  Please send transcripts to :  Christ For The Nations Institute *Attention:  Admissions Office* P.O. Box 769000 Dallas, TX 75376-9000 </p>
 	</div>
+-->
 	<div class="btn-group pull-right">
 	<?php
 		echo $this->Html->link('Back',array('action'=>'personal'),array('class'=>'btn btn-large pull-left','div'=>false));

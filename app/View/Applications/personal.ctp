@@ -47,13 +47,13 @@
 	</div>
 	<div class="row-fluid">
 		<div class="span4">
-			<?php echo $this->Form->input('twitter',array('class'=>'span12')); ?>
+			<?php echo $this->Form->input('twitter',array('label'=>'Twitter <a href="#" class="labeltooltip" data-toggle="tooltip" data-placement="top" title data-original-title="Please insert your twitter handle if you have one."><i class="icon-question-sign"></i></a>','class'=>'span12')); ?>
 		</div>
 		<div class="span4">
-			<?php echo $this->Form->input('facebook',array('class'=>'span12')); ?>
+			<?php echo $this->Form->input('facebook',array('label'=>'Facebook <a href="#" class="labeltooltip" data-toggle="tooltip" data-placement="top" title data-original-title="Please insert the full url for your facebook profile page if you have one."><i class="icon-question-sign"></i></a>','class'=>'span12')); ?>
 		</div>
 		<div class="span4">
-			<?php echo $this->Form->input('instagram',array('class'=>'span12')); ?>
+			<?php echo $this->Form->input('instagram',array('label'=>'Instagram <a href="#" class="labeltooltip" data-toggle="tooltip" data-placement="top" title data-original-title="Please insert your instagram handle if you have one."><i class="icon-question-sign"></i></a>','class'=>'span12')); ?>
 		</div>
 	</div>
 	<div class="row-fluid">

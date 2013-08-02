@@ -22,10 +22,10 @@
 	</div>
 	<div class="row-fluid">
 		<div class="span6">
-			<?php echo $this->Form->input('spouse_first',array('label'=>'spouse First Name','class'=>'span12')); ?>
+			<?php echo $this->Form->input('spouse_first',array('label'=>'First Name of spouse','class'=>'span12')); ?>
 		</div>
 		<div class="span6">
-			<?php echo $this->Form->input('spouse_last',array('label'=>'spouse Last Name','class'=>'span12')); ?>
+			<?php echo $this->Form->input('spouse_last',array('label'=>'Last Name of spouse','class'=>'span12')); ?>
 		</div>
 	</div>
 	<div class="row-fluid">
@@ -33,7 +33,7 @@
 			<?php echo $this->ExtendedForm->radio('spouse_saved',array('label'=>'Has your spouse accepted Christ?','type'=>'radio','options'=>array(1 => 'Yes',0 => 'No'))); ?>
 		</div>
 		<div class="span6">
-			<?php echo $this->ExtendedForm->radio('spouse_coming',array('label'=>'Is your Spouse applying to come to CFNI?','type'=>'radio','options'=>array(1 => 'Yes',0 => 'No'))); ?>
+			<?php echo $this->ExtendedForm->radio('spouse_coming',array('label'=>'Is your spouse applying to come to CFNI?','type'=>'radio','options'=>array(1 => 'Yes',0 => 'No'))); ?>
 		</div>
 	</div>
 	<div class="row-fluid">

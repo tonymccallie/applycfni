@@ -3,7 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<title>CFNI Student Application: <?php echo $title_for_layout ?></title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta name="description" content="">
 	<meta name="author" content="">
 
@@ -125,7 +126,7 @@
 		<div class="container">
 			<div class="row-fluid">
 				<div class="span12 text-center">
-					<p>&copy;<?php echo date('Y') ?> Christ for the Nations Institute, 444 Fawn Ridge Drive Dallas, Texas 75224  |  1-800-933-CFNI (2364)  |  <a href="mailto:info@cfni.org">info@cfni.org</a>  | <a href="#">Privacy Policy </a> </p>
+					<p>&copy;<?php echo date('Y') ?> Christ for the Nations Institute |  1-800-933-CFNI (2364)  |  <a href="mailto:info@cfni.org">info@cfni.org</a>  | <a href="http://apply.cfni.org/privacypolicy.html">Privacy Policy </a> | <a href="http://apply.cfni.org/termsandconditions.html">Terms & Conditions </a> | <a href="http://apply.cfni.org/eula.html">EULA </a> </p>
 				</div>
 			</div>
 		</div>
