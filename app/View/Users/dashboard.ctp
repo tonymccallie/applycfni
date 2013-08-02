@@ -5,7 +5,7 @@
 As you begin your application process, a checklist will be provided to indicate information needed for acceptance. Please refer to this form as you check off the necessary items needed to complete your application form. </p>
 
 <!-- I PUT THIS AS A PLACE HOLDER FOR SCREENSHOTS, NOT SURE IF IT IS RIGHT -->
-	<a href="/applycfni/applications/start" class="btn btn-large btn-inverse">Start the Application</a>
+	<?php echo $this->Html->link('Start the Application','/applications/start',array('class'=>'btn btn-large btn-inverse')) ?>
 
 <?php else: ?>
 	<h1>Thank You.</h1>
