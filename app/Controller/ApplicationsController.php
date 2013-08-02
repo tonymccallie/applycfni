@@ -53,6 +53,11 @@ class ApplicationsController extends AppController {
 				$this->request->data['Application']['step_completed'] = 2;
 			}
 			
+			if((!empty($this->request->data['Application']['ssn']))&&(strlen($this->request->data['Application']['ssn']) == 9)) {
+				$ssn = $this->request->data['Application']['ssn'];
+				$this->request->data['Application']['ssn'] = substr($ssn,0,3).'-'.substr($ssn,3,2).'-'.substr($ssn,5);
+			}
+			
 			$this->Application->validate = $this->Application->validatePersonal;
 			
 			if($this->request->data['Application']['country'] == 'US') {

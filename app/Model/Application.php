@@ -17,12 +17,14 @@ class Application extends AppModel {
 				'message' => 'Please choose an expected entrance term.'
 			)
 		),
-		'international' => array(
+		/*
+'international' => array(
 			'ruleName' => array(
 				'rule' => array('notEmpty'),
 				'message' => 'Please indicate whether or not you are an International Student.'
 			)
 		),
+*/
 		'degree_id' => array(
 			'ruleName' => array(
 				'rule' => array('notEmpty'),
@@ -77,7 +79,7 @@ class Application extends AppModel {
 		'ssn' => array(
 			'ruleName' => array(
 				'rule' => array('ssn',null,'us'),
-				'message' => 'Please use a valid Social Security Number'
+				'message' => 'Please use a valid Social Security Number in the format 555-55-5555'
 			)
 		),
 		'birth_date' => array(
@@ -269,25 +271,7 @@ class Application extends AppModel {
 		'signature_name' => array(
 			'ruleName' => array(
 				'rule' => array('notEmpty'),
-				'message' => 'Please enter your name.'
-			)
-		),
-		'signature_phone' => array(
-			'ruleName' => array(
-				'rule' => array('phone',null,'us'),
-				'message' => 'Please enter a valid phone number.'
-			)
-		),
-		'signature_signature' => array(
-			'ruleName' => array(
-				'rule' => array('notEmpty'),
-				'message' => 'Please enter your signature.'
-			)
-		),
-		'signature_date' => array(
-			'ruleName' => array(
-				'rule' => array('notEmpty'),
-				'message' => 'Please enter a signature date.'
+				'message' => 'Please enter your full name.'
 			)
 		),
 	);

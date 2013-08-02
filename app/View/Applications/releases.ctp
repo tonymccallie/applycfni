@@ -51,9 +51,6 @@
 		</div>
 		<div class="span6">
 			<?php echo $this->Form->input('signature_name',array('label'=>'Full Name','class'=>'span12')); ?>
-			<?php echo $this->Form->input('signature_phone',array('label'=>'Phone Number','class'=>'span12')); ?>
-			<?php echo $this->Form->input('signature_signature',array('label'=>'Signature (Full Name) <a href="#" class="labeltooltip" data-toggle="tooltip" data-placement="top" title data-original-title="By signing this form digitally, and submitting this form you are agreeing to all statements, policies, and terms stated within this application  ."><i class="icon-question-sign"></i></a>','class'=>'span12')); ?>
-			<?php echo $this->Form->input('signature_date',array('label'=>'Date of Signature','class'=>'span4','empty'=>true,'type'=>'date')); ?>
 		</div>
 	</div>
 	<div class="btn-group pull-right">

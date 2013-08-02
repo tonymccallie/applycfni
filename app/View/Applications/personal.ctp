@@ -58,10 +58,10 @@
 	</div>
 	<div class="row-fluid">
 		<div class="span6">
-			<?php echo $this->Form->input('ssn',array('label'=>'Social Security Number','class'=>'span12')); ?>
+			<?php echo $this->Form->input('ssn',array('label'=>'Social Security Number <a href="#" class="labeltooltip" data-toggle="tooltip" data-placement="top" title data-original-title="Please use the format 555-55-5555"><i class="icon-question-sign"></i></a>','class'=>'span12')); ?>
 		</div>
 		<div class="span6">
-			<?php echo $this->Form->input('birth_date',array('label'=>'Date of Birth','class'=>'span4','empty'=>true,'minYear' => date('Y') - 70,)); ?>
+			<?php echo $this->Form->input('birth_date',array('label'=>'Date of Birth','class'=>'span4','empty'=>true,'minYear' => date('Y') - 70,'maxYear'=>date('Y'))); ?>
 		</div>
 	</div>
 	<div class="row-fluid">

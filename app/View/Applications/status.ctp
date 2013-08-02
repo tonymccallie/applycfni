@@ -1,4 +1,5 @@
 <div class="span12">
 	<h2>Application Status</h2>
-	<p>This page will contain the status...</p>
+	<p>You have successfully submitted your application to CFNI.</p>
+	<p>The next steps...</p>
 </div>
