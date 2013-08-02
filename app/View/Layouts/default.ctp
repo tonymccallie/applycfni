@@ -12,7 +12,7 @@
 	$develop = true;
 	if($develop):
 ?>
-	<link rel="stylesheet/less" type="text/css" href="<?php echo $this->webroot ?>css/styles.less" />
+	<link rel="stylesheet/less" type="text/css" href="<?php echo $this->webroot ?>css/styles.less?<?php echo time() ?>" />
 	<script type="text/javascript">
 		less = {
 			env: "development", // or "production"
