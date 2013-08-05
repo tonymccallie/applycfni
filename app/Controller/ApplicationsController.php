@@ -393,6 +393,16 @@ class ApplicationsController extends AppController {
 				if($this->Application->save($data)) {
 					$application = $this->Application->findById($this->request->data['Application']['id']);
 					$this->Session->write('application',$application);
+					
+					Common::email(array(
+						'to' => $this->application['User']['email'],
+						'subject' => 'CFNI Application Referral Request',
+						'template' => 'received',
+						'variables' => array(
+							'applicant_name' => $this->application['Application']['first_name'].' '.$this->application['Application']['last_name'],
+						)
+					),'');
+					
 					$this->Session->setFlash('Thank you for filling out your application. Someone will contact you.','success');
 					$this->redirect(array('action'=>'status'));
 				} else {
