@@ -40,12 +40,6 @@ class Application extends AppModel {
 				'message' => 'Please enter your first name'
 			)
 		),
-		'mid_name' => array(
-			'ruleName' => array(
-				'rule' => array('notEmpty'),
-				'message' => 'Please enter your middle name'
-			)
-		),
 		'last_name' => array(
 			'ruleName' => array(
 				'rule' => array('notEmpty'),

@@ -277,7 +277,7 @@ class Common {
 			'to' => 'UNSET TO <info@greyback.net>',
 			'cc' => array(),
 			'bcc' => array(),
-			'from' => array('info@greyback.net'=>'GreybackDeveloper'),
+			'from' => array('admissions@cfni.org'=>'Christ for the Nations Institute'),
 			'subject' => 'SUBJECT',
 			'title' => 'TITLE',
 			'template' => 'simple',

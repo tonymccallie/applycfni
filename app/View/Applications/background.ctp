@@ -29,11 +29,14 @@
 		</div>
 	</div>
 	<div class="row-fluid">
-		<div class="span6">
+		<div class="span4">
 			<?php echo $this->ExtendedForm->radio('spouse_saved',array('label'=>'Has your spouse accepted Christ?','type'=>'radio','options'=>array(1 => 'Yes',0 => 'No'))); ?>
 		</div>
-		<div class="span6">
-			<?php echo $this->ExtendedForm->radio('spouse_coming',array('label'=>'Is your spouse applying to come to CFNI?','type'=>'radio','options'=>array(1 => 'Yes',0 => 'No'))); ?>
+		<div class="span4">
+			<?php echo $this->ExtendedForm->radio('spouse_coming',array('label'=>'Is your spouse coming with you?','type'=>'radio','options'=>array(1 => 'Yes',0 => 'No'))); ?>
+		</div>
+		<div class="span4">
+			<?php echo $this->ExtendedForm->radio('spouse_applying',array('label'=>'Is your spouse applying to come to CFNI?','type'=>'radio','options'=>array(1 => 'Yes',0 => 'No'))); ?>
 		</div>
 	</div>
 	<div class="row-fluid">

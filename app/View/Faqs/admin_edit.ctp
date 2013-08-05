@@ -2,7 +2,7 @@
 	<h3>
 		<i class="icon-edit"></i> Edit Faq
 		<div class="btn-group pull-right">
-			<?php echo $this->Html->link('<i class="icon-trash"></i> ', array('action' => 'delete', $this->data['Faq']['id']), array('escape'=>false,'class'=>'btn'),'Are you sure you want to delete this Faq?'); ?>
+			<?php echo $this->Html->link('<i class="icon-trash"></i> Delete', array('action' => 'delete', $this->data['Faq']['id']), array('escape'=>false,'class'=>'btn'),'Are you sure you want to delete this Faq?'); ?>
 		</div>
 	</h3>
 </div>

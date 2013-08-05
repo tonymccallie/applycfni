@@ -115,7 +115,7 @@ class UsersController extends AppController {
 						'User.id' => $user['User']['id']
 					)
 				);
-				$this->Session->setFlash('Thank you for confirming your email. You may now login!', 'success');
+				$this->Session->setFlash('Thank you for confirming your email. You may now login.', 'success');
 				$this->redirect(array('controller'=>'users','action'=>'login'));
 			}
 		} else {

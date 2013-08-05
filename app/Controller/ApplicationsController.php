@@ -130,6 +130,12 @@ class ApplicationsController extends AppController {
 							'message' => "Please check yes or no."
 						)
 					);
+					$this->Application->validate['spouse_applying'] = array(
+						'ruleName' => array(
+							'rule' => array('notEmpty'),
+							'message' => "Please check yes or no."
+						)
+					);
 					break;
 				case 'Divorced':
 				case 'Separated':
@@ -196,6 +202,15 @@ class ApplicationsController extends AppController {
 					'ruleName' => array(
 						'rule' => array('notEmpty'),
 						'message' => 'Please elaborate on the details if you answered yes to the previous questions.'
+					)
+				);
+			}
+
+			if($this->request->data['Application']['conduct_code'] === 0) {
+				$this->Application->validate['conduct_reason'] = array(
+					'ruleName' => array(
+						'rule' => array('notEmpty'),
+						'message' => 'Please elaborate on why you answered no to the Code of Conduct agreement.'
 					)
 				);
 			}
@@ -384,6 +399,42 @@ class ApplicationsController extends AppController {
 	
 	function status() {
 		
+	}
+	
+	public function admin_index() {
+		$this->Application->recursive = 0;
+		$this->set('applications', $this->paginate());
+	}
+
+	public function admin_edit($id = null) {
+		if (!$this->Application->exists($id)) {
+			throw new NotFoundException(__('Invalid application'));
+		}
+		if ($this->request->is('post') || $this->request->is('put')) {
+			if ($this->Application->save($this->request->data)) {
+				$this->Session->setFlash('The application has been saved','success');
+				$this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash('The application could not be saved. Please, try again.','error');
+			}
+		} else {
+			$options = array('conditions' => array('Application.' . $this->Application->primaryKey => $id));
+			$this->request->data = $this->Application->find('first', $options);
+		}
+	}
+
+
+	public function admin_delete($id = null) {
+		$this->Application->id = $id;
+		if (!$this->Application->exists()) {
+			throw new NotFoundException(__('Invalid Application'));
+		}
+		if ($this->Application->delete()) {
+			$this->Session->setFlash('Application deleted','success');
+			$this->redirect(array('action' => 'index'));
+		}
+		$this->Session->setFlash('Application was not deleted','error');
+		$this->redirect(array('action' => 'index'));
 	}
 }
 ?>

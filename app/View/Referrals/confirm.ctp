@@ -16,28 +16,6 @@
 		</div>
 	</div>
 	<div class="row-fluid">
-		<?php echo $this->Form->input('address1',array('label'=>'Current Address','class'=>'span12')); ?>
-	</div>
-	<div class="row-fluid">
-		<?php echo $this->Form->input('address2',array('label'=>'Address Line Two','class'=>'span12')); ?>
-	</div>
-	<div class="row-fluid">
-		<div class="span6">
-			<?php echo $this->Form->input('city',array('label'=>'City','class'=>'span12')); ?>
-		</div>
-		<div class="span3">
-			<?php echo $this->Form->input('state',array('options' => Common::states(),'empty'=>'--','class'=>'span12'));?>
-		</div>
-		<div class="span3">
-			<?php echo $this->Form->input('zip',array('label'=>'Zip Code','class'=>'span12')); ?>
-		</div>
-	</div>
-	<div class="row-fluid">
-		<div class="span12">
-			<?php echo $this->Form->input('country',array('options'=>Common::countries(),'empty'=>'--','class'=>'span12')); ?>
-		</div>
-	</div>
-	<div class="row-fluid">
 		<div class="span6">
 			<?php echo $this->Form->input('phone',array('label'=>'Phone','class'=>'span12')); ?>
 		</div>
@@ -119,31 +97,31 @@
 					<?php echo $this->ExtendedForm->checkbox('warmhearted',array('label'=>'Warmhearted','type'=>'checkbox')); ?>
 				</div>
 				<div class="span6">
-					<?php echo $this->ExtendedForm->checkbox('warmhearted',array('label'=>'Critical','type'=>'checkbox')); ?>
+					<?php echo $this->ExtendedForm->checkbox('critical',array('label'=>'Critical','type'=>'checkbox')); ?>
 				</div>
 			</div>
 			<div class="row-fluid">
 				<div class="span6">
-					<?php echo $this->ExtendedForm->checkbox('warmhearted',array('label'=>'Tolerant','type'=>'checkbox')); ?>
+					<?php echo $this->ExtendedForm->checkbox('tolerant',array('label'=>'Tolerant','type'=>'checkbox')); ?>
 				</div>
 				<div class="span6">
-					<?php echo $this->ExtendedForm->checkbox('warmhearted',array('label'=>'Sympathetic','type'=>'checkbox')); ?>
-				</div>
-			</div>
-			<div class="row-fluid">
-				<div class="span6">
-					<?php echo $this->ExtendedForm->checkbox('warmhearted',array('label'=>'Rebellious','type'=>'checkbox')); ?>
-				</div>
-				<div class="span6">
-					<?php echo $this->ExtendedForm->checkbox('warmhearted',array('label'=>'Respectful','type'=>'checkbox')); ?>
+					<?php echo $this->ExtendedForm->checkbox('sympathetic',array('label'=>'Sympathetic','type'=>'checkbox')); ?>
 				</div>
 			</div>
 			<div class="row-fluid">
 				<div class="span6">
-					<?php echo $this->ExtendedForm->checkbox('warmhearted',array('label'=>'Enthusiastic','type'=>'checkbox')); ?>
+					<?php echo $this->ExtendedForm->checkbox('rebellious',array('label'=>'Rebellious','type'=>'checkbox')); ?>
 				</div>
 				<div class="span6">
-					<?php echo $this->ExtendedForm->checkbox('warmhearted',array('label'=>'Loving','type'=>'checkbox')); ?>
+					<?php echo $this->ExtendedForm->checkbox('respectful',array('label'=>'Respectful','type'=>'checkbox')); ?>
+				</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span6">
+					<?php echo $this->ExtendedForm->checkbox('enthusiastic',array('label'=>'Enthusiastic','type'=>'checkbox')); ?>
+				</div>
+				<div class="span6">
+					<?php echo $this->ExtendedForm->checkbox('loving',array('label'=>'Loving','type'=>'checkbox')); ?>
 				</div>
 			</div>
 		</div>
@@ -168,6 +146,28 @@
 		</div>
 		<div class="span4">
 			<?php echo $this->Form->input('denomination',array('class'=>'span12')); ?>
+		</div>
+	</div>
+	<div class="row-fluid">
+		<?php echo $this->Form->input('address1',array('label'=>'Church Address','class'=>'span12')); ?>
+	</div>
+	<div class="row-fluid">
+		<?php echo $this->Form->input('address2',array('label'=>'Address Line Two','class'=>'span12')); ?>
+	</div>
+	<div class="row-fluid">
+		<div class="span6">
+			<?php echo $this->Form->input('city',array('label'=>'City','class'=>'span12')); ?>
+		</div>
+		<div class="span3">
+			<?php echo $this->Form->input('state',array('options' => Common::states(),'empty'=>'--','class'=>'span12'));?>
+		</div>
+		<div class="span3">
+			<?php echo $this->Form->input('zip',array('label'=>'Zip Code','class'=>'span12')); ?>
+		</div>
+	</div>
+	<div class="row-fluid">
+		<div class="span12">
+			<?php echo $this->Form->input('country',array('options'=>Common::countries(),'empty'=>'--','class'=>'span12')); ?>
 		</div>
 	</div>
 	<div class="row-fluid">
