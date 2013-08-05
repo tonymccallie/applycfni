@@ -2,6 +2,15 @@
 App::uses('AppController', 'Controller');
 class ApplicationsController extends AppController {
 	public $application = array();
+	
+	var $app_status = array(
+		'' => 'In Progress',
+		'Received' => 'Received',
+		'Processed' => 'Processed',
+		'Approved' => 'Approved',
+		'Denied' => 'Denied'
+	);
+	
 	function index() {
 		
 	}
@@ -404,6 +413,7 @@ class ApplicationsController extends AppController {
 	public function admin_index() {
 		$this->Application->recursive = 0;
 		$this->set('applications', $this->paginate());
+		$this->set('app_status',$this->app_status);
 	}
 
 	public function admin_edit($id = null) {
@@ -421,6 +431,11 @@ class ApplicationsController extends AppController {
 			$options = array('conditions' => array('Application.' . $this->Application->primaryKey => $id));
 			$this->request->data = $this->Application->find('first', $options);
 		}
+		$this->set('app_status',$this->app_status);
+		$degrees = $this->Application->Degree->find('list');
+		$majors = $this->Application->Major->find('list');
+		$semesters = $this->Application->Semester->find('list');
+		$this->set(compact('degrees','majors','semesters'));
 	}
 
 

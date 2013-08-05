@@ -153,3 +153,9 @@ label {
 @import "responsive_large.less";
 @import "responsive_tablet.less";
 @import "responsive_phone.less";
+
+@media print {
+	#header, #footer, #steps, #application_delete {
+		display: none;
+	}
+}

@@ -13,12 +13,16 @@
 				<th>
 					<?php echo $this->Paginator->sort('last_name','<i class="icon-sort"></i> Name',array('escape'=>false)); ?>
 				</th>
+				<th>
+					<?php echo $this->Paginator->sort('status','<i class="icon-sort"></i> Status',array('escape'=>false)); ?>
+				</th>
 			</tr>
 		</thead>
 		<tbody>
 		<?php foreach($applications as $application): ?>
 			<tr>
 				<td><?php echo $this->Html->link($application['Application']['last_name'].', '.$application['Application']['first_name'],array('action'=>'edit',$application['Application']['id'])) ?></td>
+				<td><?php echo $application['Application']['status'] ?></td>
 			</tr>
 		<?php endforeach ?>
 		</tbody>
