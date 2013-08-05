@@ -11,6 +11,11 @@
 	
 	<?php foreach($faqs as $faq): ?>
 	<div class="row-fluid">
+		<div class="span12">
+			<h5></h5>
+		</div>
+	</div>
+	<div class="row-fluid">
 		<div class="span4" id="<?php echo $faq['Faq']['id'] ?>">
 			<b><?php echo $faq['Faq']['question'] ?></b>
 		</div>

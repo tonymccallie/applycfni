@@ -345,6 +345,7 @@ class Common {
 	
 	function countries() {
 		return array(
+			'us' => 'United States',
 			'af' => 'Afganistan', 'al' => 'Albania', 'dz' => 'Algeria', 'as' => 'American Samoa', 
 			'ad' => 'Andorra', 'ao' => 'Angola', 'ai' => 'Anguilla', 'aq' => 'Antarctica', 'ag' => 'Antigua and Barbuda', 
 			'ar' => 'Argentina', 'am' => 'Armenia', 'aw' => 'Aruba', 'au' => 'Australia', 'at' => 'Austria', 
