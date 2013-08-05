@@ -386,7 +386,8 @@ class ApplicationsController extends AppController {
 				$data = array(
 					'Application' => array(
 						'id' => $this->application['Application']['id'],
-						'stripe_id' => $charge->id
+						'stripe_id' => $charge->id,
+						'status' => 'Received'
 					)
 				);
 				if($this->Application->save($data)) {

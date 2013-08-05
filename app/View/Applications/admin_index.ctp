@@ -22,7 +22,7 @@
 		<?php foreach($applications as $application): ?>
 			<tr>
 				<td><?php echo $this->Html->link($application['Application']['last_name'].', '.$application['Application']['first_name'],array('action'=>'edit',$application['Application']['id'])) ?></td>
-				<td><?php echo $application['Application']['status'] ?></td>
+				<td><?php echo $app_status[$application['Application']['status']] ?></td>
 			</tr>
 		<?php endforeach ?>
 		</tbody>

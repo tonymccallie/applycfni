@@ -6,6 +6,7 @@
 	<?php
 		echo $this->Form->create();
 			echo $this->Form->input('id',array());
+			echo $this->Form->input('position',array('type'=>'hidden'));
 	?>
 	<div class="row-fluid">
 		<div class="span6">
@@ -134,9 +135,7 @@
 			<?php echo $this->Form->input('weaknesses',array('label'=>'Please describe any weaknesses of the applicant of which we should be aware.','type'=>'textarea','class'=>'span12')); ?>
 		</div>
 	</div>
-	<div class="row-fluid">
-		<h4>To be completed only if you are the applicants pastor:</h4>
-	</div>
+	<?php if($this->data['Referral']['position'] == 0): ?>
 	<div class="row-fluid">
 		<div class="span4">
 			<?php echo $this->Form->input('church_name',array('class'=>'span12')); ?>
@@ -183,6 +182,7 @@
 			<?php echo $this->Form->input('home_factors',array('label'=>'Please describe home factors which might affect the applicants success at CFNI.','type'=>'textarea','class'=>'span12')); ?>
 		</div>
 	</div>
+	<?php endif; ?>
 	<div class="row-fluid">
 		<div class="span6">
 			<?php echo $this->Form->input('concerns',array('label'=>'Do you have any concerns about the applicants personal character? Please Explain:','type'=>'textarea','class'=>'span12')); ?>

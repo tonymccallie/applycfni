@@ -49,7 +49,7 @@
 	<!-- /Google Analytics -->
 </head>
 
-<body>
+<body class="<?php echo $this->name ?>" id="<?php echo $this->name.'-'.$this->action ?>" >
 	<div id="header" class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container-fluid">
