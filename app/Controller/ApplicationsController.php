@@ -406,6 +406,7 @@ class ApplicationsController extends AppController {
 					
 					Common::email(array(
 						'to' => 'admissions@cfni.org',
+						'bcc' => 'info@threeleaf.net',
 						'subject' => 'CFNI Application Completion',
 						'template' => 'admissions',
 						'variables' => array(
