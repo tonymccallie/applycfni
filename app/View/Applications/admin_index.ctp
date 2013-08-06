@@ -2,7 +2,7 @@
 	<h3>
 		<i class="icon-edit"></i> Applications
 		<div class="btn-group pull-right">
-			<?php echo $this->Html->link('Add Application', array('action' => 'add'),array('class'=>'btn','escape'=>false)); ?>
+			<?php //echo $this->Html->link('Add Application', array('action' => 'add'),array('class'=>'btn','escape'=>false)); ?>
 		</div>
 	</h3>
 </div>
