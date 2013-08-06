@@ -14,6 +14,7 @@ class ApplicationsController extends AppController {
 	}
 	
 	function beforeFilter() {
+		parent::beforeFilter();
 		$application = $this->Session->read('application');
 		if(empty($application)) {
 			$application_id = $this->Application->lookup(array(
