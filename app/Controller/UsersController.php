@@ -61,7 +61,7 @@ class UsersController extends AppController {
 					$this->Session->setFlash('We were unable to find an account with that email address.', 'alert');
 					return true;
 				}
-				$url = Common::currentUrl().'users/recover/'.$user['User']['id'].'-'.substr($user['User']['passwd'],0,6);
+				$url = 'https://www.applytocfni.com/users/recover/'.$user['User']['id'].'-'.substr($user['User']['passwd'],0,6);
 				
 				Common::email(array(
 					'to' => $this->request->data['User']['email'],
@@ -137,7 +137,7 @@ class UsersController extends AppController {
 								
 				if ($this->User->save($this->request->data)) {
 					$this->request->data['User']['passwd'] = Authsome::hash($this->request->data['User']['passwd']);
-					$url = Common::currentUrl().'users/register/'.$this->User->getLastInsertId().'-'.substr($this->request->data['User']['passwd'],0,6);
+					$url = 'https://www.applytocfni.com/users/register/'.$this->User->getLastInsertId().'-'.substr($this->request->data['User']['passwd'],0,6);
 					Common::email(array(
 						'to' => $this->request->data['User']['email'],
 						'subject' => 'New User Registration',
