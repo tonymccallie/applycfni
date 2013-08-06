@@ -396,10 +396,20 @@ class ApplicationsController extends AppController {
 					
 					Common::email(array(
 						'to' => $this->application['User']['email'],
-						'subject' => 'CFNI Application Referral Request',
+						'subject' => 'CFNI Application Completion',
 						'template' => 'received',
 						'variables' => array(
 							'applicant_name' => $this->application['Application']['first_name'].' '.$this->application['Application']['last_name'],
+						)
+					),'');
+					
+					Common::email(array(
+						'to' => 'admissions@cfni.org',
+						'subject' => 'CFNI Application Completion',
+						'template' => 'admissions',
+						'variables' => array(
+							'applicant_name' => $this->application['Application']['first_name'].' '.$this->application['Application']['last_name'],
+							'applicant_id' => $this->application['Application']['id']
 						)
 					),'');
 					

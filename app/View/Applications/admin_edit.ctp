@@ -430,7 +430,7 @@
 	</div>
 	<div class="row-fluid">
 		<div class="span12">
-			<label>Electronic Signature:</label> <?php echo $yesno[$this->data['Application']['signature_name']] ?>
+			<label>Electronic Signature:</label> <?php echo $this->data['Application']['signature_name'] ?>
 		</div>
 	</div>
 	<div class="row-fluid">
