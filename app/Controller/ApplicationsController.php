@@ -6,9 +6,7 @@ class ApplicationsController extends AppController {
 	var $app_status = array(
 		'' => 'In Progress',
 		'Received' => 'Received',
-		'Processed' => 'Processed',
-		'Approved' => 'Approved',
-		'Denied' => 'Denied'
+		'Completed' => 'Completed',
 	);
 	
 	function index() {
