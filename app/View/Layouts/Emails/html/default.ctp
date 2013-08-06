@@ -8,7 +8,7 @@
 		<table id="NewsletterHeader" border="0" cellspacing="0" cellpadding="0" width="600" style="margin-top:15px; margin-bottom:15px;">
 	        <tr>
 	            <td>
-	                <img src="http://applycfni.ajani.greyback.net/img/email-logo.gif" alt="logo" width="600" height="36" />
+	                <img src="https://applytocfni.com/img/email-logo.gif" alt="logo" width="600" height="36" />
 	            </td>
 	        </tr>
 	    </table>
