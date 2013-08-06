@@ -49,7 +49,7 @@ class Application extends AppModel {
 		'address1' => array(
 			'ruleName' => array(
 				'rule' => array('notEmpty'),
-				'message' => 'Please your address.'
+				'message' => 'Please enter your address.'
 			)
 		),
 		'city' => array(

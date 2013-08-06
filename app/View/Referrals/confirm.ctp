@@ -58,12 +58,13 @@
 	</div>
 	<div class="row-fluid">
 		<div class="span12">
-			<?php echo $this->Form->input('christian_service',array('label'=>'To your knowledge, what Christian service has the applicant participated in regularly?
-(such as a Sunday school teacher, youth leader, nursery worker, etc.)','class'=>'span12','type'=>'textarea')); ?>
+			<?php echo $this->Form->input('christian_service',array('label'=>'To your knowledge, what Christian service has the applicant participated in regularly? (such as a Sunday school teacher, youth leader, nursery worker, etc.)','class'=>'span12','type'=>'textarea')); ?>
 		</div>
 	</div>
 	<div class="row-fluid">
-		<lable>To your knowledge, does the applicant:
+		<div class="span12">
+			<label>To your knowledge, does the applicant:</label>
+		</div>
 	</div>
 	<div class="row-fluid">
 		<div class="span4">
