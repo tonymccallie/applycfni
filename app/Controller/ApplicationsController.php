@@ -26,7 +26,7 @@ class ApplicationsController extends AppController {
 		$this->application = $application;
 		$this->set(compact('application'));
 		if(substr($this->action,0,6) != 'admin_') {
-			if((($this->action != 'status') && (!empty($application['Application']['stripe_id'])))||(substr($this->action,0,6) != 'admin_')) {
+			if(($this->action != 'status') && (!empty($application['Application']['stripe_id']))) {
 				$this->Session->setFlash('Your application has already been submitted. No further changes can be made.','success');
 				$this->redirect(array('action'=>'status'));
 			}
