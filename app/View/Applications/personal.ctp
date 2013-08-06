@@ -91,7 +91,7 @@
 			<?php echo $this->Form->input('citizen_country',array('label'=>'Country of Citizenship','options'=>Common::countries(),'empty'=>'--','class'=>'span12')); ?>
 		</div>
 		<div class="span6">
-			<?php echo $this->ExtendedForm->radio('citizen_status',array('label'=>'Are you a permanent resident/resident alien?','type'=>'radio','options'=>array(1 => 'Yes',0 => 'No'))); ?>
+			<?php echo $this->ExtendedForm->radio('citizen_status',array('label'=>'Are you a citizen/permanent resident/resident alien?','type'=>'radio','options'=>array(1 => 'Yes',0 => 'No'))); ?>
 		</div>
 	</div>
 	<div class="row-fluid">

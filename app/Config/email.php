@@ -11,8 +11,8 @@ class EmailConfig {
 	public $gmail = array(
         'host' => 'ssl://smtp.gmail.com',
         'port' => 465,
-        'username' => 'tony@threeleaf.net',
-        'password' => 'crystalann',
+        'username' => 'admissions@applytocfni.com',
+        'password' => 'bob13013',
         'transport' => 'Smtp'
     );
 

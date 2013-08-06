@@ -9,7 +9,7 @@
 	</div>
 	<div class="row-fluid">
 		<div class="span6">
-			<h4>Pastoral Recommendation <a href="/test" class="labeltooltip" data-toggle="tooltip" data-placement="top" title data-original-title="Your pastor must have known you for at least 6 months prior to filling out this recommendation.  If your pastor is related to you, please ask another member of the church’s pastoral staff who is familiar with you to complete this form and provide a letter of explanation."><i class="icon-question-sign"></i></a></h4>
+			<h4>Pastoral Recommendation <a href="#" class="labeltooltip" data-toggle="tooltip" data-placement="top" title data-original-title="Your pastor must have known you for at least 6 months prior to filling out this recommendation.  If your pastor is related to you, please ask another member of the church’s pastoral staff who is familiar with you to complete this form and provide a letter of explanation."><i class="icon-question-sign"></i></a></h4>
 			<?php
 				echo $this->Form->input('Referral.0.id',array());
 				echo $this->Form->input('Referral.0.first_name',array());
@@ -25,7 +25,7 @@
 			?>
 		</div>
 		<div class="span6">
-			<h4>Personal Recommendation <a href="/test" class="labeltooltip" data-toggle="tooltip" data-placement="top" title data-original-title="This form should be completed by a high school or college teacher, an employer or a friend, but NOT completed by a relative.  The recommender must have known you for at least 6 months prior to filling out this recommendation."><i class="icon-question-sign"></i></a></h4>
+			<h4>Personal Recommendation <a href="#" class="labeltooltip" data-toggle="tooltip" data-placement="top" title data-original-title="This form should be completed by a high school or college teacher, an employer or a friend, but NOT completed by a relative.  The recommender must have known you for at least 6 months prior to filling out this recommendation."><i class="icon-question-sign"></i></a></h4>
 			<?php
 				echo $this->Form->input('Referral.1.id',array());
 				echo $this->Form->input('Referral.1.first_name',array());

@@ -14,7 +14,8 @@
 	</div>
 	<div class="row-fluid">
 		<div class="span12">
-			<?php echo $this->Form->input('testimony',array('label'=>'What is your personal salvation experience? (250-500 Words)','class'=>'span12')); ?>
+			<?php echo $this->Form->input('testimony',array('label'=>'What is your personal salvation experience in 250 to 500 words? <span style="color:#555; font-weight:bold;">(Current word count = <span id="display_count">0</span>)</span>','id'=>'word_count','class'=>'span12')); ?>
+			
 		</div>
 	</div>
 	<div class="row-fluid">

@@ -36,7 +36,6 @@
 	<div class="row-fluid">
 		<div class="span6">
 			<p>I hereby agree the information I have provided in this application is true. I further understand that if I have overlooked a question, or failed to complete any part of the application form, the review process of my application may be delayed. This may result in me having to wait until the following semester to attend. </p>
-			<p>Note:  If you are under 18 years of age, a Parent or Legal guardian must sign this application and must also complete the "Minor Release" form before the application can be processed.  After you have submitted your application, please contact a CFNI Enrollment Services Advisor.  </p>
 		</div>
 		<div class="span6">
 			<?php echo $this->ExtendedForm->checkbox('truthful_release',array('label'=>'I Agree','type'=>'checkbox')); ?>
@@ -48,6 +47,7 @@
 	<div class="row-fluid">
 		<div class="span6">
 			<p>The form will not be "signed" in the sense of a traditional paper document. To verify the contents of the online application, please fill in your full name to serve as your digital signature.  By filing out this form and signing you are agreeing to validity of the stated electronic signature.</p>
+						<p>Note:  If you are under 18 years of age, a Parent or Legal guardian must sign this application and must also complete the "Minor Release" form before the application can be processed.  After you have submitted your application, please contact a CFNI Enrollment Services Advisor.  </p>
 		</div>
 		<div class="span6">
 			<?php echo $this->Form->input('signature_name',array('label'=>'Full Name','class'=>'span12')); ?>
