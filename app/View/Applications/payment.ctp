@@ -3,7 +3,7 @@
 	<script type="text/javascript">
 	/* <![CDATA[ */
 	
-	Stripe.setPublishableKey('pk_test_Ncl1E5iRvaODV8641OJ6whwf');
+	Stripe.setPublishableKey('pk_live_KsWmMYVFBYlaF0tQN1wVjXJh');
 	
 	$(document).ready(function() {
 		$('#ApplicationPaymentForm').submit(function(event) {

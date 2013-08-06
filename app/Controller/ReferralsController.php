@@ -19,5 +19,14 @@ class ReferralsController extends AppController {
 			$this->redirect('/');
 		}
 	}
+	
+	var $validateForm = array(
+		'tester' => array(
+			'ruleName' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'Message is required'
+			)
+		)
+	);
 }
 ?>

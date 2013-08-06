@@ -375,7 +375,7 @@ class ApplicationsController extends AppController {
 	function payment() {
 		if(!empty($this->request->data['Application'])) {
 			App::import('Vendor','stripe/Stripe');
-			Stripe::setApiKey("sk_test_4QXdfngcC47Y1xA1uxw3hw4r");
+			Stripe::setApiKey("sk_live_5ej02BMQZDZNv229OKu8p7Os");
 			try {
 				$charge = Stripe_Charge::create(array(
 					"amount" => 5000, // amount in cents, again
