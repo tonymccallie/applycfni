@@ -280,7 +280,7 @@ class ApplicationsController extends AppController {
 			}
 			
 			//send emails
-			$url = Common::currentUrl().'referrals/confirm/';
+			$url = 'https://www.applytocfni.com/referrals/confirm/';
 			
 			$emailCount = 0;
 			
