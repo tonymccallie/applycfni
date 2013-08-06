@@ -26,9 +26,11 @@ class ApplicationsController extends AppController {
 		}
 		$this->application = $application;
 		$this->set(compact('application'));
-		if(($this->action != 'status') && (!empty($application['Application']['stripe_id']))) {
-			$this->Session->setFlash('Your application has already been submitted. No further changes can be made.','success');
-			$this->redirect(array('action'=>'status'));
+		if(substr($this->action,0,6) != 'admin_') {
+			if((($this->action != 'status') && (!empty($application['Application']['stripe_id'])))||(substr($this->action,0,6) != 'admin_')) {
+				$this->Session->setFlash('Your application has already been submitted. No further changes can be made.','success');
+				$this->redirect(array('action'=>'status'));
+			}
 		}
 	}
 	
@@ -435,6 +437,13 @@ class ApplicationsController extends AppController {
 	
 	public function admin_index() {
 		$this->Application->recursive = 0;
+		$paginate = array(
+			'conditions' => array(
+				'Application.last_name NOT' => ''
+			)
+		);
+		
+		$this->paginate = $paginate;
 		$this->set('applications', $this->paginate());
 		$this->set('app_status',$this->app_status);
 	}
