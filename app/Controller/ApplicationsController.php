@@ -387,7 +387,8 @@ class ApplicationsController extends AppController {
 					'Application' => array(
 						'id' => $this->application['Application']['id'],
 						'stripe_id' => $charge->id,
-						'status' => 'Received'
+						'status' => 'Received',
+						'completed' => date('Y-m-d H:i:s')
 					)
 				);
 				if($this->Application->save($data)) {
