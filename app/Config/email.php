@@ -18,14 +18,14 @@ class EmailConfig {
 
 	public $smtp = array(
 		'transport' => 'Smtp',
-		'from' => array('site@localhost' => 'My Site'),
-		'host' => 'localhost',
-		'port' => 25,
+		'from' => array('admissions@cfni.org' => 'Christ for the Nations Institute'),
+		'host' => 'ssl://email-smtp.us-east-1.amazonaws.com',
+		'port' => 465,
 		'timeout' => 30,
-		'username' => 'user',
-		'password' => 'secret',
-		'client' => null,
-		'log' => false,
+		'username' => 'AKIAJUJN3UPSHR5TXDTA',
+		'password' => 'AmkgRFn6/OrjbwWo4hNQPWU1liDHjaQF19ISXpiT0lE5',
+		//'client' => null,
+		'log' => true
 		//'charset' => 'utf-8',
 		//'headerCharset' => 'utf-8',
 	);

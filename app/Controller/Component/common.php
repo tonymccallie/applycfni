@@ -290,7 +290,7 @@ class Common {
 		
 		App::uses('CakeEmail', 'Network/Email');
 		$email = new CakeEmail();
-		$email->config('gmail');
+		$email->config('smtp');
 		$email->from($config['from'])
 			->to($config['to'])
 			->subject($config['subject'])
