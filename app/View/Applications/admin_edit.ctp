@@ -47,11 +47,14 @@
 	</div>
 	
 	<div class="row-fluid">
-		<div class="span12">
+		<div class="span6">
 			<?php 
 				$middle = (!empty($this->data['Application']['mid_name']))?$this->data['Application']['mid_name'].' ':'';
 			?>
 			<label>Name:</label> <?php echo $this->data['Application']['first_name'].' '.$middle.$this->data['Application']['last_name'] ?>
+		</div>
+		<div class="span6">
+			<label>Email:</label> <?php echo $this->data['User']['email'] ?>
 		</div>
 	</div>
 	<div class="row-fluid">
