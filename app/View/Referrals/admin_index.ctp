@@ -1,3 +1,9 @@
+<?php
+	$letter = array(
+		0 => 'Pastoral',
+		1 => 'Personal'
+	);
+?>
 <div class="admin_header">
 	<h3>
 		<i class="icon-edit"></i> Referrals
@@ -16,6 +22,7 @@
 				<th>
 					<?php echo $this->Paginator->sort('applicant_id','<i class="icon-sort"></i> Applicant',array('escape'=>false)); ?>
 				</th>
+				<th>Type</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -23,6 +30,7 @@
 			<tr>
 				<td><?php echo $this->Html->link($referral['Referral']['last_name'].', '.$referral['Referral']['first_name'],array('action'=>'edit',$referral['Referral']['id'])) ?></td>
 				<td><?php echo $referral['Application']['first_name'].' '.$referral['Application']['last_name'] ?></td>
+				<td><?php echo $letter[$referral['Referral']['position']] ?></td>
 			</tr>
 		<?php endforeach ?>
 		</tbody>
