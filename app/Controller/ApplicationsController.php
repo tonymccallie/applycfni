@@ -53,7 +53,11 @@ class ApplicationsController extends AppController {
 		}
 		$degrees = $this->Application->Degree->find('list');
 		$majors = $this->Application->Major->find('list');
-		$semesters = $this->Application->Semester->find('list');
+		$semesters = $this->Application->Semester->find('list',array(
+			'conditions' => array(
+				'Semester.close >=' => date('Y-m-d 00:00:00')
+			)
+		));
 		$this->set(compact('degrees','majors','semesters'));
 	}
 	

@@ -16,13 +16,21 @@
 				<th>
 					<?php echo $this->Paginator->sort('start','<i class="icon-sort"></i> Start',array('escape'=>false)); ?>
 				</th>
+				<th>
+					<?php echo $this->Paginator->sort('late','<i class="icon-sort"></i> Late',array('escape'=>false)); ?>
+				</th>
+				<th>
+					<?php echo $this->Paginator->sort('close','<i class="icon-sort"></i> Close',array('escape'=>false)); ?>
+				</th>
 			</tr>
 		</thead>
 		<tbody>
 		<?php foreach($semesters as $semester): ?>
 			<tr>
 				<td><?php echo $this->Html->link($semester['Semester']['title'],array('action'=>'edit',$semester['Semester']['id'])) ?></td>
-				<td><?php echo $semester['Semester']['start'] ?></td>
+				<td><?php echo date('M jS, Y',strtotime($semester['Semester']['start'])) ?></td>
+				<td><?php echo !empty($semester['Semester']['late'])?date('M jS, Y',strtotime($semester['Semester']['late'])):'' ?></td>
+				<td><?php echo !empty($semester['Semester']['close'])?date('M jS, Y',strtotime($semester['Semester']['close'])):'' ?></td>
 			</tr>
 		<?php endforeach ?>
 		</tbody>
