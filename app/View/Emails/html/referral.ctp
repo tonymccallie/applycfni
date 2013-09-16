@@ -3,6 +3,5 @@
 <p>Please click the link below to write a referral.</p>
 <p><?php echo $this->Html->link($url) ?></p>
 <p>NOTE: This form cannot be completed by a relative of the applicant.</p>
-<p>Pastoral Recommendation Tool Tip: Your pastor must have known you for at least 6 months prior to filling out this recommendation.  If your pastor is related to you, please ask another member of the church’s pastoral staff who is familiar with you to complete this form and provide a letter of explanation.</p>
 <p>Thanks and blessings,</p>
 <p>CFNI Enrollment Services Department</p>

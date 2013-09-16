@@ -156,7 +156,7 @@
 		<div class="container">
 			<div class="row-fluid">
 				<div class="span12 text-center">
-					<p>&copy;<?php echo date('Y') ?> Christ for the Nations Institute |  1-800-933-CFNI (2364)  |  <a href="mailto:info@cfni.org">info@cfni.org</a>  | <a href="http://apply.cfni.org/privacypolicy.html">Privacy Policy </a> | <a href="http://apply.cfni.org/termsandconditions.html">Terms & Conditions </a> | <a href="http://apply.cfni.org/eula.html">EULA </a> </p>
+					<p>&copy;<?php echo date('Y') ?> Christ for the Nations Institute |  1-800-933-CFNI (2364)  |  <a href="mailto:info@cfni.org">info@cfni.org</a>  | <a href="https://applytocfni.com/privacypolicy.html">Privacy Policy </a> | <a href="https://applytocfni.com/termsandconditions.html">Terms & Conditions </a> | <a href="https://applytocfni.com/eula.html">EULA </a> </p>
 				</div>
 			</div>
 		</div>

@@ -46,7 +46,7 @@
 	</div>
 	<div class="row-fluid">
 		<div class="span12">
-			<?php echo $this->Form->input('church_affiliation',array('label'=>'Church Affiliation','class'=>'span12')); ?>
+			<?php echo $this->Form->input('church_affiliation',array('label'=>'Church Denomination','class'=>'span12')); ?>
 		</div>
 	</div>
 	<div class="row-fluid">

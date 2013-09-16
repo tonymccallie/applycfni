@@ -18,7 +18,7 @@
 	</div>
 	<div class="row-fluid">
 		<h4>Domestic Students</h4>
-		<p>Please provide an official transcript from your high school and any other institute of learning you have attended. Home school transcripts need to be notarized.  Please send transcripts to:  Christ For The Nations Institute *Attention:  Admissions Office* P.O. Box 769000 Dallas, TX 75376-9000</p>
+		<p>Please provide an official transcript from your high school and any other institute of learning you have attended. Home school transcripts need to be notarized.  Please send transcripts to:  Christ For The Nations Institute *Attention:  Admissions Office* 444 Fawn Ridge Drive, Dallas, TX 75224</p>
 	</div>
 <!--
 	<div class="row-fluid">
