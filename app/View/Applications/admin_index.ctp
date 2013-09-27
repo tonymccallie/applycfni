@@ -2,11 +2,23 @@
 	<h3>
 		<i class="icon-edit"></i> Applications
 		<div class="btn-group pull-right">
-			<?php //echo $this->Html->link('Add Application', array('action' => 'add'),array('class'=>'btn','escape'=>false)); ?>
+			<?php
+				echo $this->Html->link('Show All','/admin/applications/index',array('escape'=>false,'class'=>'btn'));	
+				foreach($app_status as $k => $status) {
+					$active = '<i class="icon-check-empty"></i> ';
+					if(isset($this->request->params['named']['status'])) {
+						if($this->request->params['named']['status'] == $k) {
+							$active = '<i class="icon-check"></i> ';
+						}
+					}
+					echo $this->Html->link($active.$status,'/admin/applications/index/status:'.$k,array('escape'=>false,'class'=>'btn'));	
+				}
+			?>
 		</div>
 	</h3>
 </div>
 <div class="">
+	<?php echo $this->element('search') ?>
 	<table class="table table-striped table-bordered">
 		<thead>
 			<tr>

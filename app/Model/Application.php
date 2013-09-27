@@ -142,6 +142,12 @@ class Application extends AppModel {
 				'message' => 'Please check yes or no.'
 			)
 		),
+		'picture' => array(
+			'ruleName' => array(
+				'rule' => array('notEmpty'),
+				'message' => 'Please upload a profile picture of yourself.'
+			)
+		),
 	);
 	
 	var $validateBackground = array(

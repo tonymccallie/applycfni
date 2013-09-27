@@ -45,7 +45,15 @@
 	<div class="row-fluid">
 		<h2>Personal</h2>
 	</div>
-	
+	<div class="row-fluid">
+		<div class="span3">
+			<?php
+				if(!empty($this->data['Application']['picture'])) {
+					echo $this->Html->image('/profile_pictures/'.$this->data['Application']['picture']);
+				}
+			?>
+		</div>
+	</div>
 	<div class="row-fluid">
 		<div class="span6">
 			<?php 
@@ -94,7 +102,11 @@
 			<label>Social Security Number:</label> <?php echo $this->data['Application']['ssn'] ?>
 		</div>
 		<div class="span6">
-			<label>Date of Birth:</label> <?php echo date('F d, Y',strtotime($this->data['Application']['birth_date'])) ?>
+			<?php
+				$age = date_diff(date_create($this->data['Application']['birth_date']),date_create('now'));
+				$age = $age->format('%y');
+			?>
+			<label>Date of Birth:</label> <?php echo date('F d, Y',strtotime($this->data['Application']['birth_date'])).' ('.$age.' yrs old)' ?>
 		</div>
 	</div>
 	<div class="row-fluid">

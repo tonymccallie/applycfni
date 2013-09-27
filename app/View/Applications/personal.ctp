@@ -1,7 +1,7 @@
 <div class="span12">
 	<h2>Step 2: Personal Information</h2>
 	<?php 
-		echo $this->Form->create();
+		echo $this->Form->create('Application',array('type' => 'file'));
 			echo $this->Form->input('id',array());
 	?>
 	<div class="row-fluid">
@@ -72,7 +72,7 @@
 			<?php echo $this->Form->input('birth_state',array('options' => Common::states(),'empty'=>'--','class'=>'span12'));?>
 		</div>
 		<div class="span3">
-			<?php echo $this->Form->input('birth_country',array('options'=>Common::countries(),'empty'=>'--','class'=>'span12')); ?>
+			<?php echo $this->Form->input('birth_country',array('label'=>'Birth Country <a href="#" class="labeltooltip" data-toggle="tooltip" data-placement="top" title data-original-title="Birth Country info..."><i class="icon-question-sign"></i></a>','options'=>Common::countries(),'empty'=>'--','class'=>'span12')); ?>
 		</div>
 	</div>
 	<div class="row-fluid">
@@ -92,6 +92,11 @@
 		</div>
 		<div class="span6">
 			<?php echo $this->ExtendedForm->radio('citizen_status',array('label'=>'Are you a citizen/permanent resident/resident alien?','type'=>'radio','options'=>array(1 => 'Yes',0 => 'No'))); ?>
+		</div>
+	</div>
+	<div class="row-fluid">
+		<div class="span12">
+			<?php echo $this->ExtendedForm->radio('deferred_action',array('label'=>'Are you Deferred Action? <a href="#" class="labeltooltip" data-toggle="tooltip" data-placement="top" title data-original-title="Description of deferred action"><i class="icon-question-sign"></i></a>','type'=>'radio','options'=>array(1 => 'Yes',0 => 'No'))); ?>
 		</div>
 	</div>
 	<div class="row-fluid">
@@ -125,6 +130,31 @@
 		</div>
 		<div class="span6">
 			<?php echo $this->ExtendedForm->radio('recruit_yfn',array('label'=>'Have you attended Youth for the Nations?','type'=>'radio','options'=>array(1 => 'Yes',0 => 'No'))); ?>
+		</div>
+	</div>
+	<div class="row-fluid">
+		<div class="span12">
+			<?php echo $this->ExtendedForm->radio('live_on_campus',array('label'=>'Are you planning on living on campus?','type'=>'radio','options'=>array(1 => 'Yes',0 => 'No'))); ?>
+		</div>
+	</div>
+	<div class="row-fluid">
+		<h4>Photo</h4>
+	</div>
+	<div class="row-fluid">
+		<div class="span4">
+			<p>Please upload a photo of yourself.</p>
+		</div>
+		<div class="span4">
+			<?php
+				echo $this->Form->input('picture',array('type'=>'file')); 
+			?>
+		</div>
+		<div class="span4">
+			<?php
+				if(!empty($this->data['Application']['picture'])) {
+					echo $this->Html->image('/profile_pictures/'.$this->data['Application']['picture']);
+				}
+			?>
 		</div>
 	</div>
 	<div class="btn-group pull-right">

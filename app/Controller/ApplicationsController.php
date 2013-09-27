@@ -98,6 +98,17 @@ class ApplicationsController extends AppController {
 				);
 			}
 			
+			if(!empty($this->request->data['Application']['picture']['name'])) {
+				
+				$nameArray = explode('.', $this->request->data['Application']['picture']['name']);
+				$extension = strtolower($nameArray[count($nameArray)-1]);
+				$filename = Common::generateRandom().'.'.$extension;
+				move_uploaded_file($this->request->data['Application']['picture']['tmp_name'],WWW_ROOT.'profile_pictures/' . $filename);
+				$this->request->data['Application']['picture'] = $filename;
+			} else {
+				$this->request->data['Application']['picture'] = '';
+			}
+			
 			if($this->Application->save($this->request->data)) {
 				$application = $this->Application->findById($this->request->data['Application']['id']);
 				$this->Session->write('application',$application);
@@ -220,7 +231,7 @@ class ApplicationsController extends AppController {
 				);
 			}
 
-			if($this->request->data['Application']['conduct_code'] === 0) {
+			if($this->request->data['Application']['conduct_code'] === '0') {
 				$this->Application->validate['conduct_reason'] = array(
 					'ruleName' => array(
 						'rule' => array('notEmpty'),
@@ -444,6 +455,21 @@ class ApplicationsController extends AppController {
 				'Application.last_name NOT' => ''
 			)
 		);
+		
+		if(isset($this->request->params['named']['status'])) {
+			$paginate['conditions']['Application.status'] = $this->request->params['named']['status'];
+		}
+		
+		if(!empty($this->request->data['Application']['search'])) {
+			$paginate['conditions']['OR'] = array(
+				'Application.first_name LIKE' => '%'.$this->request->data['Application']['search'].'%',
+				'Application.last_name LIKE' => '%'.$this->request->data['Application']['search'].'%',
+				'Application.address1 LIKE' => '%'.$this->request->data['Application']['search'].'%',
+				'Application.city LIKE' => '%'.$this->request->data['Application']['search'].'%',
+				'Application.state LIKE' => '%'.$this->request->data['Application']['search'].'%',
+				'Application.zip LIKE' => '%'.$this->request->data['Application']['search'].'%',
+			);
+		}
 		
 		$this->paginate = $paginate;
 		$this->set('applications', $this->paginate());
