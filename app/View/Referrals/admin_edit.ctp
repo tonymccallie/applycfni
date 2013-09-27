@@ -9,9 +9,9 @@
 <div class="admin_header">
 	<h3>
 		<?php 
-			$middle = (!empty($this->data['Referral']['mid_name']))?$this->data['Referral']['mid_name'].' ':'';
+			$middle = (!empty($this->data['Application']['mid_name']))?$this->data['Application']['mid_name'].' ':'';
 		?>
-		<i class="icon-edit"></i> <?php echo $letter[$this->data['Referral']['position']] ?> Referral for <?php echo $this->data['Referral']['first_name'].' '.$middle.$this->data['Referral']['last_name'] ?>
+		<i class="icon-edit"></i> <?php echo $letter[$this->data['Referral']['position']] ?> Referral for <?php echo $this->data['Application']['first_name'].' '.$middle.$this->data['Application']['last_name'] ?>
 		<div class="btn-group pull-right">
 			<?php echo $this->Html->link('<i class="icon-trash"></i> ', array('action' => 'delete', $this->data['Application']['id']), array('id'=>'application_delete','escape'=>false,'class'=>'btn'),'Are you sure you want to delete this Referral?'); ?>
 		</div>
