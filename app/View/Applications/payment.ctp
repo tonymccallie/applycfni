@@ -56,6 +56,7 @@
 		<div class="span12">
 			<h4>Coupon Code</h4>
 			<?php echo $this->Form->input('coupon',array('label'=>'Do you have a coupon code?','class'=>'span12')); ?>
+			<?php echo $this->Form->submit('Verify Coupon',array('class'=>'btn')); ?>
 		</div>
 	</div>
 	<div class="row-fluid">

@@ -428,7 +428,7 @@ class ApplicationsController extends AppController {
 				}	
 			}
 			
-			if(($amount > 0)&&(empty($this->request->data['stripeToken']))) {
+			if(($amount > 0)&&(empty($this->request->data['stripeToken']))&&($continue)) {
 				$continue = false;
 				$this->Application->invalidate('name_on_card','You will need to enter valid payment information to continue.');
 			}
