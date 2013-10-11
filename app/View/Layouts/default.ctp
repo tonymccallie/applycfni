@@ -105,6 +105,7 @@
 									<li><?php echo $this->Html->link('Majors','/admin/majors') ?></li>
 									<li><?php echo $this->Html->link('Degrees','/admin/degrees') ?></li>
 									<li><?php echo $this->Html->link('FAQs','/admin/faqs') ?></li>
+									<li><?php echo $this->Html->link('Coupons','/admin/coupons') ?></li>
 								</ul>
 							</li>
 						<?php endif ?>

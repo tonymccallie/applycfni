@@ -8,16 +8,22 @@
 	$(document).ready(function() {
 		$('#ApplicationPaymentForm').submit(function(event) {
 			var $form = $(this);
-			//disable button
-			$('#errors').hide();
-			$('#submit_payment').attr('disabled',true);
-			Stripe.createToken($form, stripeResponse);
-			return false;
+			var checkCC = true;
+			if(($('#ApplicationCoupon').val().length > 0)&&($('#ApplicationNameOnCard').val().length == 0)) {
+				checkCC = false;
+			}
+			
+			if(checkCC) {
+				//disable button
+				$('#errors').hide();
+				$('#submit_payment').attr('disabled',true);
+				Stripe.createToken($form, stripeResponse);
+				return false;
+			}
 		});
 	});
 	
 	var stripeResponse = function(status, response) {
-		console.log([status, response]);
 		var $form = $('#ApplicationPaymentForm');
 
 		if (response.error) {
@@ -46,6 +52,17 @@
 		echo $this->Form->create();
 			echo $this->Form->input('id',array());
 	?>
+	<div class="row-fluid">
+		<div class="span12">
+			<h4>Coupon Code</h4>
+			<?php echo $this->Form->input('coupon',array('label'=>'Do you have a coupon code?','class'=>'span12')); ?>
+		</div>
+	</div>
+	<div class="row-fluid">
+		<div class="span12">
+			<h4>Card Information</h4>
+		</div>
+	</div>
 	<div id="errors" class="alert alert-error hide">
 		<i class="icon-remove-sign"></i> <span id="error_message"></span>
 	</div>

@@ -392,22 +392,86 @@ class ApplicationsController extends AppController {
 		if(!empty($this->request->data['Application'])) {
 			App::import('Vendor','stripe/Stripe');
 			Stripe::setApiKey("sk_live_5ej02BMQZDZNv229OKu8p7Os");
-			try {
-				$charge = Stripe_Charge::create(array(
-					"amount" => 5000, // amount in cents, again
-					"currency" => "usd",
-					"card" => $this->request->data['stripeToken'],
-					"description" => $this->application['Application']['first_name'].' '.$this->application['Application']['last_name'].' - '.$this->application['User']['email'])
-				);
-				$data = array(
-					'Application' => array(
-						'id' => $this->application['Application']['id'],
-						'stripe_id' => $charge->id,
-						'status' => 'Received',
-						'completed' => date('Y-m-d H:i:s')
-					)
-				);
-				if($this->Application->save($data)) {
+			$amount = 5000;
+			$continue = true;
+			if(!empty($this->request->data['Application']['coupon'])) {
+				$coupon = $this->Application->Coupon->find('first',array(
+					'conditions' => array(
+						'Coupon.code' => $this->request->data['Application']['coupon'],
+						'Coupon.used_qty < Coupon.qty',
+						'OR' => array(
+							'Coupon.start_date' => null,
+							'Coupon.start_date <=' => 'NOW()',
+						),
+						'OR' => array(
+							'Coupon.stop_date' => null,
+							'Coupon.stop_date >=' => 'NOW()',
+						), 
+					),
+					'contain' => array()
+				));
+				if($coupon) {
+					switch($coupon['Coupon']['type']) {
+						case 'percentage':
+							$amount = $amount * ((100 - $coupon['Coupon']['value'])/100);
+							break;
+						case 'amount':
+							$amount = $amount - ($coupon['Coupon']['value']*100);
+							break;
+					}
+					if($amount < 0) {
+						$amount = 0;
+					}
+				} else {
+					$continue = false;
+					$this->Application->invalidate('coupon','Please use a valid coupon.');
+				}	
+			}
+			
+			if(($amount > 0)&&(empty($this->request->data['stripeToken']))) {
+				$continue = false;
+				$this->Application->invalidate('name_on_card','You will need to enter valid payment information to continue.');
+			}
+			
+			if($continue) {
+				if($amount > 0) {
+					try {
+						$charge = Stripe_Charge::create(array(
+							"amount" => $amount, // amount in cents, again
+							"currency" => "usd",
+							"card" => $this->request->data['stripeToken'],
+							"description" => $this->application['Application']['first_name'].' '.$this->application['Application']['last_name'].' - '.$this->application['User']['email'])
+						);
+						
+						$data = array(
+							'Application' => array(
+								'id' => $this->application['Application']['id'],
+								'stripe_id' => $charge->id,
+								'status' => 'Received',
+								'completed' => date('Y-m-d H:i:s')
+							)
+						);
+					} catch(Stripe_CardError $e) {
+						$this->Session->setFlash('There were problems charging the card.','error');
+						debug($e);
+						return false;
+					}
+				} else {
+					$data = array(
+						'Application' => array(
+							'id' => $this->application['Application']['id'],
+							'coupon_id' => $coupon['Coupon']['id'],
+							'status' => 'Received',
+							'completed' => date('Y-m-d H:i:s')
+						),
+						'Coupon' => array(
+							'id' => $coupon['Coupon']['id'],
+							'used_qty' => $coupon['Coupon']['used_qty'] + 1
+						)
+					);
+				}
+
+				if($this->Application->saveAll($data)) {
 					$application = $this->Application->findById($this->request->data['Application']['id']);
 					$this->Session->write('application',$application);
 					
@@ -435,9 +499,6 @@ class ApplicationsController extends AppController {
 				} else {
 					$this->Session->setFlash('There were problems with this page of the form. See the indicated fields below.','error');
 				}
-			} catch(Stripe_CardError $e) {
-				$this->Session->setFlash('There were problems charging the card.','error');
-				debug($e);
 			}
 		} else {
 			$this->request->data = $this->application;

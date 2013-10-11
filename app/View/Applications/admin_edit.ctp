@@ -448,6 +448,13 @@
 			<label>Electronic Signature:</label> <?php echo $this->data['Application']['signature_name'] ?>
 		</div>
 	</div>
+	<?php if(!empty($this->data['Coupon'])): ?>
+	<div class="row-fluid">
+		<div class="span12">
+			<label>Coupon Used</label> <?php echo $this->Html->link($this->data['Coupon']['title'],'/admin/coupons/edit/'.$this->data['Coupon']['id']) ?>
+		</div>
+	</div>
+	<?php endif ?>
 	<div class="row-fluid">
 		<div class="span12">
 			<?php

@@ -3,7 +3,8 @@ App::uses('AppModel', 'Model');
 class Application extends AppModel {
 	public $belongsTo = array(
 		'User','Major',
-		'Degree','Semester'
+		'Degree','Semester',
+		'Coupon'
 	);
 	
 	public $hasMany = array(
