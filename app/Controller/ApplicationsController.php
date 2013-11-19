@@ -485,7 +485,7 @@ class ApplicationsController extends AppController {
 					),'');
 					
 					Common::email(array(
-						'to' => 'admissions@cfni.org',
+						'to' => array('admissions@cfni.org','finance@cfni.org'),
 						'subject' => 'CFNI Application Completion',
 						'template' => 'admissions',
 						'variables' => array(
