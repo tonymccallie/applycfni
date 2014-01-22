@@ -44,8 +44,8 @@
 				<td><?php echo $coupon['Coupon']['code'] ?></td>
 				<td><?php echo $coupon['Coupon']['qty'] ?></td>
 				<td><?php echo $coupon['Coupon']['used_qty'] ?></td>
-				<td><?php echo $coupon['Coupon']['start_date'] ?></td>
-				<td><?php echo $coupon['Coupon']['stop_date'] ?></td>
+				<td><?php echo date('M jS, Y',strtotime($coupon['Coupon']['start_date'])) ?></td>
+				<td><?php echo date('M jS, Y',strtotime($coupon['Coupon']['stop_date'])) ?></td>
 				<td><?php echo $coupon['Coupon']['type'] ?></td>
 				<td><?php echo $coupon['Coupon']['value'] ?></td>
 			</tr>

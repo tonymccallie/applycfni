@@ -395,21 +395,28 @@ class ApplicationsController extends AppController {
 			$amount = 5000;
 			$continue = true;
 			if(!empty($this->request->data['Application']['coupon'])) {
-				$coupon = $this->Application->Coupon->find('first',array(
-					'conditions' => array(
+				$conditions = array(
 						'Coupon.code' => $this->request->data['Application']['coupon'],
 						'Coupon.used_qty < Coupon.qty',
-						'OR' => array(
-							'Coupon.start_date' => null,
-							'Coupon.start_date <=' => 'NOW()',
+						array(
+							'OR' => array(
+								'Coupon.start_date' =>  null,
+								'Coupon.start_date <= NOW()',
+							),
 						),
-						'OR' => array(
-							'Coupon.stop_date' => null,
-							'Coupon.stop_date >=' => 'NOW()',
+						array(
+							'OR' => array(
+								'Coupon.stop_date' => null,
+								'Coupon.stop_date >= NOW()',
+							),
 						), 
-					),
+					);
+
+				$coupon = $this->Application->Coupon->find('first',array(
+					'conditions' => $conditions,
 					'contain' => array()
 				));
+				
 				if($coupon) {
 					switch($coupon['Coupon']['type']) {
 						case 'percentage':
@@ -470,7 +477,7 @@ class ApplicationsController extends AppController {
 						)
 					);
 				}
-
+die(debug($data));
 				if($this->Application->saveAll($data)) {
 					$application = $this->Application->findById($this->request->data['Application']['id']);
 					$this->Session->write('application',$application);

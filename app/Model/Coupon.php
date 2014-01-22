@@ -1,6 +1,7 @@
 <?php
 App::uses('AppModel', 'Model');
 class Coupon extends AppModel {
+	var $order = array('Coupon.start_date' => 'desc');
 	public $hasMany = array(
 		'Application' => array(
 			'dependent' => false //true = delete child records on delete
