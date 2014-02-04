@@ -477,7 +477,7 @@ class ApplicationsController extends AppController {
 						)
 					);
 				}
-die(debug($data));
+
 				if($this->Application->saveAll($data)) {
 					$application = $this->Application->findById($this->request->data['Application']['id']);
 					$this->Session->write('application',$application);
