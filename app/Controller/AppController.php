@@ -1,4 +1,5 @@
 <?php
+header('Expires: '.gmdate('D, d M Y H:i:s',strtotime('-1 day')). ' GMT');
 App::uses('Controller', 'Controller');
 App::uses('User','Model');
 class AppController extends Controller {
