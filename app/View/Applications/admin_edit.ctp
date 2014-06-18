@@ -121,8 +121,11 @@
 		</div>
 	</div>
 	<div class="row-fluid">
-		<div class="span6">
+		<div class="span3">
 			<label>Gender:</label> <?php echo $gender[$this->data['Application']['gender']] ?>
+		</div>
+		<div class="span3">
+			<label>Ethnicity</label> <?php echo $this->data['Application']['ethnicity'] ?>
 		</div>
 		<div class="span6">
 			<label>Maiden Name:</label> <?php echo $this->data['Application']['maiden_name'] ?>
@@ -137,6 +140,11 @@
 		</div>
 		<div class="span6">
 			<label>Are you a permanent resident/resident alien?:</label> <?php echo $yesno[$this->data['Application']['citizen_status']] ?>
+		</div>
+	</div>
+	<div class="row-fluid">
+		<div class="span12">
+			<label>Deferred</label><?php echo $yesno[$this->data['Application']['deferred_action']] ?>
 		</div>
 	</div>
 	<div class="row-fluid">

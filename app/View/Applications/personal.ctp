@@ -76,8 +76,21 @@
 		</div>
 	</div>
 	<div class="row-fluid">
-		<div class="span6">
+		<div class="span3">
 			<?php echo $this->ExtendedForm->radio('gender',array('label'=>'Gender','type'=>'radio','options'=>array('M' => 'Male','F' => 'Female'))); ?>
+		</div>
+		<div class="span3">
+			<?php
+				echo $this->Form->input('ethnicity',array('class'=>'span12','options'=>array(
+					'' => 'Please Choose',
+					'Asian' => 'Asian',
+					'African' => 'African',
+					'African American' => 'African American',
+					'Caucasian' => 'Caucasian',
+					'Hispanic' => 'Hispanic',
+					'Other' => 'Other',
+				)));
+			?>
 		</div>
 		<div class="span6">
 			<?php echo $this->Form->input('maiden_name',array('label'=>'Maiden Name','class'=>'span12')); ?>
@@ -134,7 +147,7 @@
 	</div>
 	<div class="row-fluid">
 		<div class="span12">
-			<?php echo $this->ExtendedForm->radio('live_on_campus',array('label'=>'Are you planning on living on campus?','type'=>'radio','options'=>array(1 => 'Yes',0 => 'No'))); ?>
+			<?php echo $this->ExtendedForm->radio('live_on_campus',array('label'=>'Are you planning on living on campus? <a href="#" class="labeltooltip" data-toggle="tooltip" data-placement="top" title data-original-title="All full-time students enrolled in day classes, single and married, are required to live on campus unless the student is able to provide proof of residency in the Dallas/Ft. Worth area for at least six (6) consecutive months prior to their initial application.  If residency was established by living with a parent, the student may remain off campus as long as they continue to live with their parent.  To be considered for off-campus living, an application must be submitted to director of student services at least 7 days prior to registering for classes.  Applications are subject to approval by the director of student services."><i class="icon-question-sign"></i></a>','type'=>'radio','options'=>array(1 => 'Yes',0 => 'No'))); ?>
 		</div>
 	</div>
 	<div class="row-fluid">
